@@ -6,14 +6,19 @@
 
 v0.1.0
 
-![Geohistory of North Sea well 30/4-1](image/hero_geohistory_north_sea_30-4-1.png)
-
 Reconstructs how a sedimentary basin sank and filled through time, by backstripping its layers. Python version and
 extension of [BasinSubs](https://github.com/GeoLarryLai/BasinSubs) (R; [Lai et al., 2022](https://doi.org/10.1038/s43247-022-00429-2)).
 
 Status: early-stage research software. APIs may change; check results before use.
 
 ## Installation
+
+```bash
+pip install pybasinsubs
+pip install "pybasinsubs[ui,notebooks]"   # optional: apps and notebooks
+```
+
+From source:
 
 ```bash
 git clone https://github.com/GeoLarryLai/pyBasinSubs && cd pyBasinSubs
@@ -31,6 +36,8 @@ Other references: [Roberts et al. (1998)](https://doi.org/10.1144/petgeo.4.4.327
 [Miller et al. (2020)](https://doi.org/10.1126/sciadv.aaz1346) (sea-level curve, downloaded on first use, not shipped),
 [IHFC (2024)](https://doi.org/10.5880/fidgeo.2024.014). Data credits are in `NOTICE`.
 
+![Geohistory of North Sea well 30/4-1](image/hero_geohistory_north_sea_30-4-1.png)
+
 ## Key Features
 
 - **Backstripping:** 1-D Airy backstripping with Monte Carlo uncertainty, erosion and over-compaction; `legacy`
@@ -40,7 +47,7 @@ Other references: [Roberts et al. (1998)](https://doi.org/10.1144/petgeo.4.4.327
 - **Flexure and sections:** 2-D flexural backstripping, T_e fitting and fault restoration across a section.
 - **Your own data:** CSV templates in `pybasinsubs/example_data/template/`, plus desktop and Streamlit apps.
 
-## Results
+## Examples
 
 ![Tectonic subsidence with uncertainty](image/nb3_geohistory_N.png)
 *Northern Coastal Range (Taiwan): geohistory with total and tectonic subsidence and uncertainty bands.*
