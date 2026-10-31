@@ -15,7 +15,7 @@ v0.1.0
 - Lai, L.S.-H., Dorsey, R.J., Horng, C.-S., Chi, W.-R., Shea, K.-S., and Yen, J.-Y. (2021) Polygenetic mélange in retrowedge foredeep of an active arc-continent collision, Coastal Range of eastern Taiwan. *Sedimentary Geology*, v. 418, 105901. https://doi.org/10.1016/j.sedgeo.2021.105901
 - Lai, L.S.-H., Dorsey, R.J., Horng, C.-S., Chi, W.-R., Shea, K.-S., and Yen, J.-Y. (2022) Extremely rapid up-and-down motions of island arc crust during arc-continent collision. *Communications Earth & Environment*, v. 3, no. 1, 100. https://doi.org/10.1038/s43247-022-00429-2
 
-**pyBasinSubs (Python, new):** it brings that backstripping workflow into Python and goes further: Monte Carlo uncertainty, thermal history and maturity, 2-D flexural backstripping and section restoration, CSV templates and apps for your own data. The `legacy` module reproduces the BasinSubs R results, and `legacy.py` and the bundled BasinSubs data keep their BSD-3-Clause notice.
+**pyBasinSubs (Python, new):** it brings that backstripping workflow into Python and goes further: Monte Carlo uncertainty, thermal history and maturity, 2-D flexural backstripping and section restoration, CSV templates and apps for your own data. The `legacy` module reproduces the BasinSubs R results.
 
 ## Installation
 
@@ -78,4 +78,3 @@ geohistory(r); r.summary()
 Apps: `pybasinsubs-ui` (backstripping), `pybasinsubs-tracer` (fault editor and restoration);
 add `--streamlit` for the Streamlit versions.
 
-`legacy.py` and the bundled BasinSubs data keep the BSD-3-Clause notice ([`LICENSE-BasinSubs-BSD3`](LICENSE-BasinSubs-BSD3)).

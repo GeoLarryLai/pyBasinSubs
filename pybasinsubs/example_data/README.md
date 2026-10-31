@@ -4,10 +4,10 @@ Shipped inside the package; locate files with `pybasinsubs.data_path("north_sea"
 
 | folder / file | content | source | licence |
 |---|---|---|---|
-| `coastal_range/Thickness, Sealevel, Backstripping` | inputs of the BasinSubs R code (thickness, ages, lithology, foraminifera bathymetry, porosity curves, densities) | BasinSubs repository, Lai et al. (2022) | BSD-3-Clause (`../LICENSE-BasinSubs-BSD3`) |
-| `coastal_range/r_outputs` | outputs written by the R code (`output results/`), used only for parity tests | BasinSubs repository | BSD-3-Clause |
+| `coastal_range/Thickness, Sealevel, Backstripping` | inputs of the BasinSubs R code (thickness, ages, lithology, foraminifera bathymetry, porosity curves, densities) | Lai et al. (2022) | AGPL-3.0-or-later (this package) |
+| `coastal_range/r_outputs` | outputs written by the R code (`output results/`), used only for parity tests | Lai et al. (2022) | AGPL-3.0-or-later (this package) |
 | *(not shipped)* `SeaLevel_Miller2020.csv` | global sea level 0–66.6 Ma, Miller et al. (2020) *Sci. Adv.* 6, eaaz1346 | downloaded on first use from the BasinSubs repository, SHA-256 checked, cached in `~/.cache/pybasinsubs` (`pybasinsubs.sealevel.miller2020_path`) | CC BY-NC 4.0 – non-commercial use only; not redistributable under AGPL-3.0 |
-| `coastal_range/Sealevel/SL_Unit_N.csv`, `SL_Unit_S.csv` | unit-averaged sea level written by the R code (reference outputs for parity tests) | BasinSubs | BSD-3; derived from Miller et al. (2020) |
+| `coastal_range/Sealevel/SL_Unit_N.csv`, `SL_Unit_S.csv` | unit-averaged sea level written by the R code (reference outputs for parity tests) | derived from Miller et al. (2020) | AGPL-3.0-or-later (this package) |
 | `north_sea/roberts1998_fig4a_vg1_digitized.csv`, `faults/*` | horizon depths of line Viking Graben 1 digitized from Roberts et al. (1998) *Petrol. Geosci.* 4, 327–338, Fig. 4a; fault-stick examples derived from it | digitized by the pyBasinSubs authors | derived numerical data, attribution required; the figure is not distributed (see `NOTICE`) |
 | `figshare_lai2022/SuppData2–4*.xlsx` | supplementary data of Lai et al. (2022): microfossils, paleobathymetry, age model / subsidence | Figshare, Lai, L.S.-H. et al. (2022) | CC BY 4.0 |
 | `north_sea/sodir_*_wells.csv`, `sodir_*_group_tops.csv` | well headers (location, KB, water depth, TD, BHT) and lithostratigraphic group tops, North Viking Graben (8 wells) and Hammerfest Basin (6 wells) | Norwegian Offshore Directorate (Sodir) FactPages, downloaded 2026-10 | Norwegian Licence for Open Government Data (NLOD 2.0) |

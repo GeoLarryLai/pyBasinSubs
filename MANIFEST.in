@@ -1,4 +1,4 @@
-include README.md LICENSE LICENSE-BasinSubs-BSD3 NOTICE
+include README.md LICENSE NOTICE
 recursive-include pybasinsubs/example_data *
 recursive-include tests *.py *.csv
 prune notebooks

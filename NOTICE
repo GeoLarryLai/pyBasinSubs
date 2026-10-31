@@ -6,33 +6,27 @@ or (at your option) any later version (AGPL-3.0-or-later; see LICENSE).
 It includes or is derived from the third-party works listed below, each under
 its own licence. Please cite the original sources when you use them.
 
-1. BasinSubs (R scripts and data; https://github.com/GeoLarryLai/BasinSubs)
-   Copyright (c) 2022, LarrySHLai. BSD 3-Clause License (see LICENSE-BasinSubs-BSD3).
-   Used in: pybasinsubs/legacy.py (Python version of the R scripts),
-   pybasinsubs/example_data/coastal_range/ (inputs and R outputs).
-   Cite: Lai, L.S.-H., Dorsey, R.J., Horng, C.-S., Chi, W.-R., Shea, K.-S., Yen, J.-Y.
-   (2022) Extremely rapid up-and-down motions of island arc crust during
-   arc-continent collision. Communications Earth & Environment 3, 100.
-   https://doi.org/10.1038/s43247-022-00429-2
-
-2. Lai et al. (2022) supplementary data (Figshare)
+1. Lai et al. (2022) supplementary data (Figshare)
    pybasinsubs/example_data/figshare_lai2022/SuppData2-4*.xlsx
-   Licence: Creative Commons Attribution 4.0 (CC BY 4.0). Cite as in item 1.
+   Licence: Creative Commons Attribution 4.0 (CC BY 4.0). Cite: Lai, L.S.-H., Dorsey, R.J.,
+   Horng, C.-S., Chi, W.-R., Shea, K.-S., Yen, J.-Y. (2022) Extremely rapid up-and-down
+   motions of island arc crust during arc-continent collision. Communications Earth &
+   Environment 3, 100. https://doi.org/10.1038/s43247-022-00429-2
 
-3. Norwegian Offshore Directorate (Sodir) FactPages
+2. Norwegian Offshore Directorate (Sodir) FactPages
    pybasinsubs/example_data/north_sea/sodir_*_wells.csv, sodir_*_group_tops.csv,
    and the derived pybasinsubs/example_data/template/my_column_template.csv
    Contains data under the Norwegian Licence for Open Government Data (NLOD 2.0),
    made available by the Norwegian Offshore Directorate (Sokkeldirektoratet).
    https://factpages.sodir.no  -  https://data.norge.no/nlod/en/2.0
 
-4. International Heat Flow Commission (IHFC) Global Heat Flow Database, 2024 release
+3. International Heat Flow Commission (IHFC) Global Heat Flow Database, 2024 release
    pybasinsubs/example_data/heatflow/ihfc2024_northsea_barents.csv (subset)
    Licence: CC BY 4.0. Global Heat Flow Data Assessment Group et al. (2024),
    The Global Heat Flow Database: Release 2024, GFZ Data Services.
    https://doi.org/10.5880/fidgeo.2024.014
 
-5. Roberts et al. (1998), line Viking Graben 1 (digitized, derived data)
+4. Roberts et al. (1998), line Viking Graben 1 (digitized, derived data)
    pybasinsubs/example_data/north_sea/roberts1998_fig4a_vg1_digitized.csv and the
    fault-stick examples in pybasinsubs/example_data/faults/ derived from it.
    Horizon depths were digitized by the pyBasinSubs authors from Fig. 4a of:
@@ -43,7 +37,7 @@ its own licence. Please cite the original sources when you use them.
    teaching; the figure itself remains copyright of its publisher. Precision is
    limited (about +-50 m in depth, +-0.2 km in x).
 
-6. Miller et al. (2020) global sea-level curve - NOT distributed
+5. Miller et al. (2020) global sea-level curve - NOT distributed
    Miller, K.G. et al. (2020) Cenozoic sea-level and cryospheric evolution from
    deep-sea geochemical and continental margin records. Science Advances 6,
    eaaz1346. https://doi.org/10.1126/sciadv.aaz1346  (CC BY-NC 4.0)
@@ -51,23 +45,20 @@ its own licence. Please cite the original sources when you use them.
    is downloaded on first use from the BasinSubs repository and cached locally
    (pybasinsubs.sealevel.miller2020_path). Non-commercial use only.
    The two small tables coastal_range/Sealevel/SL_Unit_N.csv and SL_Unit_S.csv
-   (unit-averaged values written by the BasinSubs R code, 2 x ~20 numbers) are
-   kept as R reference outputs for the parity tests.
+   (unit-averaged values, 2 x ~20 numbers) are kept as reference outputs
+   for the parity tests.
    tests/fixtures/synthetic_sealevel.csv is a synthetic curve generated for the
    tests and contains no Miller et al. data.
 
-7. Compiled by the pyBasinSubs authors (AGPL-3.0-or-later)
+6. Compiled by the pyBasinSubs authors (AGPL-3.0-or-later)
    pybasinsubs/example_data/north_sea/group_lookup.csv: ages from the ICS 2023
    chart and approximate lithology / paleo-water depth values compiled from
    Gradstein et al. (2010), Halland et al. (2014) and Henriksen et al. (2011).
 
 Licence compatibility
-   The BasinSubs code (BSD-3-Clause) is incorporated under its original terms;
-   its copyright notice and licence text are preserved verbatim in
-   LICENSE-BasinSubs-BSD3. BSD-3-Clause, MIT and Apache-2.0 components and
-   dependencies (NumPy, SciPy, pandas, Matplotlib, openpyxl, Panel, Bokeh,
-   Streamlit, scikit-image, ...) are compatible with AGPLv3 and keep their own
-   licences. Bundled data under CC BY 4.0 and NLOD 2.0 remain under those terms
+   Dependencies (NumPy, SciPy, pandas, Matplotlib, openpyxl, Panel, Bokeh,
+   Streamlit, scikit-image, ...) keep their own permissive licences, which are
+   compatible with AGPLv3. Bundled data under CC BY 4.0 and NLOD 2.0 remain under those terms
    (attribution required). CC BY-NC data (Miller et al. 2020) are not bundled.
 
 Network use (AGPL-3.0 section 13)

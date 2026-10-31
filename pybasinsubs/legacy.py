@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Copyright (C) 2026 Larry Syu-Heng Lai
-"""Line-by-line Python port of the BasinSubs R scripts (Lai, 2022; BSD-3-Clause).
+"""Line-by-line Python port of the BasinSubs R scripts (Lai, 2022).
 
 This layer reproduces the published R outputs in ``BasinSubs/output results``
 *exactly*, including the R scripts' quirks (documented below). Use the generic

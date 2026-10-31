@@ -5,7 +5,7 @@
 The curve covers 0-66.6 Ma. It is NOT shipped with the package: the Miller et al.
 (2020) data are published under CC BY-NC 4.0, which is incompatible with the
 AGPL-3.0-or-later licence of this package. On first use it is downloaded from the
-BasinSubs repository (github.com/LarrySHLai/BasinSubs, file
+BasinSubs repository (github.com/GeoLarryLai/BasinSubs, file
 Sealevel/SeaLevel_Miller2020.csv), checked against a SHA-256 and cached in
 ``~/.cache/pybasinsubs`` (env PYBASINSUBS_CACHE). Offline: point env
 PYBASINSUBS_MILLER2020 at a local copy. Non-commercial use only; cite
@@ -21,7 +21,7 @@ import urllib.request
 import hashlib
 from ._paths import cache_dir
 
-MILLER_URL = "https://raw.githubusercontent.com/LarrySHLai/BasinSubs/main/Sealevel/SeaLevel_Miller2020.csv"
+MILLER_URL = "https://raw.githubusercontent.com/GeoLarryLai/BasinSubs/main/Sealevel/SeaLevel_Miller2020.csv"
 MILLER_SHA256 = "8bbe0cb2881245834e05a08f96bb657386faade7f7f42bdc73c93a5c90c95961"
 MILLER_FILE = "SeaLevel_Miller2020.csv"
 
