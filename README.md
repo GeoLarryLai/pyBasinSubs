@@ -2,16 +2,36 @@
 
 # pyBasinSubs
 
-[![PyPI version](https://img.shields.io/pypi/v/pybasinsubs.svg)](https://pypi.org/project/pybasinsubs/) [![pepy downloads](https://static.pepy.tech/badge/pybasinsubs)](https://pepy.tech/project/pybasinsubs)
+[![PyPI version](https://img.shields.io/pypi/v/pybasinsubs.svg)](https://pypi.org/project/pybasinsubs/) [![pepy downloads](https://static.pepy.tech/badge/pybasinsubs)](https://pepy.tech/project/pybasinsubs) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.ZENODO_CONCEPT_DOI.svg)](https://doi.org/10.5281/zenodo.ZENODO_CONCEPT_DOI)
+
+v0.1.0
 
 ![Geohistory of North Sea well 30/4-1](image/hero_geohistory_north_sea_30-4-1.png)
 
 Reconstructs how a sedimentary basin sank and filled through time, by backstripping its layers. Python version and
 extension of [BasinSubs](https://github.com/GeoLarryLai/BasinSubs) (R; [Lai et al., 2022](https://doi.org/10.1038/s43247-022-00429-2)).
 
-Status: 0.1.0, early-stage research software. APIs may change; check results before use.
+Status: early-stage research software. APIs may change; check results before use.
 
-## What it does
+## Installation
+
+```bash
+git clone https://github.com/GeoLarryLai/pyBasinSubs && cd pyBasinSubs
+pip install -e ".[ui,notebooks,test]"     # or: conda env create -f environment.yml
+python -m pytest -q
+```
+
+## Citation
+
+Lai, L.S.-H. (2026) pyBasinSubs. *Zenodo*, [https://doi.org/10.5281/zenodo.ZENODO_CONCEPT_DOI](https://doi.org/10.5281/zenodo.ZENODO_CONCEPT_DOI)
+
+Please also cite the method paper:
+[Lai et al. (2022)](https://doi.org/10.1038/s43247-022-00429-2).
+Other references: [Roberts et al. (1998)](https://doi.org/10.1144/petgeo.4.4.327),
+[Miller et al. (2020)](https://doi.org/10.1126/sciadv.aaz1346) (sea-level curve, downloaded on first use, not shipped),
+[IHFC (2024)](https://doi.org/10.5880/fidgeo.2024.014). Data credits are in `NOTICE`.
+
+## Key Features
 
 - **Backstripping:** 1-D Airy backstripping with Monte Carlo uncertainty, erosion and over-compaction; `legacy`
   reproduces the BasinSubs R results.
@@ -33,14 +53,6 @@ Status: 0.1.0, early-stage research software. APIs may change; check results bef
 
 Executed notebooks in `notebooks/` cover each feature (re-run with `python tools/run_notebooks.py`).
 
-## Install
-
-```bash
-git clone https://github.com/GeoLarryLai/pyBasinSubs && cd pyBasinSubs
-pip install -e ".[ui,notebooks,test]"     # or: conda env create -f environment.yml
-python -m pytest -q
-```
-
 ## Quick start
 
 ```python
@@ -54,17 +66,7 @@ geohistory(r); r.summary()
 Apps (`ui` extra): `pybasinsubs-ui` (backstripping), `pybasinsubs-tracer` (fault editor and restoration);
 add `--streamlit` for the Streamlit versions.
 
-## How to cite
-
-> Lai, L. S.-H. (2026). pyBasinSubs (version 0.1.0) [Computer software]. https://github.com/GeoLarryLai/pyBasinSubs
-
-Full metadata is in [`CITATION.cff`](CITATION.cff). Please also cite the method paper,
-[Lai et al. (2022)](https://doi.org/10.1038/s43247-022-00429-2).
-Other references: [Roberts et al. (1998)](https://doi.org/10.1144/petgeo.4.4.327),
-[Miller et al. (2020)](https://doi.org/10.1126/sciadv.aaz1346) (sea-level curve, downloaded on first use, not shipped),
-[IHFC (2024)](https://doi.org/10.5880/fidgeo.2024.014). Data credits are in `NOTICE`.
-
-## Licence
+## License
 
 Copyright (C) 2026 Larry Syu-Heng Lai. AGPL-3.0-or-later (`LICENSE`). `legacy.py` and the bundled BasinSubs data keep the
 BSD-3-Clause notice (`LICENSE-BasinSubs-BSD3`).
