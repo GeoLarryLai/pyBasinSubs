@@ -1,0 +1,7 @@
+include README.md LICENSE LICENSE-BasinSubs-BSD3 NOTICE
+recursive-include pybasinsubs/example_data *
+recursive-include tests *.py *.csv
+prune notebooks
+prune image
+prune tools
+global-exclude __pycache__ *.py[cod] .DS_Store

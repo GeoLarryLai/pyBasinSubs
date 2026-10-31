@@ -1,0 +1,11 @@
+unit,age_top_Ma,age_base_Ma,f_shale,f_chalk,f_sandstone,f_shaly_sandstone,water_depth_m,sea_level_m
+Pliocene-Recent,0.0,5.3,1.0,0.0,0.0,0.0,100.0,0.0
+Miocene,5.3,23.0,1.0,0.0,0.0,0.0,150.0,0.0
+Eocene-Oligocene,23.0,56.0,1.0,0.0,0.0,0.0,300.0,0.0
+Palaeocene,56.0,66.0,1.0,0.0,0.0,0.0,400.0,0.0
+Upper Cretaceous,66.0,100.5,0.0,1.0,0.0,0.0,200.0,0.0
+Lower Cretaceous,100.5,140.0,1.0,0.0,0.0,0.0,300.0,0.0
+Kimmeridgian-Ryazanian,140.0,157.3,1.0,0.0,0.0,0.0,400.0,0.0
+Callovian-Oxfordian,157.3,166.1,1.0,0.0,0.0,0.0,200.0,0.0
+Bajocian-Bathonian,166.1,170.3,0.0,0.0,1.0,0.0,50.0,0.0
+Triassic-Lower Jurassic,170.3,252.0,0.0,0.0,0.0,1.0,0.0,0.0

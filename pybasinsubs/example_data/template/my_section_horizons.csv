@@ -1,0 +1,1772 @@
+well,x_m,unit,depth_m
+,1000.0,Pliocene-Recent,171.4
+,1500.0,Pliocene-Recent,182.9
+,2000.0,Pliocene-Recent,182.9
+,2500.0,Pliocene-Recent,182.9
+,3000.0,Pliocene-Recent,182.9
+,3500.0,Pliocene-Recent,182.9
+,4000.0,Pliocene-Recent,182.9
+,4500.0,Pliocene-Recent,194.3
+,5000.0,Pliocene-Recent,194.3
+,5500.0,Pliocene-Recent,194.3
+,6000.0,Pliocene-Recent,194.3
+,6500.0,Pliocene-Recent,194.3
+,7000.0,Pliocene-Recent,194.3
+,7500.0,Pliocene-Recent,194.3
+,8000.0,Pliocene-Recent,194.3
+,8500.0,Pliocene-Recent,194.3
+,9000.0,Pliocene-Recent,194.3
+,9500.0,Pliocene-Recent,194.3
+,10000.0,Pliocene-Recent,205.7
+,10500.0,Pliocene-Recent,205.7
+,11000.0,Pliocene-Recent,205.7
+,11500.0,Pliocene-Recent,205.7
+,12000.0,Pliocene-Recent,205.7
+,12500.0,Pliocene-Recent,205.7
+,13000.0,Pliocene-Recent,205.7
+,13500.0,Pliocene-Recent,205.7
+,14000.0,Pliocene-Recent,205.7
+,14500.0,Pliocene-Recent,205.7
+,15000.0,Pliocene-Recent,205.7
+,15500.0,Pliocene-Recent,205.7
+,16000.0,Pliocene-Recent,205.7
+,16500.0,Pliocene-Recent,205.7
+,17000.0,Pliocene-Recent,217.1
+,17500.0,Pliocene-Recent,228.6
+,18000.0,Pliocene-Recent,240.0
+,18500.0,Pliocene-Recent,240.0
+,19000.0,Pliocene-Recent,240.0
+,19500.0,Pliocene-Recent,240.0
+,20000.0,Pliocene-Recent,240.0
+,20500.0,Pliocene-Recent,240.0
+,21000.0,Pliocene-Recent,240.0
+,21500.0,Pliocene-Recent,240.0
+,22000.0,Pliocene-Recent,240.0
+,22500.0,Pliocene-Recent,228.6
+,23000.0,Pliocene-Recent,228.6
+,23500.0,Pliocene-Recent,228.6
+,24000.0,Pliocene-Recent,228.6
+,24500.0,Pliocene-Recent,217.1
+,25000.0,Pliocene-Recent,205.7
+,25500.0,Pliocene-Recent,205.7
+,26000.0,Pliocene-Recent,205.7
+,26500.0,Pliocene-Recent,194.3
+,27000.0,Pliocene-Recent,194.3
+,27500.0,Pliocene-Recent,205.7
+,28000.0,Pliocene-Recent,205.7
+,28500.0,Pliocene-Recent,194.3
+,29000.0,Pliocene-Recent,194.3
+,29500.0,Pliocene-Recent,200.0
+34/7-demo,30000.0,Pliocene-Recent,205.7
+,30500.0,Pliocene-Recent,205.7
+,31000.0,Pliocene-Recent,205.7
+,31500.0,Pliocene-Recent,205.7
+,32000.0,Pliocene-Recent,205.7
+,32500.0,Pliocene-Recent,205.7
+,33000.0,Pliocene-Recent,205.7
+,33500.0,Pliocene-Recent,194.3
+,34000.0,Pliocene-Recent,194.3
+,34500.0,Pliocene-Recent,211.4
+,35000.0,Pliocene-Recent,217.1
+,35500.0,Pliocene-Recent,217.1
+,36000.0,Pliocene-Recent,217.1
+,36500.0,Pliocene-Recent,217.1
+,37000.0,Pliocene-Recent,217.1
+,37500.0,Pliocene-Recent,217.1
+,38000.0,Pliocene-Recent,217.1
+,38500.0,Pliocene-Recent,217.1
+,39000.0,Pliocene-Recent,217.1
+,39500.0,Pliocene-Recent,217.1
+,40000.0,Pliocene-Recent,217.1
+,40500.0,Pliocene-Recent,217.1
+,41000.0,Pliocene-Recent,217.1
+,41500.0,Pliocene-Recent,217.1
+,42000.0,Pliocene-Recent,217.1
+,42500.0,Pliocene-Recent,228.6
+,43000.0,Pliocene-Recent,228.6
+,43500.0,Pliocene-Recent,211.4
+,44000.0,Pliocene-Recent,205.7
+,44500.0,Pliocene-Recent,205.7
+,45000.0,Pliocene-Recent,205.7
+,45500.0,Pliocene-Recent,205.7
+,46000.0,Pliocene-Recent,205.7
+,46500.0,Pliocene-Recent,205.7
+,47000.0,Pliocene-Recent,205.7
+,47500.0,Pliocene-Recent,205.7
+,48000.0,Pliocene-Recent,205.7
+,48500.0,Pliocene-Recent,200.0
+,49000.0,Pliocene-Recent,194.3
+,49500.0,Pliocene-Recent,194.3
+,50000.0,Pliocene-Recent,182.9
+,50500.0,Pliocene-Recent,182.9
+,51000.0,Pliocene-Recent,182.9
+,51500.0,Pliocene-Recent,182.9
+,52000.0,Pliocene-Recent,182.9
+,52500.0,Pliocene-Recent,182.9
+,53000.0,Pliocene-Recent,182.9
+,53500.0,Pliocene-Recent,182.9
+,54000.0,Pliocene-Recent,171.4
+,54500.0,Pliocene-Recent,171.4
+,55000.0,Pliocene-Recent,171.4
+,55500.0,Pliocene-Recent,160.0
+,56000.0,Pliocene-Recent,160.0
+,56500.0,Pliocene-Recent,160.0
+,57000.0,Pliocene-Recent,160.0
+,57500.0,Pliocene-Recent,171.4
+,58000.0,Pliocene-Recent,171.4
+,58500.0,Pliocene-Recent,171.4
+,59000.0,Pliocene-Recent,182.9
+,59500.0,Pliocene-Recent,182.9
+,60000.0,Pliocene-Recent,182.9
+,60500.0,Pliocene-Recent,182.9
+,61000.0,Pliocene-Recent,182.9
+,61500.0,Pliocene-Recent,182.9
+,62000.0,Pliocene-Recent,182.9
+,62500.0,Pliocene-Recent,194.3
+,63000.0,Pliocene-Recent,194.3
+,63500.0,Pliocene-Recent,194.3
+,64000.0,Pliocene-Recent,194.3
+,64500.0,Pliocene-Recent,194.3
+,65000.0,Pliocene-Recent,200.0
+,65500.0,Pliocene-Recent,205.7
+,66000.0,Pliocene-Recent,205.7
+,66500.0,Pliocene-Recent,200.0
+,67000.0,Pliocene-Recent,194.3
+,67500.0,Pliocene-Recent,194.3
+,68000.0,Pliocene-Recent,194.3
+,68500.0,Pliocene-Recent,205.7
+,69000.0,Pliocene-Recent,205.7
+,69500.0,Pliocene-Recent,194.3
+,70000.0,Pliocene-Recent,182.9
+,70500.0,Pliocene-Recent,182.9
+,71000.0,Pliocene-Recent,194.3
+,71500.0,Pliocene-Recent,205.7
+,72000.0,Pliocene-Recent,205.7
+,72500.0,Pliocene-Recent,205.7
+,73000.0,Pliocene-Recent,194.3
+,73500.0,Pliocene-Recent,182.9
+,74000.0,Pliocene-Recent,171.4
+,74500.0,Pliocene-Recent,171.4
+,75000.0,Pliocene-Recent,171.4
+,75500.0,Pliocene-Recent,171.4
+,76000.0,Pliocene-Recent,171.4
+,76500.0,Pliocene-Recent,171.4
+,77000.0,Pliocene-Recent,171.4
+,77500.0,Pliocene-Recent,177.2
+,78000.0,Pliocene-Recent,182.9
+,78500.0,Pliocene-Recent,182.9
+,79000.0,Pliocene-Recent,171.4
+,79500.0,Pliocene-Recent,177.2
+,80000.0,Pliocene-Recent,182.9
+,80500.0,Pliocene-Recent,182.9
+,81000.0,Pliocene-Recent,171.4
+,1000.0,Miocene,537.1
+,1500.0,Miocene,537.1
+,2000.0,Miocene,548.6
+,2500.0,Miocene,548.6
+,3000.0,Miocene,548.6
+,3500.0,Miocene,548.6
+,4000.0,Miocene,548.6
+,4500.0,Miocene,548.6
+,5000.0,Miocene,548.6
+,5500.0,Miocene,548.6
+,6000.0,Miocene,548.6
+,6500.0,Miocene,554.3
+,7000.0,Miocene,560.0
+,7500.0,Miocene,560.0
+,8000.0,Miocene,565.7
+,8500.0,Miocene,571.4
+,9000.0,Miocene,571.4
+,9500.0,Miocene,577.2
+,10000.0,Miocene,582.9
+,10500.0,Miocene,582.9
+,11000.0,Miocene,594.3
+,11500.0,Miocene,594.3
+,12000.0,Miocene,594.3
+,12500.0,Miocene,605.7
+,13000.0,Miocene,605.7
+,13500.0,Miocene,605.7
+,14000.0,Miocene,605.7
+,14500.0,Miocene,617.1
+,15000.0,Miocene,617.1
+,15500.0,Miocene,622.8
+,16000.0,Miocene,628.6
+,16500.0,Miocene,628.6
+,17000.0,Miocene,628.6
+,17500.0,Miocene,628.6
+,18000.0,Miocene,628.6
+,18500.0,Miocene,634.3
+,19000.0,Miocene,640.0
+,19500.0,Miocene,651.4
+,20000.0,Miocene,651.4
+,20500.0,Miocene,662.9
+,21000.0,Miocene,662.9
+,21500.0,Miocene,674.3
+,22000.0,Miocene,680.0
+,22500.0,Miocene,691.4
+,23000.0,Miocene,708.6
+,23500.0,Miocene,708.6
+,24000.0,Miocene,720.0
+,24500.0,Miocene,731.4
+,25000.0,Miocene,742.9
+,25500.0,Miocene,742.9
+,26000.0,Miocene,748.6
+,26500.0,Miocene,754.3
+,27000.0,Miocene,765.7
+,27500.0,Miocene,765.7
+,28000.0,Miocene,777.1
+,28500.0,Miocene,788.6
+,29000.0,Miocene,800.0
+,29500.0,Miocene,817.2
+,30000.0,Miocene,834.3
+,30500.0,Miocene,845.7
+,31000.0,Miocene,862.9
+,31500.0,Miocene,885.7
+,32000.0,Miocene,891.4
+,32500.0,Miocene,891.4
+,33000.0,Miocene,891.4
+,33500.0,Miocene,902.9
+,34000.0,Miocene,914.3
+,34500.0,Miocene,914.3
+,35000.0,Miocene,914.3
+,35500.0,Miocene,914.3
+,36000.0,Miocene,914.3
+,36500.0,Miocene,914.3
+,37000.0,Miocene,914.3
+,37500.0,Miocene,914.3
+,38000.0,Miocene,914.3
+,38500.0,Miocene,914.3
+,39000.0,Miocene,914.3
+,39500.0,Miocene,914.3
+,40000.0,Miocene,914.3
+,40500.0,Miocene,914.3
+,41000.0,Miocene,914.3
+,41500.0,Miocene,914.3
+,42000.0,Miocene,914.3
+,42500.0,Miocene,914.3
+,43000.0,Miocene,914.3
+,43500.0,Miocene,914.3
+,44000.0,Miocene,914.3
+,44500.0,Miocene,914.3
+,45000.0,Miocene,914.3
+,45500.0,Miocene,914.3
+,46000.0,Miocene,914.3
+,46500.0,Miocene,914.3
+,47000.0,Miocene,914.3
+,47500.0,Miocene,902.9
+,48000.0,Miocene,902.9
+,48500.0,Miocene,902.9
+,49000.0,Miocene,897.1
+,49500.0,Miocene,891.4
+,50000.0,Miocene,891.4
+,50500.0,Miocene,891.4
+,51000.0,Miocene,891.4
+,51500.0,Miocene,891.4
+,52000.0,Miocene,891.4
+,52500.0,Miocene,891.4
+,53000.0,Miocene,891.4
+,53500.0,Miocene,891.4
+,54000.0,Miocene,891.4
+,54500.0,Miocene,891.4
+,55000.0,Miocene,880.0
+,55500.0,Miocene,880.0
+,56000.0,Miocene,880.0
+,56500.0,Miocene,880.0
+,57000.0,Miocene,880.0
+,57500.0,Miocene,880.0
+,58000.0,Miocene,880.0
+,58500.0,Miocene,880.0
+,59000.0,Miocene,880.0
+,59500.0,Miocene,880.0
+,60000.0,Miocene,880.0
+,60500.0,Miocene,891.4
+,61000.0,Miocene,891.4
+,61500.0,Miocene,891.4
+,62000.0,Miocene,891.4
+,62500.0,Miocene,902.9
+,63000.0,Miocene,902.9
+,63500.0,Miocene,914.3
+,64000.0,Miocene,914.3
+,64500.0,Miocene,914.3
+,65000.0,Miocene,920.0
+,65500.0,Miocene,925.7
+,66000.0,Miocene,925.7
+,66500.0,Miocene,937.1
+,67000.0,Miocene,948.6
+,67500.0,Miocene,948.6
+,68000.0,Miocene,948.6
+,68500.0,Miocene,960.0
+,69000.0,Miocene,960.0
+,69500.0,Miocene,971.4
+,70000.0,Miocene,971.4
+,70500.0,Miocene,971.4
+,71000.0,Miocene,982.9
+,71500.0,Miocene,982.9
+,72000.0,Miocene,982.9
+,72500.0,Miocene,982.9
+,73000.0,Miocene,982.9
+,73500.0,Miocene,971.4
+,74000.0,Miocene,971.4
+,74500.0,Miocene,971.4
+,75000.0,Miocene,971.4
+,75500.0,Miocene,971.4
+,76000.0,Miocene,971.4
+,76500.0,Miocene,982.9
+,77000.0,Miocene,982.9
+,77500.0,Miocene,982.9
+,78000.0,Miocene,982.9
+,78500.0,Miocene,982.9
+,79000.0,Miocene,982.9
+,79500.0,Miocene,982.9
+,80000.0,Miocene,982.9
+,80500.0,Miocene,982.9
+,81000.0,Miocene,982.9
+,1000.0,Eocene-Oligocene,605.7
+,1500.0,Eocene-Oligocene,617.1
+,2000.0,Eocene-Oligocene,617.1
+,2500.0,Eocene-Oligocene,622.8
+,3000.0,Eocene-Oligocene,628.6
+,3500.0,Eocene-Oligocene,628.6
+,4000.0,Eocene-Oligocene,628.6
+,4500.0,Eocene-Oligocene,628.6
+,5000.0,Eocene-Oligocene,640.0
+,5500.0,Eocene-Oligocene,640.0
+,6000.0,Eocene-Oligocene,651.4
+,6500.0,Eocene-Oligocene,651.4
+,7000.0,Eocene-Oligocene,662.9
+,7500.0,Eocene-Oligocene,662.9
+,8000.0,Eocene-Oligocene,668.6
+,8500.0,Eocene-Oligocene,674.3
+,9000.0,Eocene-Oligocene,685.7
+,9500.0,Eocene-Oligocene,697.1
+,10000.0,Eocene-Oligocene,708.6
+,10500.0,Eocene-Oligocene,720.0
+,11000.0,Eocene-Oligocene,731.4
+,11500.0,Eocene-Oligocene,731.4
+,12000.0,Eocene-Oligocene,742.9
+,12500.0,Eocene-Oligocene,754.3
+,13000.0,Eocene-Oligocene,765.7
+,13500.0,Eocene-Oligocene,765.7
+,14000.0,Eocene-Oligocene,777.1
+,14500.0,Eocene-Oligocene,788.6
+,15000.0,Eocene-Oligocene,788.6
+,15500.0,Eocene-Oligocene,800.0
+,16000.0,Eocene-Oligocene,811.4
+,16500.0,Eocene-Oligocene,817.2
+,17000.0,Eocene-Oligocene,828.6
+,17500.0,Eocene-Oligocene,834.3
+,18000.0,Eocene-Oligocene,845.7
+,18500.0,Eocene-Oligocene,845.7
+,19000.0,Eocene-Oligocene,857.1
+,19500.0,Eocene-Oligocene,857.1
+,20000.0,Eocene-Oligocene,868.6
+,20500.0,Eocene-Oligocene,880.0
+,21000.0,Eocene-Oligocene,891.4
+,21500.0,Eocene-Oligocene,891.4
+,22000.0,Eocene-Oligocene,902.9
+,22500.0,Eocene-Oligocene,914.3
+,23000.0,Eocene-Oligocene,925.7
+,23500.0,Eocene-Oligocene,925.7
+,24000.0,Eocene-Oligocene,931.4
+,24500.0,Eocene-Oligocene,937.1
+,25000.0,Eocene-Oligocene,948.6
+,25500.0,Eocene-Oligocene,948.6
+,26000.0,Eocene-Oligocene,954.3
+,26500.0,Eocene-Oligocene,960.0
+,27000.0,Eocene-Oligocene,971.4
+,27500.0,Eocene-Oligocene,982.9
+,28000.0,Eocene-Oligocene,994.3
+,28500.0,Eocene-Oligocene,994.3
+,29000.0,Eocene-Oligocene,1000.0
+,29500.0,Eocene-Oligocene,1017.1
+,30000.0,Eocene-Oligocene,1028.6
+,30500.0,Eocene-Oligocene,1040.0
+,31000.0,Eocene-Oligocene,1040.0
+,31500.0,Eocene-Oligocene,1045.7
+,32000.0,Eocene-Oligocene,1051.4
+,32500.0,Eocene-Oligocene,1051.4
+,33000.0,Eocene-Oligocene,1062.9
+,33500.0,Eocene-Oligocene,1062.9
+,34000.0,Eocene-Oligocene,1062.9
+,34500.0,Eocene-Oligocene,1068.6
+,35000.0,Eocene-Oligocene,1074.3
+,35500.0,Eocene-Oligocene,1074.3
+,36000.0,Eocene-Oligocene,1085.7
+,36500.0,Eocene-Oligocene,1085.7
+,37000.0,Eocene-Oligocene,1085.7
+,37500.0,Eocene-Oligocene,1097.1
+,38000.0,Eocene-Oligocene,1097.1
+,38500.0,Eocene-Oligocene,1097.1
+,39000.0,Eocene-Oligocene,1097.1
+,39500.0,Eocene-Oligocene,1108.6
+,40000.0,Eocene-Oligocene,1108.6
+,40500.0,Eocene-Oligocene,1120.0
+,41000.0,Eocene-Oligocene,1120.0
+,41500.0,Eocene-Oligocene,1131.4
+,42000.0,Eocene-Oligocene,1131.4
+,42500.0,Eocene-Oligocene,1131.4
+,43000.0,Eocene-Oligocene,1131.4
+,43500.0,Eocene-Oligocene,1131.4
+,44000.0,Eocene-Oligocene,1131.4
+,44500.0,Eocene-Oligocene,1131.4
+,45000.0,Eocene-Oligocene,1131.4
+,45500.0,Eocene-Oligocene,1131.4
+,46000.0,Eocene-Oligocene,1131.4
+,46500.0,Eocene-Oligocene,1131.4
+,47000.0,Eocene-Oligocene,1131.4
+,47500.0,Eocene-Oligocene,1131.4
+,48000.0,Eocene-Oligocene,1131.4
+,48500.0,Eocene-Oligocene,1131.4
+,49000.0,Eocene-Oligocene,1131.4
+,49500.0,Eocene-Oligocene,1131.4
+,50000.0,Eocene-Oligocene,1131.4
+,50500.0,Eocene-Oligocene,1131.4
+,51000.0,Eocene-Oligocene,1131.4
+,51500.0,Eocene-Oligocene,1131.4
+,52000.0,Eocene-Oligocene,1131.4
+,52500.0,Eocene-Oligocene,1131.4
+,53000.0,Eocene-Oligocene,1142.9
+,53500.0,Eocene-Oligocene,1154.3
+,54000.0,Eocene-Oligocene,1154.3
+,54500.0,Eocene-Oligocene,1154.3
+,55000.0,Eocene-Oligocene,1165.7
+,55500.0,Eocene-Oligocene,1177.1
+,56000.0,Eocene-Oligocene,1177.1
+,56500.0,Eocene-Oligocene,1177.1
+,57000.0,Eocene-Oligocene,1188.6
+,57500.0,Eocene-Oligocene,1194.3
+,58000.0,Eocene-Oligocene,1200.0
+,58500.0,Eocene-Oligocene,1211.4
+,59000.0,Eocene-Oligocene,1211.4
+,59500.0,Eocene-Oligocene,1211.4
+,60000.0,Eocene-Oligocene,1222.9
+,60500.0,Eocene-Oligocene,1222.9
+,61000.0,Eocene-Oligocene,1228.6
+,61500.0,Eocene-Oligocene,1234.3
+,62000.0,Eocene-Oligocene,1234.3
+,62500.0,Eocene-Oligocene,1234.3
+,63000.0,Eocene-Oligocene,1245.7
+,63500.0,Eocene-Oligocene,1245.7
+,64000.0,Eocene-Oligocene,1245.7
+,64500.0,Eocene-Oligocene,1257.1
+,65000.0,Eocene-Oligocene,1257.1
+,65500.0,Eocene-Oligocene,1257.1
+,66000.0,Eocene-Oligocene,1268.6
+,66500.0,Eocene-Oligocene,1268.6
+,67000.0,Eocene-Oligocene,1280.0
+,67500.0,Eocene-Oligocene,1280.0
+,68000.0,Eocene-Oligocene,1280.0
+,68500.0,Eocene-Oligocene,1280.0
+,69000.0,Eocene-Oligocene,1280.0
+,69500.0,Eocene-Oligocene,1280.0
+,70000.0,Eocene-Oligocene,1280.0
+,70500.0,Eocene-Oligocene,1280.0
+,71000.0,Eocene-Oligocene,1280.0
+,71500.0,Eocene-Oligocene,1280.0
+,72000.0,Eocene-Oligocene,1280.0
+,72500.0,Eocene-Oligocene,1291.4
+,73000.0,Eocene-Oligocene,1291.4
+,73500.0,Eocene-Oligocene,1285.7
+,74000.0,Eocene-Oligocene,1280.0
+,74500.0,Eocene-Oligocene,1280.0
+,75000.0,Eocene-Oligocene,1280.0
+,75500.0,Eocene-Oligocene,1280.0
+,76000.0,Eocene-Oligocene,1280.0
+,76500.0,Eocene-Oligocene,1280.0
+,77000.0,Eocene-Oligocene,1280.0
+,77500.0,Eocene-Oligocene,1280.0
+,78000.0,Eocene-Oligocene,1280.0
+,78500.0,Eocene-Oligocene,1268.6
+,79000.0,Eocene-Oligocene,1262.8
+,79500.0,Eocene-Oligocene,1257.1
+,80000.0,Eocene-Oligocene,1257.1
+,80500.0,Eocene-Oligocene,1268.6
+,81000.0,Eocene-Oligocene,1268.6
+,1000.0,Palaeocene,748.6
+,1500.0,Palaeocene,754.3
+,2000.0,Palaeocene,765.7
+,2500.0,Palaeocene,765.7
+,3000.0,Palaeocene,765.7
+,3500.0,Palaeocene,765.7
+,4000.0,Palaeocene,777.1
+,4500.0,Palaeocene,794.3
+,5000.0,Palaeocene,811.4
+,5500.0,Palaeocene,834.3
+,6000.0,Palaeocene,862.8
+,6500.0,Palaeocene,885.7
+,7000.0,Palaeocene,925.7
+,7500.0,Palaeocene,960.0
+,8000.0,Palaeocene,988.6
+,8500.0,Palaeocene,1005.7
+,9000.0,Palaeocene,1040.0
+,9500.0,Palaeocene,1068.6
+,10000.0,Palaeocene,1097.1
+,10500.0,Palaeocene,1108.6
+,11000.0,Palaeocene,1131.4
+,11500.0,Palaeocene,1148.6
+,12000.0,Palaeocene,1154.3
+,12500.0,Palaeocene,1165.7
+,13000.0,Palaeocene,1182.8
+,13500.0,Palaeocene,1194.3
+,14000.0,Palaeocene,1200.0
+,14500.0,Palaeocene,1211.4
+,15000.0,Palaeocene,1222.9
+,15500.0,Palaeocene,1234.3
+,16000.0,Palaeocene,1245.7
+,16500.0,Palaeocene,1257.1
+,17000.0,Palaeocene,1268.6
+,17500.0,Palaeocene,1280.0
+,18000.0,Palaeocene,1291.4
+,18500.0,Palaeocene,1302.9
+,19000.0,Palaeocene,1314.3
+,19500.0,Palaeocene,1325.7
+,20000.0,Palaeocene,1337.1
+,20500.0,Palaeocene,1342.8
+,21000.0,Palaeocene,1348.6
+,21500.0,Palaeocene,1348.6
+,22000.0,Palaeocene,1360.0
+,22500.0,Palaeocene,1360.0
+,23000.0,Palaeocene,1360.0
+,23500.0,Palaeocene,1360.0
+,24000.0,Palaeocene,1360.0
+,24500.0,Palaeocene,1360.0
+,25000.0,Palaeocene,1371.4
+,25500.0,Palaeocene,1371.4
+,26000.0,Palaeocene,1371.4
+,26500.0,Palaeocene,1371.4
+,27000.0,Palaeocene,1371.4
+,27500.0,Palaeocene,1382.9
+,28000.0,Palaeocene,1382.9
+,28500.0,Palaeocene,1382.9
+,29000.0,Palaeocene,1382.9
+,29500.0,Palaeocene,1382.9
+,30000.0,Palaeocene,1394.3
+,30500.0,Palaeocene,1394.3
+,31000.0,Palaeocene,1394.3
+,31500.0,Palaeocene,1405.7
+,32000.0,Palaeocene,1405.7
+,32500.0,Palaeocene,1405.7
+,33000.0,Palaeocene,1394.3
+,33500.0,Palaeocene,1382.9
+,34000.0,Palaeocene,1382.9
+,34500.0,Palaeocene,1382.9
+,35000.0,Palaeocene,1388.6
+,35500.0,Palaeocene,1394.3
+,36000.0,Palaeocene,1394.3
+,36500.0,Palaeocene,1382.9
+,37000.0,Palaeocene,1382.9
+,37500.0,Palaeocene,1360.0
+,38000.0,Palaeocene,1360.0
+,38500.0,Palaeocene,1360.0
+,39000.0,Palaeocene,1371.4
+,39500.0,Palaeocene,1371.4
+,40000.0,Palaeocene,1365.7
+,40500.0,Palaeocene,1348.6
+,41000.0,Palaeocene,1348.6
+,41500.0,Palaeocene,1348.6
+,42000.0,Palaeocene,1348.6
+,42500.0,Palaeocene,1360.0
+,43000.0,Palaeocene,1360.0
+,43500.0,Palaeocene,1371.4
+,44000.0,Palaeocene,1371.4
+,44500.0,Palaeocene,1382.9
+,45000.0,Palaeocene,1382.9
+,45500.0,Palaeocene,1394.3
+,46000.0,Palaeocene,1394.3
+,46500.0,Palaeocene,1405.7
+,47000.0,Palaeocene,1417.1
+,47500.0,Palaeocene,1428.6
+,48000.0,Palaeocene,1428.6
+,48500.0,Palaeocene,1428.6
+,49000.0,Palaeocene,1440.0
+,49500.0,Palaeocene,1440.0
+,50000.0,Palaeocene,1451.4
+,50500.0,Palaeocene,1468.6
+,51000.0,Palaeocene,1491.4
+,51500.0,Palaeocene,1497.1
+,52000.0,Palaeocene,1508.6
+,52500.0,Palaeocene,1542.8
+,53000.0,Palaeocene,1588.6
+,53500.0,Palaeocene,1622.9
+,54000.0,Palaeocene,1640.0
+,54500.0,Palaeocene,1657.1
+,55000.0,Palaeocene,1657.1
+,55500.0,Palaeocene,1668.6
+,56000.0,Palaeocene,1668.6
+,56500.0,Palaeocene,1668.6
+,57000.0,Palaeocene,1668.6
+,57500.0,Palaeocene,1668.6
+,58000.0,Palaeocene,1668.6
+,58500.0,Palaeocene,1668.6
+,59000.0,Palaeocene,1657.1
+,59500.0,Palaeocene,1657.1
+,60000.0,Palaeocene,1657.1
+,60500.0,Palaeocene,1657.1
+,61000.0,Palaeocene,1657.1
+,61500.0,Palaeocene,1668.6
+,62000.0,Palaeocene,1668.6
+,62500.0,Palaeocene,1680.0
+,63000.0,Palaeocene,1691.4
+,63500.0,Palaeocene,1702.9
+,64000.0,Palaeocene,1714.3
+,64500.0,Palaeocene,1714.3
+,65000.0,Palaeocene,1725.7
+,65500.0,Palaeocene,1725.7
+,66000.0,Palaeocene,1725.7
+,66500.0,Palaeocene,1725.7
+,67000.0,Palaeocene,1731.4
+,67500.0,Palaeocene,1737.1
+,68000.0,Palaeocene,1737.1
+,68500.0,Palaeocene,1737.1
+,69000.0,Palaeocene,1748.6
+,69500.0,Palaeocene,1748.6
+,70000.0,Palaeocene,1760.0
+,70500.0,Palaeocene,1760.0
+,71000.0,Palaeocene,1771.4
+,71500.0,Palaeocene,1771.4
+,72000.0,Palaeocene,1782.9
+,72500.0,Palaeocene,1782.9
+,73000.0,Palaeocene,1794.3
+,73500.0,Palaeocene,1794.3
+,74000.0,Palaeocene,1794.3
+,74500.0,Palaeocene,1794.3
+,75000.0,Palaeocene,1794.3
+,75500.0,Palaeocene,1782.9
+,76000.0,Palaeocene,1782.9
+,76500.0,Palaeocene,1771.4
+,77000.0,Palaeocene,1760.0
+,77500.0,Palaeocene,1742.8
+,78000.0,Palaeocene,1725.7
+,78500.0,Palaeocene,1714.3
+,79000.0,Palaeocene,1708.6
+,79500.0,Palaeocene,1702.9
+,80000.0,Palaeocene,1702.9
+,80500.0,Palaeocene,1697.2
+,81000.0,Palaeocene,1685.7
+,1000.0,Upper Cretaceous,1257.1
+,1500.0,Upper Cretaceous,1257.1
+,2000.0,Upper Cretaceous,1280.0
+,2500.0,Upper Cretaceous,1280.0
+,3000.0,Upper Cretaceous,1297.2
+,3500.0,Upper Cretaceous,1314.3
+,4000.0,Upper Cretaceous,1280.0
+,4500.0,Upper Cretaceous,1274.3
+,5000.0,Upper Cretaceous,1337.1
+,5500.0,Upper Cretaceous,1451.4
+,6000.0,Upper Cretaceous,1531.4
+,6500.0,Upper Cretaceous,1577.2
+,7000.0,Upper Cretaceous,1645.7
+,7500.0,Upper Cretaceous,1680.0
+,8000.0,Upper Cretaceous,1702.9
+,8500.0,Upper Cretaceous,1714.3
+,9000.0,Upper Cretaceous,1725.7
+,9500.0,Upper Cretaceous,1725.7
+,10000.0,Upper Cretaceous,1725.7
+,10500.0,Upper Cretaceous,1725.7
+,11000.0,Upper Cretaceous,1737.1
+,11500.0,Upper Cretaceous,1737.1
+,12000.0,Upper Cretaceous,1737.1
+,12500.0,Upper Cretaceous,1737.1
+,13000.0,Upper Cretaceous,1737.1
+,13500.0,Upper Cretaceous,1737.1
+,14000.0,Upper Cretaceous,1737.1
+,14500.0,Upper Cretaceous,1737.1
+,15000.0,Upper Cretaceous,1748.6
+,15500.0,Upper Cretaceous,1748.6
+,16000.0,Upper Cretaceous,1748.6
+,16500.0,Upper Cretaceous,1754.3
+,17000.0,Upper Cretaceous,1760.0
+,17500.0,Upper Cretaceous,1771.4
+,18000.0,Upper Cretaceous,1771.4
+,18500.0,Upper Cretaceous,1782.9
+,19000.0,Upper Cretaceous,1794.3
+,19500.0,Upper Cretaceous,1794.3
+,20000.0,Upper Cretaceous,1805.7
+,20500.0,Upper Cretaceous,1805.7
+,21000.0,Upper Cretaceous,1817.1
+,21500.0,Upper Cretaceous,1817.1
+,22000.0,Upper Cretaceous,1817.1
+,22500.0,Upper Cretaceous,1822.8
+,23000.0,Upper Cretaceous,1828.6
+,23500.0,Upper Cretaceous,1828.6
+,24000.0,Upper Cretaceous,1840.0
+,24500.0,Upper Cretaceous,1840.0
+,25000.0,Upper Cretaceous,1840.0
+,25500.0,Upper Cretaceous,1840.0
+,26000.0,Upper Cretaceous,1828.6
+,26500.0,Upper Cretaceous,1828.6
+,27000.0,Upper Cretaceous,1817.1
+,27500.0,Upper Cretaceous,1817.1
+,28000.0,Upper Cretaceous,1817.1
+,28500.0,Upper Cretaceous,1828.6
+,29000.0,Upper Cretaceous,1834.3
+,29500.0,Upper Cretaceous,1840.0
+,30000.0,Upper Cretaceous,1851.4
+,30500.0,Upper Cretaceous,1862.9
+,31000.0,Upper Cretaceous,1868.6
+,31500.0,Upper Cretaceous,1885.7
+,32000.0,Upper Cretaceous,1885.7
+,32500.0,Upper Cretaceous,1897.1
+,33000.0,Upper Cretaceous,1902.8
+,33500.0,Upper Cretaceous,1908.6
+,34000.0,Upper Cretaceous,1908.6
+,34500.0,Upper Cretaceous,1908.6
+,35000.0,Upper Cretaceous,1897.1
+,35500.0,Upper Cretaceous,1897.1
+,36000.0,Upper Cretaceous,1885.7
+,36500.0,Upper Cretaceous,1885.7
+,37000.0,Upper Cretaceous,1874.3
+,37500.0,Upper Cretaceous,1874.3
+,38000.0,Upper Cretaceous,1874.3
+,38500.0,Upper Cretaceous,1874.3
+,39000.0,Upper Cretaceous,1874.3
+,39500.0,Upper Cretaceous,1874.3
+,40000.0,Upper Cretaceous,1868.6
+,40500.0,Upper Cretaceous,1862.9
+,41000.0,Upper Cretaceous,1862.9
+,41500.0,Upper Cretaceous,1862.9
+,42000.0,Upper Cretaceous,1851.4
+,42500.0,Upper Cretaceous,1851.4
+,43000.0,Upper Cretaceous,1851.4
+,43500.0,Upper Cretaceous,1851.4
+,44000.0,Upper Cretaceous,1862.9
+,44500.0,Upper Cretaceous,1862.9
+,45000.0,Upper Cretaceous,1862.9
+,45500.0,Upper Cretaceous,1880.0
+,46000.0,Upper Cretaceous,1897.1
+,46500.0,Upper Cretaceous,1920.0
+,47000.0,Upper Cretaceous,1931.4
+,47500.0,Upper Cretaceous,1931.4
+,48000.0,Upper Cretaceous,1931.4
+,48500.0,Upper Cretaceous,1931.4
+,49000.0,Upper Cretaceous,1931.4
+,49500.0,Upper Cretaceous,1931.4
+,50000.0,Upper Cretaceous,1920.0
+,50500.0,Upper Cretaceous,1920.0
+,51000.0,Upper Cretaceous,1920.0
+,51500.0,Upper Cretaceous,1920.0
+,52000.0,Upper Cretaceous,1920.0
+,52500.0,Upper Cretaceous,1920.0
+,53000.0,Upper Cretaceous,1931.4
+,53500.0,Upper Cretaceous,1931.4
+,54000.0,Upper Cretaceous,1931.4
+,54500.0,Upper Cretaceous,1931.4
+,55000.0,Upper Cretaceous,1931.4
+,55500.0,Upper Cretaceous,1931.4
+,56000.0,Upper Cretaceous,1920.0
+,56500.0,Upper Cretaceous,1920.0
+,57000.0,Upper Cretaceous,1920.0
+,57500.0,Upper Cretaceous,1920.0
+,58000.0,Upper Cretaceous,1920.0
+,58500.0,Upper Cretaceous,1920.0
+,59000.0,Upper Cretaceous,1920.0
+,59500.0,Upper Cretaceous,1920.0
+,60000.0,Upper Cretaceous,1920.0
+,60500.0,Upper Cretaceous,1908.6
+,61000.0,Upper Cretaceous,1908.6
+,61500.0,Upper Cretaceous,1908.6
+,62000.0,Upper Cretaceous,1908.6
+,62500.0,Upper Cretaceous,1920.0
+,63000.0,Upper Cretaceous,1925.7
+,63500.0,Upper Cretaceous,1937.2
+,64000.0,Upper Cretaceous,1942.9
+,64500.0,Upper Cretaceous,1960.0
+,65000.0,Upper Cretaceous,1977.1
+,65500.0,Upper Cretaceous,1977.1
+,66000.0,Upper Cretaceous,1977.1
+,66500.0,Upper Cretaceous,1977.1
+,67000.0,Upper Cretaceous,1977.1
+,67500.0,Upper Cretaceous,1988.6
+,68000.0,Upper Cretaceous,1988.6
+,68500.0,Upper Cretaceous,2000.0
+,69000.0,Upper Cretaceous,2011.4
+,69500.0,Upper Cretaceous,2011.4
+,70000.0,Upper Cretaceous,2022.9
+,70500.0,Upper Cretaceous,2022.9
+,71000.0,Upper Cretaceous,2022.9
+,71500.0,Upper Cretaceous,2022.9
+,72000.0,Upper Cretaceous,2011.4
+,72500.0,Upper Cretaceous,2011.4
+,73000.0,Upper Cretaceous,2011.4
+,73500.0,Upper Cretaceous,2011.4
+,74000.0,Upper Cretaceous,2011.4
+,74500.0,Upper Cretaceous,2022.9
+,75000.0,Upper Cretaceous,2022.9
+,75500.0,Upper Cretaceous,2022.9
+,76000.0,Upper Cretaceous,2022.9
+,76500.0,Upper Cretaceous,2022.9
+,77000.0,Upper Cretaceous,2011.4
+,77500.0,Upper Cretaceous,2000.0
+,78000.0,Upper Cretaceous,2000.0
+,78500.0,Upper Cretaceous,1988.6
+,79000.0,Upper Cretaceous,1988.6
+,79500.0,Upper Cretaceous,1977.1
+,80000.0,Upper Cretaceous,1965.7
+,80500.0,Upper Cretaceous,1965.7
+,81000.0,Upper Cretaceous,1960.0
+,1000.0,Lower Cretaceous,1257.1
+,1500.0,Lower Cretaceous,1257.1
+,2000.0,Lower Cretaceous,1280.0
+,2500.0,Lower Cretaceous,1280.0
+,3000.0,Lower Cretaceous,1297.2
+,3500.0,Lower Cretaceous,1314.3
+,4000.0,Lower Cretaceous,1280.0
+,4500.0,Lower Cretaceous,1274.3
+,5000.0,Lower Cretaceous,1337.1
+,5500.0,Lower Cretaceous,1771.4
+,6000.0,Lower Cretaceous,2057.1
+,6500.0,Lower Cretaceous,2137.2
+,7000.0,Lower Cretaceous,2308.6
+,7500.0,Lower Cretaceous,2457.1
+,8000.0,Lower Cretaceous,2571.4
+,8500.0,Lower Cretaceous,2640.0
+,9000.0,Lower Cretaceous,2765.7
+,9500.0,Lower Cretaceous,2765.7
+,10000.0,Lower Cretaceous,2765.7
+,10500.0,Lower Cretaceous,2754.3
+,11000.0,Lower Cretaceous,2754.3
+,11500.0,Lower Cretaceous,2754.3
+,12000.0,Lower Cretaceous,2754.3
+,12500.0,Lower Cretaceous,2754.3
+,13000.0,Lower Cretaceous,2754.3
+,13500.0,Lower Cretaceous,2754.3
+,14000.0,Lower Cretaceous,2742.9
+,14500.0,Lower Cretaceous,2742.9
+,15000.0,Lower Cretaceous,2742.9
+,15500.0,Lower Cretaceous,2742.9
+,16000.0,Lower Cretaceous,2742.9
+,16500.0,Lower Cretaceous,2760.0
+,17000.0,Lower Cretaceous,2777.1
+,17500.0,Lower Cretaceous,2788.6
+,18000.0,Lower Cretaceous,2811.4
+,18500.0,Lower Cretaceous,2868.6
+,19000.0,Lower Cretaceous,2920.0
+,19500.0,Lower Cretaceous,2948.6
+,20000.0,Lower Cretaceous,2971.4
+,20500.0,Lower Cretaceous,2971.4
+,21000.0,Lower Cretaceous,2971.4
+,21500.0,Lower Cretaceous,2971.4
+,22000.0,Lower Cretaceous,2971.4
+,22500.0,Lower Cretaceous,2971.4
+,23000.0,Lower Cretaceous,2971.4
+,23500.0,Lower Cretaceous,2960.0
+,24000.0,Lower Cretaceous,2960.0
+,24500.0,Lower Cretaceous,2971.4
+,25000.0,Lower Cretaceous,2971.4
+,25500.0,Lower Cretaceous,2971.4
+,26000.0,Lower Cretaceous,2960.0
+,26500.0,Lower Cretaceous,2960.0
+,27000.0,Lower Cretaceous,2948.6
+,27500.0,Lower Cretaceous,2948.6
+,28000.0,Lower Cretaceous,2960.0
+,28500.0,Lower Cretaceous,2971.4
+,29000.0,Lower Cretaceous,3005.7
+,29500.0,Lower Cretaceous,3074.3
+,30000.0,Lower Cretaceous,3131.4
+,30500.0,Lower Cretaceous,3200.0
+,31000.0,Lower Cretaceous,3251.4
+,31500.0,Lower Cretaceous,3268.6
+,32000.0,Lower Cretaceous,3268.6
+,32500.0,Lower Cretaceous,3262.8
+,33000.0,Lower Cretaceous,3240.0
+,33500.0,Lower Cretaceous,3222.9
+,34000.0,Lower Cretaceous,3211.4
+,34500.0,Lower Cretaceous,3200.0
+,35000.0,Lower Cretaceous,3188.6
+,35500.0,Lower Cretaceous,3177.1
+,36000.0,Lower Cretaceous,3165.7
+,36500.0,Lower Cretaceous,3148.6
+,37000.0,Lower Cretaceous,3131.4
+,37500.0,Lower Cretaceous,3108.6
+,38000.0,Lower Cretaceous,3080.0
+,38500.0,Lower Cretaceous,3057.2
+,39000.0,Lower Cretaceous,3040.0
+,39500.0,Lower Cretaceous,3017.1
+,40000.0,Lower Cretaceous,2994.3
+,40500.0,Lower Cretaceous,2960.0
+,41000.0,Lower Cretaceous,2948.6
+,41500.0,Lower Cretaceous,2897.2
+,42000.0,Lower Cretaceous,2857.1
+,42500.0,Lower Cretaceous,2845.7
+,43000.0,Lower Cretaceous,2822.9
+,43500.0,Lower Cretaceous,2811.4
+,44000.0,Lower Cretaceous,2822.9
+,44500.0,Lower Cretaceous,2902.9
+,45000.0,Lower Cretaceous,2971.4
+,45500.0,Lower Cretaceous,3040.0
+,46000.0,Lower Cretaceous,3085.7
+,46500.0,Lower Cretaceous,3108.6
+,47000.0,Lower Cretaceous,3131.4
+,47500.0,Lower Cretaceous,3131.4
+,48000.0,Lower Cretaceous,3131.4
+,48500.0,Lower Cretaceous,3114.3
+,49000.0,Lower Cretaceous,3080.0
+,49500.0,Lower Cretaceous,3051.4
+,50000.0,Lower Cretaceous,3028.6
+,50500.0,Lower Cretaceous,3011.4
+,51000.0,Lower Cretaceous,2988.6
+,51500.0,Lower Cretaceous,2960.0
+,52000.0,Lower Cretaceous,2937.1
+,52500.0,Lower Cretaceous,2931.4
+,53000.0,Lower Cretaceous,2914.3
+,53500.0,Lower Cretaceous,2902.9
+,54000.0,Lower Cretaceous,2902.9
+,54500.0,Lower Cretaceous,2885.7
+,55000.0,Lower Cretaceous,2868.6
+,55500.0,Lower Cretaceous,2811.4
+,56000.0,Lower Cretaceous,2788.6
+,56500.0,Lower Cretaceous,2754.3
+,57000.0,Lower Cretaceous,2708.6
+,57500.0,Lower Cretaceous,2708.6
+,58000.0,Lower Cretaceous,2708.6
+,58500.0,Lower Cretaceous,2697.1
+,59000.0,Lower Cretaceous,2662.9
+,59500.0,Lower Cretaceous,2645.7
+,60000.0,Lower Cretaceous,2617.1
+,60500.0,Lower Cretaceous,2617.1
+,61000.0,Lower Cretaceous,2617.1
+,61500.0,Lower Cretaceous,2651.4
+,62000.0,Lower Cretaceous,2674.3
+,62500.0,Lower Cretaceous,2720.0
+,63000.0,Lower Cretaceous,2788.6
+,63500.0,Lower Cretaceous,2868.6
+,64000.0,Lower Cretaceous,2914.3
+,64500.0,Lower Cretaceous,2960.0
+,65000.0,Lower Cretaceous,3005.7
+,65500.0,Lower Cretaceous,3062.9
+,66000.0,Lower Cretaceous,3120.0
+,66500.0,Lower Cretaceous,3165.7
+,67000.0,Lower Cretaceous,3211.4
+,67500.0,Lower Cretaceous,3222.9
+,68000.0,Lower Cretaceous,3222.9
+,68500.0,Lower Cretaceous,3205.7
+,69000.0,Lower Cretaceous,3188.6
+,69500.0,Lower Cretaceous,3142.9
+,70000.0,Lower Cretaceous,3108.6
+,70500.0,Lower Cretaceous,3108.6
+,71000.0,Lower Cretaceous,3097.1
+,71500.0,Lower Cretaceous,3097.1
+,72000.0,Lower Cretaceous,3080.0
+,72500.0,Lower Cretaceous,3074.3
+,73000.0,Lower Cretaceous,3062.9
+,73500.0,Lower Cretaceous,3034.3
+,74000.0,Lower Cretaceous,2994.3
+,74500.0,Lower Cretaceous,2982.9
+,75000.0,Lower Cretaceous,2960.0
+,75500.0,Lower Cretaceous,2937.1
+,76000.0,Lower Cretaceous,2868.6
+,76500.0,Lower Cretaceous,2800.0
+,77000.0,Lower Cretaceous,2731.4
+,77500.0,Lower Cretaceous,2674.3
+,78000.0,Lower Cretaceous,2628.6
+,78500.0,Lower Cretaceous,2582.9
+,79000.0,Lower Cretaceous,2537.1
+,79500.0,Lower Cretaceous,2485.7
+,80000.0,Lower Cretaceous,2445.7
+,80500.0,Lower Cretaceous,2405.7
+,81000.0,Lower Cretaceous,2354.3
+,1000.0,Kimmeridgian-Ryazanian,1297.2
+,1500.0,Kimmeridgian-Ryazanian,1291.4
+,2000.0,Kimmeridgian-Ryazanian,1291.4
+,2500.0,Kimmeridgian-Ryazanian,1280.0
+,3000.0,Kimmeridgian-Ryazanian,1297.2
+,3500.0,Kimmeridgian-Ryazanian,1314.3
+,4000.0,Kimmeridgian-Ryazanian,1314.3
+,4500.0,Kimmeridgian-Ryazanian,1314.3
+,5000.0,Kimmeridgian-Ryazanian,1337.1
+,5500.0,Kimmeridgian-Ryazanian,1771.4
+,6000.0,Kimmeridgian-Ryazanian,2108.6
+,6500.0,Kimmeridgian-Ryazanian,2217.2
+,7000.0,Kimmeridgian-Ryazanian,2434.3
+,7500.0,Kimmeridgian-Ryazanian,2651.4
+,8000.0,Kimmeridgian-Ryazanian,2811.4
+,8500.0,Kimmeridgian-Ryazanian,2902.9
+,9000.0,Kimmeridgian-Ryazanian,3085.7
+,9500.0,Kimmeridgian-Ryazanian,3102.8
+,10000.0,Kimmeridgian-Ryazanian,3108.6
+,10500.0,Kimmeridgian-Ryazanian,3085.7
+,11000.0,Kimmeridgian-Ryazanian,3062.9
+,11500.0,Kimmeridgian-Ryazanian,3068.6
+,12000.0,Kimmeridgian-Ryazanian,3074.3
+,12500.0,Kimmeridgian-Ryazanian,3074.3
+,13000.0,Kimmeridgian-Ryazanian,3062.9
+,13500.0,Kimmeridgian-Ryazanian,3051.4
+,14000.0,Kimmeridgian-Ryazanian,3051.4
+,14500.0,Kimmeridgian-Ryazanian,3085.7
+,15000.0,Kimmeridgian-Ryazanian,3085.7
+,15500.0,Kimmeridgian-Ryazanian,3068.6
+,16000.0,Kimmeridgian-Ryazanian,3051.4
+,16500.0,Kimmeridgian-Ryazanian,3051.4
+,17000.0,Kimmeridgian-Ryazanian,3068.6
+,17500.0,Kimmeridgian-Ryazanian,3085.7
+,18000.0,Kimmeridgian-Ryazanian,3165.7
+,18500.0,Kimmeridgian-Ryazanian,3308.6
+,19000.0,Kimmeridgian-Ryazanian,3434.3
+,19500.0,Kimmeridgian-Ryazanian,3485.7
+,20000.0,Kimmeridgian-Ryazanian,3497.1
+,20500.0,Kimmeridgian-Ryazanian,3491.4
+,21000.0,Kimmeridgian-Ryazanian,3474.3
+,21500.0,Kimmeridgian-Ryazanian,3474.3
+,22000.0,Kimmeridgian-Ryazanian,3462.9
+,22500.0,Kimmeridgian-Ryazanian,3451.4
+,23000.0,Kimmeridgian-Ryazanian,3440.0
+,23500.0,Kimmeridgian-Ryazanian,3417.1
+,24000.0,Kimmeridgian-Ryazanian,3394.3
+,24500.0,Kimmeridgian-Ryazanian,3382.9
+,25000.0,Kimmeridgian-Ryazanian,3371.4
+,25500.0,Kimmeridgian-Ryazanian,3354.3
+,26000.0,Kimmeridgian-Ryazanian,3331.4
+,26500.0,Kimmeridgian-Ryazanian,3302.9
+,27000.0,Kimmeridgian-Ryazanian,3257.1
+,27500.0,Kimmeridgian-Ryazanian,3228.6
+,28000.0,Kimmeridgian-Ryazanian,3222.9
+,28500.0,Kimmeridgian-Ryazanian,3257.1
+,29000.0,Kimmeridgian-Ryazanian,3342.9
+,29500.0,Kimmeridgian-Ryazanian,3571.4
+,30000.0,Kimmeridgian-Ryazanian,3725.7
+,30500.0,Kimmeridgian-Ryazanian,3840.0
+,31000.0,Kimmeridgian-Ryazanian,3874.3
+,31500.0,Kimmeridgian-Ryazanian,3874.3
+,32000.0,Kimmeridgian-Ryazanian,3840.0
+,32500.0,Kimmeridgian-Ryazanian,3765.7
+,33000.0,Kimmeridgian-Ryazanian,3685.7
+,33500.0,Kimmeridgian-Ryazanian,3634.3
+,34000.0,Kimmeridgian-Ryazanian,3611.4
+,34500.0,Kimmeridgian-Ryazanian,3582.8
+,35000.0,Kimmeridgian-Ryazanian,3548.6
+,35500.0,Kimmeridgian-Ryazanian,3508.6
+,36000.0,Kimmeridgian-Ryazanian,3462.9
+,36500.0,Kimmeridgian-Ryazanian,3428.6
+,37000.0,Kimmeridgian-Ryazanian,3394.3
+,37500.0,Kimmeridgian-Ryazanian,3348.6
+,38000.0,Kimmeridgian-Ryazanian,3308.6
+,38500.0,Kimmeridgian-Ryazanian,3262.8
+,39000.0,Kimmeridgian-Ryazanian,3222.9
+,39500.0,Kimmeridgian-Ryazanian,3188.6
+,40000.0,Kimmeridgian-Ryazanian,3142.8
+,40500.0,Kimmeridgian-Ryazanian,3097.1
+,41000.0,Kimmeridgian-Ryazanian,3062.9
+,41500.0,Kimmeridgian-Ryazanian,3022.8
+,42000.0,Kimmeridgian-Ryazanian,2982.9
+,42500.0,Kimmeridgian-Ryazanian,2937.1
+,43000.0,Kimmeridgian-Ryazanian,2891.4
+,43500.0,Kimmeridgian-Ryazanian,2880.0
+,44000.0,Kimmeridgian-Ryazanian,2880.0
+,44500.0,Kimmeridgian-Ryazanian,2971.4
+,45000.0,Kimmeridgian-Ryazanian,3051.4
+,45500.0,Kimmeridgian-Ryazanian,3131.4
+,46000.0,Kimmeridgian-Ryazanian,3188.6
+,46500.0,Kimmeridgian-Ryazanian,3211.4
+,47000.0,Kimmeridgian-Ryazanian,3222.9
+,47500.0,Kimmeridgian-Ryazanian,3222.9
+,48000.0,Kimmeridgian-Ryazanian,3222.9
+,48500.0,Kimmeridgian-Ryazanian,3182.8
+,49000.0,Kimmeridgian-Ryazanian,3154.3
+,49500.0,Kimmeridgian-Ryazanian,3142.9
+,50000.0,Kimmeridgian-Ryazanian,3131.4
+,50500.0,Kimmeridgian-Ryazanian,3114.3
+,51000.0,Kimmeridgian-Ryazanian,3080.0
+,51500.0,Kimmeridgian-Ryazanian,3040.0
+,52000.0,Kimmeridgian-Ryazanian,2994.3
+,52500.0,Kimmeridgian-Ryazanian,2994.3
+,53000.0,Kimmeridgian-Ryazanian,2994.3
+,53500.0,Kimmeridgian-Ryazanian,2982.9
+,54000.0,Kimmeridgian-Ryazanian,2965.7
+,54500.0,Kimmeridgian-Ryazanian,2942.8
+,55000.0,Kimmeridgian-Ryazanian,2914.3
+,55500.0,Kimmeridgian-Ryazanian,2857.1
+,56000.0,Kimmeridgian-Ryazanian,2834.3
+,56500.0,Kimmeridgian-Ryazanian,2800.0
+,57000.0,Kimmeridgian-Ryazanian,2765.7
+,57500.0,Kimmeridgian-Ryazanian,2754.3
+,58000.0,Kimmeridgian-Ryazanian,2737.2
+,58500.0,Kimmeridgian-Ryazanian,2697.1
+,59000.0,Kimmeridgian-Ryazanian,2662.9
+,59500.0,Kimmeridgian-Ryazanian,2645.7
+,60000.0,Kimmeridgian-Ryazanian,2617.1
+,60500.0,Kimmeridgian-Ryazanian,2617.1
+,61000.0,Kimmeridgian-Ryazanian,2617.1
+,61500.0,Kimmeridgian-Ryazanian,2651.4
+,62000.0,Kimmeridgian-Ryazanian,2674.3
+,62500.0,Kimmeridgian-Ryazanian,2720.0
+,63000.0,Kimmeridgian-Ryazanian,2788.6
+,63500.0,Kimmeridgian-Ryazanian,2868.6
+,64000.0,Kimmeridgian-Ryazanian,2948.6
+,64500.0,Kimmeridgian-Ryazanian,3000.0
+,65000.0,Kimmeridgian-Ryazanian,3068.6
+,65500.0,Kimmeridgian-Ryazanian,3154.3
+,66000.0,Kimmeridgian-Ryazanian,3257.1
+,66500.0,Kimmeridgian-Ryazanian,3331.4
+,67000.0,Kimmeridgian-Ryazanian,3411.4
+,67500.0,Kimmeridgian-Ryazanian,3440.0
+,68000.0,Kimmeridgian-Ryazanian,3451.4
+,68500.0,Kimmeridgian-Ryazanian,3434.3
+,69000.0,Kimmeridgian-Ryazanian,3394.3
+,69500.0,Kimmeridgian-Ryazanian,3314.3
+,70000.0,Kimmeridgian-Ryazanian,3217.2
+,70500.0,Kimmeridgian-Ryazanian,3165.7
+,71000.0,Kimmeridgian-Ryazanian,3154.3
+,71500.0,Kimmeridgian-Ryazanian,3142.9
+,72000.0,Kimmeridgian-Ryazanian,3142.9
+,72500.0,Kimmeridgian-Ryazanian,3131.4
+,73000.0,Kimmeridgian-Ryazanian,3108.6
+,73500.0,Kimmeridgian-Ryazanian,3091.4
+,74000.0,Kimmeridgian-Ryazanian,3068.6
+,74500.0,Kimmeridgian-Ryazanian,3040.0
+,75000.0,Kimmeridgian-Ryazanian,2994.3
+,75500.0,Kimmeridgian-Ryazanian,2937.1
+,76000.0,Kimmeridgian-Ryazanian,2868.6
+,76500.0,Kimmeridgian-Ryazanian,2800.0
+,77000.0,Kimmeridgian-Ryazanian,2731.4
+,77500.0,Kimmeridgian-Ryazanian,2674.3
+,78000.0,Kimmeridgian-Ryazanian,2628.6
+,78500.0,Kimmeridgian-Ryazanian,2582.9
+,79000.0,Kimmeridgian-Ryazanian,2537.1
+,79500.0,Kimmeridgian-Ryazanian,2485.7
+,80000.0,Kimmeridgian-Ryazanian,2445.7
+,80500.0,Kimmeridgian-Ryazanian,2405.7
+,81000.0,Kimmeridgian-Ryazanian,2354.3
+,1000.0,Callovian-Oxfordian,1297.2
+,1500.0,Callovian-Oxfordian,1291.4
+,2000.0,Callovian-Oxfordian,1291.4
+,2500.0,Callovian-Oxfordian,1280.0
+,3000.0,Callovian-Oxfordian,1297.2
+,3500.0,Callovian-Oxfordian,1314.3
+,4000.0,Callovian-Oxfordian,1314.3
+,4500.0,Callovian-Oxfordian,1314.3
+,5000.0,Callovian-Oxfordian,1337.1
+,5500.0,Callovian-Oxfordian,1771.4
+,6000.0,Callovian-Oxfordian,2234.3
+,6500.0,Callovian-Oxfordian,2520.0
+,7000.0,Callovian-Oxfordian,2880.0
+,7500.0,Callovian-Oxfordian,3017.1
+,8000.0,Callovian-Oxfordian,3114.2
+,8500.0,Callovian-Oxfordian,3165.7
+,9000.0,Callovian-Oxfordian,3268.6
+,9500.0,Callovian-Oxfordian,3280.0
+,10000.0,Callovian-Oxfordian,3280.0
+,10500.0,Callovian-Oxfordian,3268.6
+,11000.0,Callovian-Oxfordian,3245.7
+,11500.0,Callovian-Oxfordian,3234.3
+,12000.0,Callovian-Oxfordian,3222.9
+,12500.0,Callovian-Oxfordian,3222.9
+,13000.0,Callovian-Oxfordian,3222.9
+,13500.0,Callovian-Oxfordian,3222.9
+,14000.0,Callovian-Oxfordian,3234.3
+,14500.0,Callovian-Oxfordian,3245.7
+,15000.0,Callovian-Oxfordian,3257.1
+,15500.0,Callovian-Oxfordian,3245.7
+,16000.0,Callovian-Oxfordian,3234.3
+,16500.0,Callovian-Oxfordian,3228.6
+,17000.0,Callovian-Oxfordian,3211.4
+,17500.0,Callovian-Oxfordian,3200.0
+,18000.0,Callovian-Oxfordian,3314.3
+,18500.0,Callovian-Oxfordian,3640.0
+,19000.0,Callovian-Oxfordian,3874.3
+,19500.0,Callovian-Oxfordian,3874.3
+,20000.0,Callovian-Oxfordian,3851.4
+,20500.0,Callovian-Oxfordian,3805.7
+,21000.0,Callovian-Oxfordian,3760.0
+,21500.0,Callovian-Oxfordian,3714.3
+,22000.0,Callovian-Oxfordian,3674.3
+,22500.0,Callovian-Oxfordian,3657.1
+,23000.0,Callovian-Oxfordian,3634.3
+,23500.0,Callovian-Oxfordian,3600.0
+,24000.0,Callovian-Oxfordian,3560.0
+,24500.0,Callovian-Oxfordian,3531.4
+,25000.0,Callovian-Oxfordian,3497.1
+,25500.0,Callovian-Oxfordian,3457.2
+,26000.0,Callovian-Oxfordian,3422.8
+,26500.0,Callovian-Oxfordian,3382.9
+,27000.0,Callovian-Oxfordian,3348.6
+,27500.0,Callovian-Oxfordian,3325.7
+,28000.0,Callovian-Oxfordian,3325.7
+,28500.0,Callovian-Oxfordian,3417.1
+,29000.0,Callovian-Oxfordian,3588.6
+,29500.0,Callovian-Oxfordian,3851.4
+,30000.0,Callovian-Oxfordian,4057.1
+,30500.0,Callovian-Oxfordian,4125.7
+,31000.0,Callovian-Oxfordian,4125.7
+,31500.0,Callovian-Oxfordian,4091.4
+,32000.0,Callovian-Oxfordian,4034.3
+,32500.0,Callovian-Oxfordian,3948.6
+,33000.0,Callovian-Oxfordian,3851.4
+,33500.0,Callovian-Oxfordian,3760.0
+,34000.0,Callovian-Oxfordian,3725.7
+,34500.0,Callovian-Oxfordian,3685.7
+,35000.0,Callovian-Oxfordian,3651.4
+,35500.0,Callovian-Oxfordian,3611.4
+,36000.0,Callovian-Oxfordian,3554.3
+,36500.0,Callovian-Oxfordian,3514.3
+,37000.0,Callovian-Oxfordian,3485.7
+,37500.0,Callovian-Oxfordian,3462.9
+,38000.0,Callovian-Oxfordian,3440.0
+,38500.0,Callovian-Oxfordian,3354.2
+,39000.0,Callovian-Oxfordian,3291.4
+,39500.0,Callovian-Oxfordian,3257.1
+,40000.0,Callovian-Oxfordian,3211.4
+,40500.0,Callovian-Oxfordian,3154.3
+,41000.0,Callovian-Oxfordian,3108.6
+,41500.0,Callovian-Oxfordian,3091.4
+,42000.0,Callovian-Oxfordian,3040.0
+,42500.0,Callovian-Oxfordian,3005.7
+,43000.0,Callovian-Oxfordian,2960.0
+,43500.0,Callovian-Oxfordian,2948.6
+,44000.0,Callovian-Oxfordian,2994.3
+,44500.0,Callovian-Oxfordian,3120.0
+,45000.0,Callovian-Oxfordian,3262.8
+,45500.0,Callovian-Oxfordian,3325.7
+,46000.0,Callovian-Oxfordian,3371.4
+,46500.0,Callovian-Oxfordian,3405.7
+,47000.0,Callovian-Oxfordian,3417.1
+,47500.0,Callovian-Oxfordian,3405.7
+,48000.0,Callovian-Oxfordian,3394.3
+,48500.0,Callovian-Oxfordian,3337.2
+,49000.0,Callovian-Oxfordian,3274.3
+,49500.0,Callovian-Oxfordian,3245.7
+,50000.0,Callovian-Oxfordian,3211.4
+,50500.0,Callovian-Oxfordian,3188.6
+,51000.0,Callovian-Oxfordian,3148.6
+,51500.0,Callovian-Oxfordian,3131.4
+,52000.0,Callovian-Oxfordian,3120.0
+,52500.0,Callovian-Oxfordian,3097.1
+,53000.0,Callovian-Oxfordian,3074.3
+,53500.0,Callovian-Oxfordian,3062.9
+,54000.0,Callovian-Oxfordian,3045.7
+,54500.0,Callovian-Oxfordian,3005.7
+,55000.0,Callovian-Oxfordian,2971.4
+,55500.0,Callovian-Oxfordian,2914.3
+,56000.0,Callovian-Oxfordian,2880.0
+,56500.0,Callovian-Oxfordian,2857.1
+,57000.0,Callovian-Oxfordian,2811.4
+,57500.0,Callovian-Oxfordian,2794.3
+,58000.0,Callovian-Oxfordian,2771.4
+,58500.0,Callovian-Oxfordian,2765.7
+,59000.0,Callovian-Oxfordian,2754.3
+,59500.0,Callovian-Oxfordian,2737.2
+,60000.0,Callovian-Oxfordian,2697.1
+,60500.0,Callovian-Oxfordian,2662.9
+,61000.0,Callovian-Oxfordian,2651.4
+,61500.0,Callovian-Oxfordian,2651.4
+,62000.0,Callovian-Oxfordian,2674.3
+,62500.0,Callovian-Oxfordian,2720.0
+,63000.0,Callovian-Oxfordian,2788.6
+,63500.0,Callovian-Oxfordian,2868.6
+,64000.0,Callovian-Oxfordian,2948.6
+,64500.0,Callovian-Oxfordian,3085.8
+,65000.0,Callovian-Oxfordian,3217.1
+,65500.0,Callovian-Oxfordian,3405.7
+,66000.0,Callovian-Oxfordian,3622.9
+,66500.0,Callovian-Oxfordian,3714.2
+,67000.0,Callovian-Oxfordian,3782.9
+,67500.0,Callovian-Oxfordian,3782.9
+,68000.0,Callovian-Oxfordian,3737.1
+,68500.0,Callovian-Oxfordian,3662.8
+,69000.0,Callovian-Oxfordian,3588.6
+,69500.0,Callovian-Oxfordian,3485.7
+,70000.0,Callovian-Oxfordian,3377.2
+,70500.0,Callovian-Oxfordian,3337.1
+,71000.0,Callovian-Oxfordian,3314.3
+,71500.0,Callovian-Oxfordian,3302.9
+,72000.0,Callovian-Oxfordian,3291.4
+,72500.0,Callovian-Oxfordian,3280.0
+,73000.0,Callovian-Oxfordian,3280.0
+,73500.0,Callovian-Oxfordian,3240.0
+,74000.0,Callovian-Oxfordian,3194.3
+,74500.0,Callovian-Oxfordian,3154.3
+,75000.0,Callovian-Oxfordian,3108.6
+,75500.0,Callovian-Oxfordian,3051.4
+,76000.0,Callovian-Oxfordian,2994.3
+,76500.0,Callovian-Oxfordian,2902.9
+,77000.0,Callovian-Oxfordian,2828.6
+,77500.0,Callovian-Oxfordian,2754.3
+,78000.0,Callovian-Oxfordian,2685.7
+,78500.0,Callovian-Oxfordian,2662.9
+,79000.0,Callovian-Oxfordian,2645.7
+,79500.0,Callovian-Oxfordian,2611.4
+,80000.0,Callovian-Oxfordian,2571.4
+,80500.0,Callovian-Oxfordian,2525.7
+,81000.0,Callovian-Oxfordian,2468.6
+,1000.0,Bajocian-Bathonian,1302.9
+,1500.0,Bajocian-Bathonian,1302.9
+,2000.0,Bajocian-Bathonian,1302.9
+,2500.0,Bajocian-Bathonian,1302.9
+,3000.0,Bajocian-Bathonian,1314.3
+,3500.0,Bajocian-Bathonian,1314.3
+,4000.0,Bajocian-Bathonian,1314.3
+,4500.0,Bajocian-Bathonian,1314.3
+,5000.0,Bajocian-Bathonian,1337.1
+,5500.0,Bajocian-Bathonian,1771.4
+,6000.0,Bajocian-Bathonian,2234.3
+,6500.0,Bajocian-Bathonian,2697.1
+,7000.0,Bajocian-Bathonian,3154.3
+,7500.0,Bajocian-Bathonian,3337.1
+,8000.0,Bajocian-Bathonian,3422.8
+,8500.0,Bajocian-Bathonian,3440.0
+,9000.0,Bajocian-Bathonian,3462.9
+,9500.0,Bajocian-Bathonian,3474.3
+,10000.0,Bajocian-Bathonian,3474.3
+,10500.0,Bajocian-Bathonian,3474.3
+,11000.0,Bajocian-Bathonian,3440.0
+,11500.0,Bajocian-Bathonian,3411.4
+,12000.0,Bajocian-Bathonian,3382.9
+,12500.0,Bajocian-Bathonian,3382.9
+,13000.0,Bajocian-Bathonian,3382.9
+,13500.0,Bajocian-Bathonian,3394.3
+,14000.0,Bajocian-Bathonian,3405.7
+,14500.0,Bajocian-Bathonian,3405.7
+,15000.0,Bajocian-Bathonian,3405.7
+,15500.0,Bajocian-Bathonian,3388.6
+,16000.0,Bajocian-Bathonian,3382.9
+,16500.0,Bajocian-Bathonian,3365.7
+,17000.0,Bajocian-Bathonian,3342.8
+,17500.0,Bajocian-Bathonian,3325.7
+,18000.0,Bajocian-Bathonian,3428.6
+,18500.0,Bajocian-Bathonian,3760.0
+,19000.0,Bajocian-Bathonian,4028.6
+,19500.0,Bajocian-Bathonian,4160.0
+,20000.0,Bajocian-Bathonian,4194.3
+,20500.0,Bajocian-Bathonian,4137.2
+,21000.0,Bajocian-Bathonian,4034.3
+,21500.0,Bajocian-Bathonian,3988.6
+,22000.0,Bajocian-Bathonian,3937.2
+,22500.0,Bajocian-Bathonian,3914.3
+,23000.0,Bajocian-Bathonian,3885.7
+,23500.0,Bajocian-Bathonian,3817.1
+,24000.0,Bajocian-Bathonian,3771.4
+,24500.0,Bajocian-Bathonian,3702.9
+,25000.0,Bajocian-Bathonian,3634.3
+,25500.0,Bajocian-Bathonian,3605.7
+,26000.0,Bajocian-Bathonian,3565.7
+,26500.0,Bajocian-Bathonian,3520.0
+,27000.0,Bajocian-Bathonian,3462.9
+,27500.0,Bajocian-Bathonian,3411.4
+,28000.0,Bajocian-Bathonian,3405.7
+,28500.0,Bajocian-Bathonian,3451.4
+,29000.0,Bajocian-Bathonian,3588.6
+,29500.0,Bajocian-Bathonian,4005.7
+,30000.0,Bajocian-Bathonian,4297.1
+,30500.0,Bajocian-Bathonian,4422.9
+,31000.0,Bajocian-Bathonian,4445.7
+,31500.0,Bajocian-Bathonian,4394.2
+,32000.0,Bajocian-Bathonian,4308.6
+,32500.0,Bajocian-Bathonian,4165.7
+,33000.0,Bajocian-Bathonian,4011.4
+,33500.0,Bajocian-Bathonian,3931.4
+,34000.0,Bajocian-Bathonian,3874.3
+,34500.0,Bajocian-Bathonian,3817.2
+,35000.0,Bajocian-Bathonian,3742.8
+,35500.0,Bajocian-Bathonian,3691.4
+,36000.0,Bajocian-Bathonian,3634.3
+,36500.0,Bajocian-Bathonian,3594.3
+,37000.0,Bajocian-Bathonian,3565.7
+,37500.0,Bajocian-Bathonian,3542.9
+,38000.0,Bajocian-Bathonian,3520.0
+,38500.0,Bajocian-Bathonian,3411.4
+,39000.0,Bajocian-Bathonian,3325.7
+,39500.0,Bajocian-Bathonian,3302.9
+,40000.0,Bajocian-Bathonian,3274.2
+,40500.0,Bajocian-Bathonian,3211.4
+,41000.0,Bajocian-Bathonian,3165.7
+,41500.0,Bajocian-Bathonian,3091.4
+,42000.0,Bajocian-Bathonian,3040.0
+,42500.0,Bajocian-Bathonian,3005.7
+,43000.0,Bajocian-Bathonian,2960.0
+,43500.0,Bajocian-Bathonian,2948.6
+,44000.0,Bajocian-Bathonian,2994.3
+,44500.0,Bajocian-Bathonian,3428.6
+,45000.0,Bajocian-Bathonian,3628.6
+,45500.0,Bajocian-Bathonian,3634.3
+,46000.0,Bajocian-Bathonian,3634.3
+,46500.0,Bajocian-Bathonian,3702.9
+,47000.0,Bajocian-Bathonian,3702.9
+,47500.0,Bajocian-Bathonian,3668.6
+,48000.0,Bajocian-Bathonian,3600.0
+,48500.0,Bajocian-Bathonian,3520.0
+,49000.0,Bajocian-Bathonian,3428.6
+,49500.0,Bajocian-Bathonian,3371.4
+,50000.0,Bajocian-Bathonian,3302.9
+,50500.0,Bajocian-Bathonian,3262.8
+,51000.0,Bajocian-Bathonian,3211.4
+,51500.0,Bajocian-Bathonian,3200.0
+,52000.0,Bajocian-Bathonian,3188.6
+,52500.0,Bajocian-Bathonian,3182.8
+,53000.0,Bajocian-Bathonian,3177.1
+,53500.0,Bajocian-Bathonian,3154.3
+,54000.0,Bajocian-Bathonian,3125.7
+,54500.0,Bajocian-Bathonian,3080.0
+,55000.0,Bajocian-Bathonian,3040.0
+,55500.0,Bajocian-Bathonian,2982.9
+,56000.0,Bajocian-Bathonian,2960.0
+,56500.0,Bajocian-Bathonian,2937.1
+,57000.0,Bajocian-Bathonian,2891.4
+,57500.0,Bajocian-Bathonian,2857.1
+,58000.0,Bajocian-Bathonian,2817.2
+,58500.0,Bajocian-Bathonian,2788.6
+,59000.0,Bajocian-Bathonian,2754.3
+,59500.0,Bajocian-Bathonian,2737.2
+,60000.0,Bajocian-Bathonian,2697.1
+,60500.0,Bajocian-Bathonian,2662.9
+,61000.0,Bajocian-Bathonian,2651.4
+,61500.0,Bajocian-Bathonian,2657.2
+,62000.0,Bajocian-Bathonian,2697.1
+,62500.0,Bajocian-Bathonian,2742.9
+,63000.0,Bajocian-Bathonian,2788.6
+,63500.0,Bajocian-Bathonian,2868.6
+,64000.0,Bajocian-Bathonian,2948.6
+,64500.0,Bajocian-Bathonian,3114.3
+,65000.0,Bajocian-Bathonian,3320.0
+,65500.0,Bajocian-Bathonian,3680.0
+,66000.0,Bajocian-Bathonian,3931.4
+,66500.0,Bajocian-Bathonian,4102.8
+,67000.0,Bajocian-Bathonian,4205.7
+,67500.0,Bajocian-Bathonian,4171.4
+,68000.0,Bajocian-Bathonian,4022.9
+,68500.0,Bajocian-Bathonian,3925.8
+,69000.0,Bajocian-Bathonian,3817.1
+,69500.0,Bajocian-Bathonian,3680.0
+,70000.0,Bajocian-Bathonian,3537.2
+,70500.0,Bajocian-Bathonian,3497.1
+,71000.0,Bajocian-Bathonian,3474.3
+,71500.0,Bajocian-Bathonian,3474.3
+,72000.0,Bajocian-Bathonian,3474.3
+,72500.0,Bajocian-Bathonian,3474.3
+,73000.0,Bajocian-Bathonian,3462.9
+,73500.0,Bajocian-Bathonian,3434.3
+,74000.0,Bajocian-Bathonian,3400.0
+,74500.0,Bajocian-Bathonian,3348.6
+,75000.0,Bajocian-Bathonian,3268.6
+,75500.0,Bajocian-Bathonian,3194.2
+,76000.0,Bajocian-Bathonian,3120.0
+,76500.0,Bajocian-Bathonian,3028.6
+,77000.0,Bajocian-Bathonian,2954.2
+,77500.0,Bajocian-Bathonian,2851.4
+,78000.0,Bajocian-Bathonian,2765.7
+,78500.0,Bajocian-Bathonian,2742.9
+,79000.0,Bajocian-Bathonian,2737.2
+,79500.0,Bajocian-Bathonian,2691.4
+,80000.0,Bajocian-Bathonian,2651.4
+,80500.0,Bajocian-Bathonian,2622.8
+,81000.0,Bajocian-Bathonian,2600.0
+,1000.0,Triassic-Lower Jurassic,1302.9
+,1500.0,Triassic-Lower Jurassic,1302.9
+,2000.0,Triassic-Lower Jurassic,1302.9
+,2500.0,Triassic-Lower Jurassic,1302.9
+,3000.0,Triassic-Lower Jurassic,1320.0
+,3500.0,Triassic-Lower Jurassic,1325.7
+,4000.0,Triassic-Lower Jurassic,1325.7
+,4500.0,Triassic-Lower Jurassic,1325.7
+,5000.0,Triassic-Lower Jurassic,1337.1
+,5500.0,Triassic-Lower Jurassic,1771.4
+,6000.0,Triassic-Lower Jurassic,2234.3
+,6500.0,Triassic-Lower Jurassic,2697.1
+,7000.0,Triassic-Lower Jurassic,3302.9
+,7500.0,Triassic-Lower Jurassic,3451.4
+,8000.0,Triassic-Lower Jurassic,3560.0
+,8500.0,Triassic-Lower Jurassic,3577.1
+,9000.0,Triassic-Lower Jurassic,3622.9
+,9500.0,Triassic-Lower Jurassic,3651.4
+,10000.0,Triassic-Lower Jurassic,3668.6
+,10500.0,Triassic-Lower Jurassic,3657.1
+,11000.0,Triassic-Lower Jurassic,3634.3
+,11500.0,Triassic-Lower Jurassic,3617.2
+,12000.0,Triassic-Lower Jurassic,3600.0
+,12500.0,Triassic-Lower Jurassic,3577.1
+,13000.0,Triassic-Lower Jurassic,3554.3
+,13500.0,Triassic-Lower Jurassic,3537.2
+,14000.0,Triassic-Lower Jurassic,3531.4
+,14500.0,Triassic-Lower Jurassic,3542.9
+,15000.0,Triassic-Lower Jurassic,3542.9
+,15500.0,Triassic-Lower Jurassic,3525.7
+,16000.0,Triassic-Lower Jurassic,3520.0
+,16500.0,Triassic-Lower Jurassic,3508.6
+,17000.0,Triassic-Lower Jurassic,3497.2
+,17500.0,Triassic-Lower Jurassic,3474.3
+,18000.0,Triassic-Lower Jurassic,3542.9
+,18500.0,Triassic-Lower Jurassic,3800.0
+,19000.0,Triassic-Lower Jurassic,4108.6
+,19500.0,Triassic-Lower Jurassic,4354.3
+,20000.0,Triassic-Lower Jurassic,4434.3
+,20500.0,Triassic-Lower Jurassic,4354.2
+,21000.0,Triassic-Lower Jurassic,4228.6
+,21500.0,Triassic-Lower Jurassic,4148.6
+,22000.0,Triassic-Lower Jurassic,4080.0
+,22500.0,Triassic-Lower Jurassic,4034.3
+,23000.0,Triassic-Lower Jurassic,4000.0
+,23500.0,Triassic-Lower Jurassic,3954.3
+,24000.0,Triassic-Lower Jurassic,3914.2
+,24500.0,Triassic-Lower Jurassic,3851.4
+,25000.0,Triassic-Lower Jurassic,3782.9
+,25500.0,Triassic-Lower Jurassic,3725.7
+,26000.0,Triassic-Lower Jurassic,3662.8
+,26500.0,Triassic-Lower Jurassic,3634.3
+,27000.0,Triassic-Lower Jurassic,3588.6
+,27500.0,Triassic-Lower Jurassic,3565.7
+,28000.0,Triassic-Lower Jurassic,3565.7
+,28500.0,Triassic-Lower Jurassic,3611.4
+,29000.0,Triassic-Lower Jurassic,3742.8
+,29500.0,Triassic-Lower Jurassic,4074.2
+,30000.0,Triassic-Lower Jurassic,4342.9
+,30500.0,Triassic-Lower Jurassic,4617.1
+,31000.0,Triassic-Lower Jurassic,4674.3
+,31500.0,Triassic-Lower Jurassic,4605.7
+,32000.0,Triassic-Lower Jurassic,4480.0
+,32500.0,Triassic-Lower Jurassic,4331.4
+,33000.0,Triassic-Lower Jurassic,4120.0
+,33500.0,Triassic-Lower Jurassic,4045.7
+,34000.0,Triassic-Lower Jurassic,4022.9
+,34500.0,Triassic-Lower Jurassic,3982.8
+,35000.0,Triassic-Lower Jurassic,3925.8
+,35500.0,Triassic-Lower Jurassic,3851.4
+,36000.0,Triassic-Lower Jurassic,3760.0
+,36500.0,Triassic-Lower Jurassic,3748.6
+,37000.0,Triassic-Lower Jurassic,3737.1
+,37500.0,Triassic-Lower Jurassic,3657.1
+,38000.0,Triassic-Lower Jurassic,3588.6
+,38500.0,Triassic-Lower Jurassic,3537.2
+,39000.0,Triassic-Lower Jurassic,3508.6
+,39500.0,Triassic-Lower Jurassic,3485.7
+,40000.0,Triassic-Lower Jurassic,3440.0
+,40500.0,Triassic-Lower Jurassic,3325.7
+,41000.0,Triassic-Lower Jurassic,3257.1
+,41500.0,Triassic-Lower Jurassic,3177.1
+,42000.0,Triassic-Lower Jurassic,3131.4
+,42500.0,Triassic-Lower Jurassic,3108.6
+,43000.0,Triassic-Lower Jurassic,3085.7
+,43500.0,Triassic-Lower Jurassic,3085.7
+,44000.0,Triassic-Lower Jurassic,3131.4
+,44500.0,Triassic-Lower Jurassic,3428.6
+,45000.0,Triassic-Lower Jurassic,3645.8
+,45500.0,Triassic-Lower Jurassic,3777.2
+,46000.0,Triassic-Lower Jurassic,3874.3
+,46500.0,Triassic-Lower Jurassic,3965.7
+,47000.0,Triassic-Lower Jurassic,3988.6
+,47500.0,Triassic-Lower Jurassic,3965.7
+,48000.0,Triassic-Lower Jurassic,3920.0
+,48500.0,Triassic-Lower Jurassic,3840.0
+,49000.0,Triassic-Lower Jurassic,3748.6
+,49500.0,Triassic-Lower Jurassic,3714.3
+,50000.0,Triassic-Lower Jurassic,3657.1
+,50500.0,Triassic-Lower Jurassic,3588.6
+,51000.0,Triassic-Lower Jurassic,3485.7
+,51500.0,Triassic-Lower Jurassic,3485.7
+,52000.0,Triassic-Lower Jurassic,3485.7
+,52500.0,Triassic-Lower Jurassic,3480.0
+,53000.0,Triassic-Lower Jurassic,3462.9
+,53500.0,Triassic-Lower Jurassic,3440.0
+,54000.0,Triassic-Lower Jurassic,3422.8
+,54500.0,Triassic-Lower Jurassic,3400.0
+,55000.0,Triassic-Lower Jurassic,3382.9
+,55500.0,Triassic-Lower Jurassic,3302.9
+,56000.0,Triassic-Lower Jurassic,3268.6
+,56500.0,Triassic-Lower Jurassic,3222.9
+,57000.0,Triassic-Lower Jurassic,3154.3
+,57500.0,Triassic-Lower Jurassic,3097.1
+,58000.0,Triassic-Lower Jurassic,3040.0
+,58500.0,Triassic-Lower Jurassic,3005.7
+,59000.0,Triassic-Lower Jurassic,2982.9
+,59500.0,Triassic-Lower Jurassic,2965.7
+,60000.0,Triassic-Lower Jurassic,2925.7
+,60500.0,Triassic-Lower Jurassic,2914.3
+,61000.0,Triassic-Lower Jurassic,2897.2
+,61500.0,Triassic-Lower Jurassic,2862.8
+,62000.0,Triassic-Lower Jurassic,2822.9
+,62500.0,Triassic-Lower Jurassic,2800.0
+,63000.0,Triassic-Lower Jurassic,2800.0
+,63500.0,Triassic-Lower Jurassic,2868.6
+,64000.0,Triassic-Lower Jurassic,2948.6
+,64500.0,Triassic-Lower Jurassic,3148.6
+,65000.0,Triassic-Lower Jurassic,3405.8
+,65500.0,Triassic-Lower Jurassic,3680.0
+,66000.0,Triassic-Lower Jurassic,4022.9
+,66500.0,Triassic-Lower Jurassic,4325.8
+,67000.0,Triassic-Lower Jurassic,4548.6
+,67500.0,Triassic-Lower Jurassic,4548.6
+,68000.0,Triassic-Lower Jurassic,4434.3
+,68500.0,Triassic-Lower Jurassic,4280.0
+,69000.0,Triassic-Lower Jurassic,4137.1
+,69500.0,Triassic-Lower Jurassic,3977.1
+,70000.0,Triassic-Lower Jurassic,3828.6
+,70500.0,Triassic-Lower Jurassic,3748.6
+,71000.0,Triassic-Lower Jurassic,3725.7
+,71500.0,Triassic-Lower Jurassic,3725.7
+,72000.0,Triassic-Lower Jurassic,3725.7
+,72500.0,Triassic-Lower Jurassic,3714.3
+,73000.0,Triassic-Lower Jurassic,3680.0
+,73500.0,Triassic-Lower Jurassic,3680.0
+,74000.0,Triassic-Lower Jurassic,3680.0
+,74500.0,Triassic-Lower Jurassic,3634.3
+,75000.0,Triassic-Lower Jurassic,3577.1
+,75500.0,Triassic-Lower Jurassic,3502.8
+,76000.0,Triassic-Lower Jurassic,3417.1
+,76500.0,Triassic-Lower Jurassic,3291.4
+,77000.0,Triassic-Lower Jurassic,3188.6
+,77500.0,Triassic-Lower Jurassic,3102.8
+,78000.0,Triassic-Lower Jurassic,3040.0
+,78500.0,Triassic-Lower Jurassic,3028.6
+,79000.0,Triassic-Lower Jurassic,3028.6
+,79500.0,Triassic-Lower Jurassic,2977.2
+,80000.0,Triassic-Lower Jurassic,2925.7
+,80500.0,Triassic-Lower Jurassic,2925.7
+,81000.0,Triassic-Lower Jurassic,2920.0
+,1000.0,base,1302.9
+,1500.0,base,1302.9
+,2000.0,base,1302.9
+,2500.0,base,1302.9
+,3000.0,base,1320.0
+,3500.0,base,1325.7
+,4000.0,base,1325.7
+,4500.0,base,1325.7
+,5000.0,base,1337.1
+,5500.0,base,1771.4
+,6000.0,base,2234.3
+,6500.0,base,2800.0
+,7000.0,base,3302.9
+,7500.0,base,3748.6
+,8000.0,base,3942.9
+,8500.0,base,3942.9
+,9000.0,base,3954.3
+,9500.0,base,3965.7
+,10000.0,base,3954.3
+,10500.0,base,3931.4
+,11000.0,base,3908.6
+,11500.0,base,3840.0
+,12000.0,base,3817.1
+,12500.0,base,3817.1
+,13000.0,base,3840.0
+,13500.0,base,3897.1
+,14000.0,base,3897.1
+,14500.0,base,3862.9
+,15000.0,base,3828.6
+,15500.0,base,3817.1
+,16000.0,base,3805.7
+,16500.0,base,3788.6
+,17000.0,base,3765.7
+,17500.0,base,3737.1
+,18000.0,base,3748.6
+,18500.0,base,3840.0
+,19000.0,base,4108.6
+,19500.0,base,4491.4
+,20000.0,base,4628.6
+,20500.0,base,4588.5
+,21000.0,base,4548.6
+,21500.0,base,4480.0
+,22000.0,base,4445.8
+,22500.0,base,4411.4
+,23000.0,base,4388.6
+,23500.0,base,4365.7
+,24000.0,base,4342.8
+,24500.0,base,4331.4
+,25000.0,base,4297.1
+,25500.0,base,4228.6
+,26000.0,base,4171.4
+,26500.0,base,4125.7
+,27000.0,base,4080.0
+,27500.0,base,4051.4
+,28000.0,base,4000.0
+,28500.0,base,3942.9
+,29000.0,base,3942.9
+,29500.0,base,4097.2
+,30000.0,base,4342.9
+,30500.0,base,4731.4
+,31000.0,base,4931.4
+,31500.0,base,5051.4
+,32000.0,base,5074.3
+,32500.0,base,5028.6
+,33000.0,base,4845.8
+,33500.0,base,4742.9
+,34000.0,base,4697.1
+,34500.0,base,4640.0
+,35000.0,base,4600.0
+,35500.0,base,4514.3
+,36000.0,base,4434.3
+,36500.0,base,4417.2
+,37000.0,base,4354.3
+,37500.0,base,4297.1
+,38000.0,base,4262.9
+,38500.0,base,4274.3
+,39000.0,base,4285.7
+,39500.0,base,4274.3
+,40000.0,base,4257.2
+,40500.0,base,4240.0
+,41000.0,base,4205.7
+,41500.0,base,4205.7
+,42000.0,base,4194.3
+,42500.0,base,4148.6
+,43000.0,base,4114.3
+,43500.0,base,4102.9
+,44000.0,base,4102.9
+,44500.0,base,4057.1
+,45000.0,base,4091.4
+,45500.0,base,4297.2
+,46000.0,base,4617.1
+,46500.0,base,4948.6
+,47000.0,base,5280.0
+,47500.0,base,5605.8
+,48000.0,base,5874.3
+,48500.0,base,6080.0
+,49000.0,base,6371.4
+,49500.0,base,6662.9
+,50000.0,base,6880.0
+,50500.0,base,6937.2
+,51000.0,base,6948.6
+,51500.0,base,6914.3
+,52000.0,base,6800.0
+,52500.0,base,6742.8
+,53000.0,base,6708.6
+,53500.0,base,6594.3
+,54000.0,base,6508.5
+,54500.0,base,6428.5
+,55000.0,base,6354.3
+,55500.0,base,6285.7
+,56000.0,base,6240.0
+,56500.0,base,6148.6
+,57000.0,base,6080.0
+,57500.0,base,5988.5
+,58000.0,base,5902.8
+,58500.0,base,5840.0
+,59000.0,base,5771.4
+,59500.0,base,5685.8
+,60000.0,base,5577.1
+,60500.0,base,5508.6
+,61000.0,base,5480.0
+,61500.0,base,5417.2
+,62000.0,base,5314.3
+,62500.0,base,5222.9
+,63000.0,base,5194.3
+,63500.0,base,5091.5
+,64000.0,base,5005.7
+,64500.0,base,4937.1
+,65000.0,base,4811.4
+,65500.0,base,4742.9
+,66000.0,base,4708.6
+,66500.0,base,4725.7
+,67000.0,base,4800.0
+,67500.0,base,4994.3
+,68000.0,base,5314.3
+,68500.0,base,5462.8
+,69000.0,base,5611.4
+,69500.0,base,6045.7
+,70000.0,base,6360.0
+,70500.0,base,6737.2
+,71000.0,base,7051.4
+,71500.0,base,7222.9
+,72000.0,base,7325.7
+,72500.0,base,7325.7
+,73000.0,base,7211.4
+,73500.0,base,7120.0
+,74000.0,base,7028.6
+,74500.0,base,6925.7
+,75000.0,base,6834.3
+,75500.0,base,6754.3
+,76000.0,base,6685.7
+,76500.0,base,6617.1
+,77000.0,base,6577.2
+,77500.0,base,6491.4
+,78000.0,base,6400.0
+,78500.0,base,6285.7
+,79000.0,base,6200.0
+,79500.0,base,6108.5
+,80000.0,base,6034.3
+,80500.0,base,5931.5
+,81000.0,base,5811.5

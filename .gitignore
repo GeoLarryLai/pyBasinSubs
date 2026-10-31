@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+*.egg-info/
+.venv/
+venv/
+.ruff_cache/
+.cache/
+*.part
+*.tar.gz
+*.tgz
+.streamlit/secrets.toml
+# Miller et al. (2020) is CC BY-NC: never commit it
+SeaLevel_Miller2020.csv

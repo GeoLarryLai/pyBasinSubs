@@ -1,0 +1,17 @@
+name: pybasinsubs
+channels: [conda-forge]
+dependencies:
+  - python>=3.10
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - openpyxl
+  - pytest
+  - jupyterlab
+  - panel
+  - ipywidgets
+  - streamlit
+  - pip
+  - pip:
+      - -e .

@@ -1,0 +1,148 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "fault_id": "F1"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      5232.0,
+      1668.6
+     ],
+     [
+      5319.4,
+      1715.7
+     ],
+     [
+      5505.5,
+      1778.6
+     ],
+     [
+      5505.5,
+      1778.6
+     ],
+     [
+      5506.5,
+      1780.0
+     ],
+     [
+      7120.8,
+      2475.7
+     ],
+     [
+      6599.1,
+      2585.7
+     ],
+     [
+      6687.6,
+      2778.6
+     ],
+     [
+      6703.9,
+      2785.7
+     ],
+     [
+      7450.1,
+      3425.7
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "fault_id": "F2"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      18336.4,
+      3537.2
+     ],
+     [
+      18426.2,
+      3708.6
+     ],
+     [
+      18841.2,
+      3954.3
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "fault_id": "F3"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      29257.2,
+      3474.3
+     ],
+     [
+      29351.0,
+      3771.4
+     ],
+     [
+      29338.7,
+      3891.4
+     ],
+     [
+      29692.4,
+      4160.0
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "fault_id": "F4"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      44336.7,
+      3288.6
+     ],
+     [
+      44375.0,
+      3365.7
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "fault_id": "F5"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      65531.3,
+      3420.0
+     ],
+     [
+      65243.2,
+      3522.8
+     ],
+     [
+      65603.5,
+      3748.6
+     ]
+    ]
+   }
+  }
+ ]
+}

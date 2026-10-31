@@ -1,0 +1,9 @@
+well,lat,lon,kb_m,water_depth_m,td_md_m,bht_degC,age_at_td,formation_at_td,completion_date,purpose,content,transect
+29/6-1,60.538317,1.990014,24.0,124.7,4832.0,166.0,LATE TRIASSIC       ,LUNDE FM            ,09.05.1982,WILDCAT,GAS/CONDENSATE,viking_graben
+30/4-1,60.622464,2.159614,24.3,120.5,5454.0,161.0,EARLY JURASSIC      ,DRAKE FM            ,14.05.1979,WILDCAT,DRY,viking_graben
+30/5-2,60.504528,2.636864,26.0,92.0,4076.0,139.0,EARLY JURASSIC      ,DRAKE FM            ,21.12.1996,APPRAISAL,OIL/GAS,viking_graben
+30/6-1,60.554194,2.777322,25.0,106.0,3175.0,91.0,TRIASSIC            ,LUNDE FM            ,22.09.1979,WILDCAT,GAS,viking_graben
+30/6-5,60.689056,2.953081,25.0,156.0,3550.0,126.0,TRIASSIC            ,LUNDE FM            ,15.08.1981,WILDCAT,OIL,viking_graben
+31/4-3,60.586722,3.093917,25.0,170.0,4981.0,143.0,EARLY PERMIAN       ,ROTLIEGEND GP       ,11.05.1980,WILDCAT,OIL/GAS,viking_graben
+31/5-2,60.725914,3.547983,26.0,316.0,2500.0,87.0,TRIASSIC            ,HEGRE GP            ,11.11.1983,APPRAISAL,OIL/GAS,viking_graben
+31/6-1,60.645803,3.681189,25.0,302.0,4070.0,132.0,PRE-DEVONIAN        ,BASEMENT            ,28.10.1983,WILDCAT,OIL/GAS,viking_graben

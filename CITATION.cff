@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "pyBasinSubs"
+abstract: "A sedimentary basin analysis toolkit: decompaction, backstripping (1D Airy or 2D flexure), microfossil paleowater depth, fault restoration and thermal maturity."
+type: software
+authors:
+  - family-names: Lai
+    given-names: "Larry Syu-Heng"
+    orcid: "https://orcid.org/0000-0003-4589-9729"
+repository-code: "https://github.com/GeoLarryLai/pyBasinSubs"
+license: AGPL-3.0-or-later
+version: "0.1.0"
+date-released: "2026-10-31"
+keywords:
+  - backstripping
+  - basin analysis
+  - subsidence
+  - geohistory
+  - thermal maturity

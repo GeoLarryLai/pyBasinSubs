@@ -1,0 +1,7 @@
+well,lat,lon,kb_m,water_depth_m,td_md_m,bht_degC,age_at_td,formation_at_td,completion_date,purpose,content,transect
+7119/12-3,71.238939,19.743867,29.0,211.0,3314.0,136.0,EARLY JURASSIC      ,NORDMELA FM         ,12.09.1983,WILDCAT,GAS/CONDENSATE,barents_hammerfest
+7120/7-1,71.310081,20.189503,25.0,233.5,2839.0,102.0,LATE TRIASSIC       ,TUBÅEN FM           ,08.10.1982,WILDCAT,GAS,barents_hammerfest
+7120/9-2,71.494669,20.701494,23.0,293.0,5072.0,161.0,LATE PERMIAN        ,RØYE FM             ,20.10.1984,APPRAISAL,GAS,barents_hammerfest
+7121/5-1,71.598578,21.40605,22.0,336.0,3200.0,115.0,LATE TRIASSIC       ,SNADD FM            ,28.09.1985,APPRAISAL,OIL/GAS,barents_hammerfest
+7122/6-2,71.587111,22.855983,23.0,408.0,3070.0,100.0,MIDDLE TRIASSIC     ,KOBBE FM            ,19.09.2006,APPRAISAL,GAS,barents_hammerfest
+7123/4-1 S,71.61375,23.063353,23.0,413.0,2920.0,98.0,MIDDLE TRIASSIC     ,SNADD FM            ,21.04.2008,APPRAISAL,SHOWS,barents_hammerfest

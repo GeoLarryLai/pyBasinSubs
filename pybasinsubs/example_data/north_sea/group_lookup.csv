@@ -1,0 +1,19 @@
+group,age_top_Ma,age_top_err_Ma,age_base_Ma,water_depth_m,water_depth_err_m,f_shale,f_sandstone,f_chalk,note
+NORDLAND GP,0.0,0.0,15.0,,,0.70,0.30,0.00,mid-Miocene to Recent; W at top = present water depth
+HORDALAND GP,18.0,2.0,54.0,300,150,0.85,0.15,0.00,Eocene-lower Miocene mudstones
+ROGALAND GP,54.0,1.0,66.0,400,200,0.80,0.20,0.00,Paleocene-lowermost Eocene
+SHETLAND GP,66.0,0.5,100.5,500,250,0.80,0.00,0.20,Upper Cretaceous marls/mudstones
+CROMER KNOLL GP,100.5,1.0,140.0,400,200,0.70,0.00,0.30,Lower Cretaceous marls
+VIKING GP,140.0,2.0,166.0,300,200,0.90,0.10,0.00,Middle-Upper Jurassic syn-rift mudstones (Heather/Draupne)
+BRENT GP,166.0,1.5,171.0,25,25,0.30,0.70,0.00,Aalenian-Bajocian delta
+DUNLIN GP,171.0,2.0,199.0,100,50,0.70,0.30,0.00,Lower Jurassic shallow marine
+STATFJORD GP,199.0,2.0,205.0,10,10,0.40,0.60,0.00,Rhaetian-Sinemurian fluvial-coastal
+HEGRE GP,205.0,3.0,247.0,0,10,0.60,0.40,0.00,Triassic continental
+NORDLAND GP (Barents),0.0,0.0,2.7,,,0.60,0.40,0.00,Plio-Pleistocene glacial; W = present
+ERODED CENOZOIC,20.0,5.0,34.0,200,100,0.85,0.15,0.00,reconstructed overburden removed by late Cenozoic uplift (assumed 1100+-400 m)
+SOTBAKKEN GP,34.0,3.0,66.0,300,150,0.85,0.15,0.00,Paleocene-Eocene mudstones (top truncated)
+NYGRUNNEN GP,66.0,1.0,100.5,300,150,0.80,0.10,0.10,Upper Cretaceous
+ADVENTDALEN GP,100.5,1.0,166.0,250,150,0.90,0.10,0.00,Middle Jurassic-Lower Cretaceous mudstones
+KAPP TOSCANA GP,166.0,2.0,237.0,50,50,0.50,0.50,0.00,Upper Triassic-Middle Jurassic deltaic/shallow marine
+SASSENDALEN GP,237.0,2.0,252.0,100,75,0.80,0.20,0.00,Lower-Middle Triassic
+TEMPELFJORDEN GP,252.0,2.0,273.0,100,75,0.50,0.00,0.50,Permian spiculitic/carbonate (carbonate treated as chalk)
