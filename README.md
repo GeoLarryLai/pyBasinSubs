@@ -1,8 +1,8 @@
-<p align="center"><img src="image/logo.png" alt="pyBasinSubs" width="160"></p>
+<p align="center"><img src="image/logo.png" alt="pyBasinSubs" width="240"></p>
 
 # pyBasinSubs
 
-[![PyPI version](https://img.shields.io/pypi/v/pybasinsubs.svg)](https://pypi.org/project/pybasinsubs/) [![pepy downloads](https://static.pepy.tech/badge/pybasinsubs)](https://pepy.tech/project/pybasinsubs) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23832018.svg)](https://doi.org/10.5281/zenodo.23832018)
+[![PyPI version](https://img.shields.io/pypi/v/pybasinsubs.svg)](https://pypi.org/project/pybasinsubs/) [![pepy downloads](https://static.pepy.tech/badge/pybasinsubs)](https://pepy.tech/project/pybasinsubs) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23832018.svg)](https://doi.org/10.5281/zenodo.23832018) [![License: AGPL-3.0-or-later](https://img.shields.io/badge/License-AGPL--3.0--or--later-blue.svg)](./LICENSE)
 
 v0.1.0
 
@@ -73,7 +73,4 @@ geohistory(r); r.summary()
 Apps (`ui` extra): `pybasinsubs-ui` (backstripping), `pybasinsubs-tracer` (fault editor and restoration);
 add `--streamlit` for the Streamlit versions.
 
-## License
-
-Copyright (C) 2026 Larry Syu-Heng Lai. AGPL-3.0-or-later (`LICENSE`). `legacy.py` and the bundled BasinSubs data keep the
-BSD-3-Clause notice (`LICENSE-BasinSubs-BSD3`).
+`legacy.py` and the bundled BasinSubs data keep the BSD-3-Clause notice ([`LICENSE-BasinSubs-BSD3`](LICENSE-BasinSubs-BSD3)).
