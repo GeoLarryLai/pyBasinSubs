@@ -2,7 +2,7 @@
 
 # pyBasinSubs
 
-[![PyPI version](https://img.shields.io/pypi/v/pybasinsubs.svg)](https://pypi.org/project/pybasinsubs/) [![pepy downloads](https://static.pepy.tech/badge/pybasinsubs)](https://pepy.tech/project/pybasinsubs) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.ZENODO_CONCEPT_DOI.svg)](https://doi.org/10.5281/zenodo.ZENODO_CONCEPT_DOI)
+[![PyPI version](https://img.shields.io/pypi/v/pybasinsubs.svg)](https://pypi.org/project/pybasinsubs/) [![pepy downloads](https://static.pepy.tech/badge/pybasinsubs)](https://pepy.tech/project/pybasinsubs) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23832018.svg)](https://doi.org/10.5281/zenodo.23832018)
 
 v0.1.0
 
@@ -28,7 +28,7 @@ python -m pytest -q
 
 ## Citation
 
-Lai, L.S.-H. (2026) pyBasinSubs. *Zenodo*, [https://doi.org/10.5281/zenodo.ZENODO_CONCEPT_DOI](https://doi.org/10.5281/zenodo.ZENODO_CONCEPT_DOI)
+Lai, L.S.-H. (2026) pyBasinSubs. *Zenodo*, [https://doi.org/10.5281/zenodo.23832018](https://doi.org/10.5281/zenodo.23832018)
 
 Please also cite the method paper:
 [Lai et al. (2022)](https://doi.org/10.1038/s43247-022-00429-2).
