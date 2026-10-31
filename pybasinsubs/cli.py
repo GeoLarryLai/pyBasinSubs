@@ -4,8 +4,6 @@
 
 pybasinsubs-ui [--streamlit] [extra args]      backstripping / geohistory app (Panel by default)
 pybasinsubs-tracer [--streamlit] [extra args] fault-surface editor + restoration (Panel by default)
-
-Needs the ``ui`` extra: pip install "pybasinsubs[ui]".
 """
 from __future__ import annotations
 import os

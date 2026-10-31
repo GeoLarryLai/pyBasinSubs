@@ -12,6 +12,8 @@ dependencies:
   - panel
   - ipywidgets
   - streamlit
+  - bokeh
+  - scikit-image
   - pip
   - pip:
       - -e .

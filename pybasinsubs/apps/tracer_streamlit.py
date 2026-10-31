@@ -4,8 +4,8 @@
 
     pybasinsubs-tracer --streamlit          (or: streamlit run pybasinsubs/apps/tracer_streamlit.py)
 
-Optional: pip install streamlit-drawable-canvas  (draw fault segments with the mouse over the section image).
-Without it, faults are added / edited / deleted in the editable table (fault_id, x, z), which always works.
+Draw fault segments with the mouse over the section image (streamlit-drawable-canvas).
+Faults can also be added / edited / deleted in the editable table (fault_id, x, z), which always works.
 """
 
 import pandas as pd

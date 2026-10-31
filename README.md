@@ -21,15 +21,14 @@ v0.1.0
 
 ```bash
 pip install pybasinsubs
-pip install "pybasinsubs[ui,notebooks]"   # optional: apps and notebooks
 ```
 
 From source:
 
 ```bash
 git clone https://github.com/GeoLarryLai/pyBasinSubs && cd pyBasinSubs
-pip install -e ".[ui,notebooks,test]"     # or: conda env create -f environment.yml
-python -m pytest -q
+pip install -e .                          # or: conda env create -f environment.yml
+pip install -r requirements-dev.txt && python -m pytest -q
 ```
 
 ## Citation
@@ -76,7 +75,7 @@ r = backstrip(from_sodir("30/4-1"), n=2000)   # or from_basinsubs("N"), read_col
 geohistory(r); r.summary()
 ```
 
-Apps (`ui` extra): `pybasinsubs-ui` (backstripping), `pybasinsubs-tracer` (fault editor and restoration);
+Apps: `pybasinsubs-ui` (backstripping), `pybasinsubs-tracer` (fault editor and restoration);
 add `--streamlit` for the Streamlit versions.
 
 `legacy.py` and the bundled BasinSubs data keep the BSD-3-Clause notice ([`LICENSE-BasinSubs-BSD3`](LICENSE-BasinSubs-BSD3)).

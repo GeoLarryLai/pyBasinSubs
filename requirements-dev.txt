@@ -1,0 +1,8 @@
+pytest
+nbmake
+nbformat
+nbclient
+jupyterlab
+ruff
+build
+twine
