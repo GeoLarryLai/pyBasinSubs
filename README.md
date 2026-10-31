@@ -6,10 +6,16 @@
 
 v0.1.0
 
-Reconstructs how a sedimentary basin sank and filled through time, by backstripping its layers. Python version and
-extension of [BasinSubs](https://github.com/GeoLarryLai/BasinSubs) (R; [Lai et al., 2022](https://doi.org/10.1038/s43247-022-00429-2)).
+> [!WARNING]
+> **pyBasinSubs** is under active development, and many functions are still experimental and not fully validated. Please use with caution.
 
-Status: early-stage research software. APIs may change; check results before use.
+**pyBasinSubs** reconstructs how a sedimentary basin sank and filled through time by backstripping its layers. It's the Python version, and an extension, of my original R code, BasinSubs.
+
+**BasinSubs (R, original):** https://github.com/GeoLarryLai/BasinSubs. This is the code behind our Coastal Range (eastern Taiwan) work:
+- Lai, L.S.-H., Dorsey, R.J., Horng, C.-S., Chi, W.-R., Shea, K.-S., and Yen, J.-Y. (2021) Polygenetic mélange in retrowedge foredeep of an active arc-continent collision, Coastal Range of eastern Taiwan. *Sedimentary Geology*, v. 418, 105901. https://doi.org/10.1016/j.sedgeo.2021.105901
+- Lai, L.S.-H., Dorsey, R.J., Horng, C.-S., Chi, W.-R., Shea, K.-S., and Yen, J.-Y. (2022) Extremely rapid up-and-down motions of island arc crust during arc-continent collision. *Communications Earth & Environment*, v. 3, no. 1, 100. https://doi.org/10.1038/s43247-022-00429-2
+
+**pyBasinSubs (Python, new):** it brings that backstripping workflow into Python and goes further: Monte Carlo uncertainty, thermal history and maturity, 2-D flexural backstripping and section restoration, CSV templates and apps for your own data. The `legacy` module reproduces the BasinSubs R results, and `legacy.py` and the bundled BasinSubs data keep their BSD-3-Clause notice.
 
 ## Installation
 
@@ -37,26 +43,26 @@ Other references: [Roberts et al. (1998)](https://doi.org/10.1144/petgeo.4.4.327
 [IHFC (2024)](https://doi.org/10.5880/fidgeo.2024.014). Data credits are in `NOTICE`.
 
 ![Geohistory of North Sea well 30/4-1](image/hero_geohistory_north_sea_30-4-1.png)
+*A geohistory (burial) plot for North Sea well 30/4-1, showing how the basin sank and filled through time.*
 
-## Key Features
+## What it can do
 
-- **Backstripping:** 1-D Airy backstripping with Monte Carlo uncertainty, erosion and over-compaction; `legacy`
-  reproduces the BasinSubs R results.
-- **Porosity and water depth:** porosity–depth fits with confidence bands; paleo-water depth from foraminifera.
-- **Thermal history:** geotherms, McKenzie β fit, Easy%Ro maturity and oil/gas windows.
-- **Flexure and sections:** 2-D flexural backstripping, T_e fitting and fault restoration across a section.
-- **Your own data:** CSV templates in `pybasinsubs/example_data/template/`, plus desktop and Streamlit apps.
+- 1-D Airy backstripping with Monte Carlo uncertainty, erosion and over-compaction (`legacy` reproduces BasinSubs R results)
+- Porosity–depth fits with confidence bands, and paleo-water depth from foraminifera
+- Thermal history: geotherms, McKenzie β fit, Easy%Ro maturity, and oil/gas windows
+- 2-D flexural backstripping, T_e fitting and fault restoration across a section
+- Load your own data from CSV templates, or use the desktop and Streamlit apps
 
 ## Examples
 
 ![Tectonic subsidence with uncertainty](image/nb3_geohistory_N.png)
-*Northern Coastal Range (Taiwan): geohistory with total and tectonic subsidence and uncertainty bands.*
+*Northern Coastal Range (Taiwan): a geohistory with total and tectonic subsidence and their uncertainty bands.*
 
 ![Source-rock maturity](image/nb6_maturity_viking_30-4-1.png)
-*North Sea well 30/4-1: burial temperature and maturity (Easy%Ro) with oil and gas windows.*
+*North Sea well 30/4-1: burial temperature and maturity (Easy%Ro), with the oil and gas windows marked.*
 
 ![Restored section through time](image/nb8_viking_restored_sequence.png)
-*North Viking Graben: a 2-D section restored through time by flexural backstripping.*
+*A 2-D section across the North Viking Graben, restored step by step through time by flexural backstripping.*
 
 Executed notebooks in `notebooks/` cover each feature (re-run with `python tools/run_notebooks.py`).
 
