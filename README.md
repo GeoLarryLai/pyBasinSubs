@@ -2,7 +2,7 @@
 <p align="center">
 <a href="https://doi.org/10.5281/zenodo.23832018"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23832018-blue" alt="DOI"></a> <a href="https://doi.org/10.1038/s43247-022-00429-2"><img src="https://img.shields.io/badge/paper-10.1038%2Fs43247--022--00429--2-blue" alt="paper DOI"></a> <a href="https://github.com/GeoLarryLai/pyBasinSubs/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-lightgrey" alt="License"></a>
 <br>
-<a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/pypi/pyversions/pybasinsubs?color=orange" alt="Python versions"></a> <a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/pypi/v/pybasinsubs?color=orange" alt="PyPI version"></a> <a href="https://pepy.tech/projects/pybasinsubs"><img src="https://img.shields.io/pepy/dt/pybasinsubs?label=pypi%20downloads&color=orange" alt="PyPI downloads"></a>
+<a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/pypi/pyversions/pybasinsubs?color=lightgrey" alt="Python versions"></a> <a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/pypi/v/pybasinsubs?color=orange" alt="PyPI version"></a> <a href="https://pepy.tech/projects/pybasinsubs"><img src="https://img.shields.io/pepy/dt/pybasinsubs?label=pypi%20downloads&color=orange" alt="PyPI downloads"></a>
 </p>
 
 # pyBasinSubs
