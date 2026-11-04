@@ -4,7 +4,7 @@
 
     pybasinsubs-tracer --streamlit          (or: streamlit run pybasinsubs/apps/tracer_streamlit.py)
 
-Draw fault segments with the mouse over the section image (streamlit-drawable-canvas).
+Trace faults by clicking vertices on the section image (Undo / Finish / Clear); each polyline is one fault stick.
 Faults can also be added / edited / deleted in the editable table (fault_id, x, z), which always works.
 """
 
@@ -15,6 +15,39 @@ import matplotlib.pyplot as plt
 
 from pybasinsubs import flex2d, faults as F
 from pybasinsubs.fault_tracer import vg1_example
+from pybasinsubs.apps import polyline as P
+
+
+def _trace_chart(img, ext, poly):
+    """Section image + polylines + an invisible click grid (Altair ships with Streamlit)."""
+    import base64, io
+    import altair as alt
+    from PIL import Image
+    buf = io.BytesIO(); Image.fromarray(img).save(buf, format="PNG")
+    url = "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
+    h, w = img.shape[:2]
+    xs = alt.Scale(domain=[ext[0], ext[1]], nice=False, zero=False)
+    zs = alt.Scale(domain=[ext[2], ext[3]], nice=False, zero=False)   # depth down
+    bg = alt.Chart(pd.DataFrame({"x": [ext[0]], "x2": [ext[1]], "z": [ext[3]], "z2": [ext[2]], "url": [url]})).mark_image(
+        aspect=False).encode(x=alt.X("x:Q", scale=xs, axis=None), x2="x2", y=alt.Y("z:Q", scale=zs, axis=None), y2="z2", url="url:N")
+    gx, gz = P.click_grid(ext)
+    sel = alt.selection_point(name="click", on="click", nearest=True, fields=["x", "z"], toggle=False, empty=False)
+    grid = alt.Chart(pd.DataFrame({"x": gx, "z": gz})).mark_point(opacity=0.001, size=20).encode(
+        x=alt.X("x:Q", scale=xs, axis=None), y=alt.Y("z:Q", scale=zs, axis=None)).add_params(sel)
+    lines = [dict(id=f"drawn-{n + 1}", i=i, x=a, z=b) for n, ln in enumerate(poly["done"] + [poly["cur"]]) for i, (a, b) in enumerate(ln)]
+    layers = [bg]
+    if lines:
+        d = alt.Chart(pd.DataFrame(lines)).encode(x=alt.X("x:Q", scale=xs, axis=None), y=alt.Y("z:Q", scale=zs, axis=None), detail="id:N", order="i:Q")
+        layers += [d.mark_line(color="red", strokeWidth=2), d.mark_point(color="red", filled=True, size=30)]
+    return alt.layer(*layers, grid).properties(width=w, height=h, padding=0).configure_view(stroke=None)   # click grid on top
+
+
+def _on_click():
+    ev = st.session_state.get(f"trace_{st.session_state.chart_n}")
+    p = P.clicked_point(getattr(ev, "selection", None) or (ev or {}).get("selection"))
+    if p is not None and p != st.session_state.last_click:
+        P.add_vertex(st.session_state.poly, *p)
+        st.session_state.last_click = p
 
 st.set_page_config(page_title="pyBasinSubs fault tracer", layout="wide")
 st.title("Fault tracer + restoration (pyBasinSubs)")
@@ -47,22 +80,19 @@ if st.session_state.get("key") != key:
     st.session_state.key = key
 
 img, ext = F.render_section_image(x, tops, base, px=(780, 300))
-try:
-    from streamlit_drawable_canvas import st_canvas
-    from PIL import Image
-    st.subheader("Draw faults (each straight line = one fault stick; use the table to add more vertices)")
-    cv = st_canvas(background_image=Image.fromarray(img), drawing_mode="line", stroke_width=3, stroke_color="#ff0000",
-                   width=img.shape[1], height=img.shape[0], key="canvas")
-    drawn = []
-    if cv.json_data:
-        for n, o in enumerate(o for o in cv.json_data["objects"] if str(o.get("type", "")).lower() == "line"):
-            cx, cy = o["left"], o["top"]
-            for px_, py_ in [(cx + o["x1"], cy + o["y1"]), (cx + o["x2"], cy + o["y2"])]:
-                drawn.append(dict(fault_id=f"drawn-{n + 1}", x=ext[0] + px_ / img.shape[1] * (ext[1] - ext[0]),
-                                  z=ext[3] + py_ / img.shape[0] * (ext[2] - ext[3])))
-except Exception as e:  # optional dependency missing or incompatible
-    drawn = []
-    st.info(f"Mouse drawing unavailable ({type(e).__name__}); edit faults in the table below.")
+st.subheader("Trace faults: click to add vertices (one polyline = one fault stick)")
+if "poly" not in st.session_state:
+    st.session_state.poly, st.session_state.last_click, st.session_state.chart_n = P.new_state(), None, 0
+poly = st.session_state.poly
+b1, b2, b3, _ = st.columns([1, 1, 1, 5])
+for col, label, fn in ((b1, "Undo", P.undo), (b2, "Finish", P.finish), (b3, "Clear", P.clear)):
+    if col.button(label, key=f"poly_{label.lower()}"):
+        fn(poly); st.session_state.last_click = None; st.session_state.chart_n += 1   # new chart = no stale click
+st.altair_chart(_trace_chart(img, ext, poly), on_select=_on_click, selection_mode="click",
+                key=f"trace_{st.session_state.chart_n}", width="content")
+st.caption(f"{len(P.polylines(poly, False))} finished, current {len(poly['cur'])} vertices. "
+           "Finish closes the current fault and starts the next; Undo removes the last vertex.")
+drawn = P.to_rows(poly)
 
 st.subheader("Fault sticks (add / edit / delete rows)")
 table = st.data_editor(st.session_state.table, num_rows="dynamic", use_container_width=True, key="editor")
