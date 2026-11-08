@@ -37,7 +37,6 @@ Package layout (``from pybasinsubs import flex2d`` and every former
   kinematic    listric / domino restoration (restore_kinematic)
   metrics      restoration_metrics, layer_areas
   result       Restoration2D (dict-style access kept)
-  montecarlo   monte_carlo_section (2-D uncertainty envelopes)
 """
 # ruff: noqa: F401  (re-exports keep the pre-Stage-3 flex2d namespace)
 from __future__ import annotations

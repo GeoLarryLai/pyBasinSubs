@@ -9,10 +9,9 @@ dependencies:
   - openpyxl
   - pytest
   - jupyterlab
-  - panel
-  - ipywidgets
-  - streamlit
-  - bokeh
+  - fastapi
+  - uvicorn
+  - httpx
   - scikit-image
   - pip
   - pip:

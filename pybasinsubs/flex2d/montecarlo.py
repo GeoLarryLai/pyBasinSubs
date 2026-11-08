@@ -108,6 +108,7 @@ def monte_carlo_section(sec: Section, faults=None, method=None, n=200, seed=0, T
 
 def plot_mc_section(ax, mc: MonteCarlo2D, i=0, colors=None, units=None, alpha=.3):
     """Draw the restored horizons at age step i with their envelopes (lo-hi shaded, median line)."""
+    from ..material_colors import material_color
     xs = mc.x / 1e3
     for k, u in enumerate(mc.units):
         if units is not None and u not in units and k not in units:
@@ -115,7 +116,7 @@ def plot_mc_section(ax, mc: MonteCarlo2D, i=0, colors=None, units=None, alpha=.3
         lo, mid, hi = mc.envelope(i, k)
         if np.all(np.isnan(mid)):
             continue
-        c = colors[k] if colors is not None else f"C{k % 10}"
+        c = colors[k] if colors is not None else material_color(u, f"C{k % 10}")
         ax.fill_between(xs, lo, hi, color=c, alpha=alpha, lw=0)
         ax.plot(xs, mid, color=c, lw=1, label=u)
     ax.invert_yaxis() if not ax.yaxis_inverted() else None

@@ -1,4 +1,4 @@
-# Written locally; not yet run. Full notebook execution, weekly and on demand.
+# Full notebook execution, weekly and on demand.
 name: notebooks (all)
 on:
   schedule: [{ cron: "0 6 * * 1" }]

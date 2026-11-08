@@ -134,26 +134,6 @@ def test_restoration2d_dict_access_and_ref():
     assert m2["mean_fault_offset"] == 0
 
 
-# ---------------------------------------------------------------- apps
-def test_streamlit_app_smoke():
-    pytest.importorskip("streamlit")
-    from streamlit.testing.v1 import AppTest
-    at = AppTest.from_file(str(ROOT / "pybasinsubs" / "apps" / "streamlit_app.py"), default_timeout=240).run()
-    assert not at.exception and len(at.tabs) == 2
-    at.selectbox(key="sec_method").set_value("domino").run()
-    assert not at.exception and not at.error
-    assert any("method = domino" in m.value for m in at.markdown)
-
-
-def test_panel_layout_builds():
-    pn = pytest.importorskip("panel")
-    from pybasinsubs.ui import app, section_app
-    a = app()
-    assert isinstance(a, pn.Tabs) and len(a) == 2
-    s = section_app(run_now=True)
-    assert "5 faults" in s[1][0].object
-
-
 # ---------------------------------------------------------------- notebooks (slow)
 @pytest.mark.slow
 @pytest.mark.parametrize("nb", sorted(p.name for p in (ROOT / "notebooks").glob("*.ipynb")))

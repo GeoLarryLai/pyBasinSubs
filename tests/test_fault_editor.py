@@ -63,20 +63,17 @@ def test_faults_source(vg1, tmp_path):
             F.load_faults("user", sec.x, tops, base, fallback=False)
 
 
-def test_tracer_starts_and_panel(vg1, tmp_path):
+def test_tracer_starts_save_reload_and_restores(vg1, tmp_path):
     sec, tops, base = vg1
     tr = FaultTracer(sec, tops, base=base, path=tmp_path / "x.csv")
     assert len(tr.sticks()) == 5 and not tr.store._undo
     tr.save(); tr2 = FaultTracer(sec, tops, base=base, path=tmp_path / "x.csv")
     assert set(tr2.sticks()) == set(tr.sticks())
-    pytest.importorskip("panel"); pytest.importorskip("bokeh")
-    app = tr2.panel()
-    assert app is not None and len(tr2.src.data["xs"]) == 5
-    d = dict(tr2.src.data); d["xs"] = d["xs"] + [[10.0, 11.0]]; d["ys"] = d["ys"] + [[1000.0, 3000.0]]
-    d["fault_id"] = d["fault_id"] + [""]; d["color"] = d["color"] + [""]
-    tr2.src.data = d                                       # as PolyDrawTool would
-    assert len(tr2.store.sticks) == 6 and "" not in tr2.store.sticks
+    tr2.store.add([(1e4, 2e3), (1.2e4, 5e3)])
+    assert len(tr2.store.sticks) == 6
     tr2.store.undo(); assert len(tr2.store.sticks) == 5
+    fig, m, msg = tr2.run_restoration("domino", Te=1500.0, Hd=8e3)
+    assert np.isfinite(m["std"]) and "domino" in msg and fig is not None
 
 
 def test_json_roundtrip_and_restore(vg1, tmp_path):
@@ -110,7 +107,9 @@ def test_json_roundtrip_and_restore(vg1, tmp_path):
 
 def test_user_prefers_json(vg1, tmp_path, monkeypatch):
     sec, tops, base = vg1
-    monkeypatch.setattr(F, "user_faults_path", lambda name=F.USER_FAULTS_FILE: tmp_path / name)
+    path = lambda name=F.USER_FAULTS_FILE: tmp_path / name
+    monkeypatch.setattr(F, "user_faults_path", path)
+    monkeypatch.setattr(F.user_store, "user_faults_path", path)       # stored_user_faults() looks it up in user_store
     assert F.stored_user_faults() is None
     st = {"A": np.array([[1e4, 2e3], [1.2e4, 5e3]])}
     F.write_user_faults(st, tmp_path / F.USER_FAULTS_CSV)
@@ -119,3 +118,73 @@ def test_user_prefers_json(vg1, tmp_path, monkeypatch):
     assert F.stored_user_faults().suffix == ".json"
     fs, used = F.load_faults("user", sec.x, tops, base)
     assert used.endswith(".json") and [f.label for f in fs] == ["J"]
+
+
+def test_vg1_restoration_uses_section_material_color(tmp_path):
+    """The restored Triassic unit keeps the lavender section color, not a fault-line color."""
+    from matplotlib.colors import to_rgba
+    import matplotlib.pyplot as plt
+    from pybasinsubs.fault_tracer import vg1_editor
+
+    tracer = vg1_editor(path=tmp_path / "faults.json")
+    fig, _, _ = tracer.run_restoration("domino", Te=1500, Hd=8000)
+    np.testing.assert_allclose(fig.axes[0].collections[0].get_facecolor()[0],
+                               to_rgba(tracer.colors[-1], alpha=0.8))
+    assert fig.axes[0].collections[0].get_label() == "Triassic-Lower Jurassic"
+    assert fig.axes[0].get_ylim()[1] <= -1000.
+    plt.close(fig)
+
+
+def test_vg1_shared_material_palette(vg1, tmp_path):
+    """Lock the app's original tab20 material sequence across section/editor/render helpers."""
+    import matplotlib.pyplot as plt
+    from matplotlib.colors import to_rgba, to_hex
+    from pybasinsubs.app_core import run_section
+    from pybasinsubs.fault_tracer import vg1_editor
+    from pybasinsubs.material_colors import VG1_COLORS, VG1_MATERIAL_COLORS, section_material_colors
+
+    sec, tops, base = vg1
+    assert list(VG1_MATERIAL_COLORS) == sec.units
+    assert VG1_COLORS == tuple(to_hex(plt.cm.tab20(i)) for i in range(10))
+    assert VG1_MATERIAL_COLORS["Upper Cretaceous"] == "#2ca02c"
+    assert VG1_MATERIAL_COLORS["Lower Cretaceous"] == "#98df8a"
+    assert VG1_MATERIAL_COLORS["Triassic-Lower Jurassic"] == "#c5b0d5"
+    tracer = vg1_editor(path=tmp_path / "faults.json")
+    assert tuple(tracer.colors) == VG1_COLORS
+    image, extent = F.render_section_image(sec.x, tops, base, px=(1600, 500))
+    np.testing.assert_array_equal(tracer.image, image)
+    assert tracer.extent == extent
+    # Sample interiors, independently of the palette returned by the editor.
+    for k, color in enumerate(VG1_COLORS):
+        bottom = tops[k + 1] if k < 9 else base
+        j = int(np.argmax((bottom - tops[k])[5:-5])) + 5
+        z = (tops[k, j] + bottom[j]) / 2
+        row = int((z - extent[3]) / (extent[2] - extent[3]) * image.shape[0])
+        col = int((sec.x[j] - extent[0]) / (extent[1] - extent[0]) * image.shape[1])
+        np.testing.assert_allclose(image[row, col], np.array(to_rgba(color)[:3]) * 255, atol=1)
+    out = run_section(sec, ages=[0], n_mc=0)
+    for fill, color in zip(out["fig"].axes[0].collections, VG1_COLORS):
+        np.testing.assert_allclose(fill.get_facecolor()[0], to_rgba(color))
+    plt.close(out["fig"])
+    assert section_material_colors(["Lower Cretaceous", "Upper Cretaceous"]) == ["#98df8a", "#2ca02c"]
+    assert section_material_colors(["Kimmeridgian-Ryazanian (Draupne)"]) == ["#d62728"]
+    assert section_material_colors(["Callovian-Oxfordian (Heather)"]) == ["#ff9896"]
+    custom = ["black"] * 10
+    assert vg1_editor(path=tmp_path / "other.json", colors=custom).colors == custom
+
+
+def test_vg1_mc_section_material_palette(vg1):
+    """Monte-Carlo material lines use the same colors without running an ensemble."""
+    import matplotlib.pyplot as plt
+    from matplotlib.colors import to_rgba
+    from types import SimpleNamespace
+    from pybasinsubs.material_colors import VG1_COLORS
+
+    sec, tops, _ = vg1
+    mc = SimpleNamespace(x=sec.x, units=sec.units,
+                         envelope=lambda i, k: (tops[k] - 10, tops[k], tops[k] + 10))
+    fig, ax = plt.subplots()
+    flex2d.plot_mc_section(ax, mc)
+    for line, color in zip(ax.lines, VG1_COLORS):
+        np.testing.assert_allclose(to_rgba(line.get_color()), to_rgba(color))
+    plt.close(fig)

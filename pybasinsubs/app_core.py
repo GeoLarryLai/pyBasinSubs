@@ -1,8 +1,9 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Copyright (C) 2026 Larry Syu-Heng Lai
-"""Shared engine for the two UIs (Panel/ipywidgets in notebooks, Streamlit).
+"""Shared engine for the browser app (``pybasinsubs-app``) and the notebooks.
 
-Both UIs call :func:`load_case` and :func:`run_case`, so they always agree.
+The app calls :func:`load_case` / :func:`run_case` (1-D column) and :func:`load_section` / :func:`run_section`
+(2-D section), so the app and the notebooks always agree.
 """
 from __future__ import annotations
 import io
@@ -119,7 +120,10 @@ def load_section(horizons=None, units=None, faults=None, tip_unit=None, dx=None,
         src = io.BytesIO(faults) if isinstance(faults, (bytes, bytearray)) else faults
         if not isinstance(src, str):
             sticks = {}
-            for k, g in pd.read_csv(src).groupby("fault_id", sort=False):
+            df = pd.read_csv(src)
+            if not {"fault_id", "x", "z"} <= set(df.columns):
+                raise ValueError("fault sticks CSV needs columns fault_id, x, z (m, depth positive down)")
+            for k, g in df.groupby("fault_id", sort=False):
                 sticks[str(k)] = g[["x", "z"]].to_numpy(float)
         else:
             sticks = F.read_fault_sticks(src)
@@ -162,7 +166,8 @@ def run_section(sec, faults=(), method="cantilever", Te=1500.0, Hd=10e3, n_mc=0,
     nt = len(ages_all)
     idx = list(range(nt)) if ages is None else [int(np.argmin(np.abs(ages_all - a))) for a in ages]
     idx = idx if len(idx) <= 6 else list(np.unique(np.linspace(0, nt - 1, 6).round().astype(int)))
-    cols = colors or [plt.cm.tab20(k % 20) for k in range(len(sec.units))]
+    from .material_colors import section_material_colors
+    cols = colors if colors is not None else section_material_colors(sec.units)
     fig, axs = plt.subplots(len(idx), 1, figsize=(11, 2.1 * len(idx)), sharex=True, squeeze=False)
     xs = sec.x / 1e3
     for a, i in zip(axs[:, 0], idx):

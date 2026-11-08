@@ -56,14 +56,14 @@ its own licence. Please cite the original sources when you use them.
    Gradstein et al. (2010), Halland et al. (2014) and Henriksen et al. (2011).
 
 Licence compatibility
-   Dependencies (NumPy, SciPy, pandas, Matplotlib, openpyxl, Panel, Bokeh,
-   Streamlit, scikit-image, ...) keep their own permissive licences, which are
+   Dependencies (NumPy, SciPy, pandas, Matplotlib, openpyxl,
+   scikit-image, FastAPI, Uvicorn, ...) keep their own permissive licences, which are
    compatible with AGPLv3. Bundled data under CC BY 4.0 and NLOD 2.0 remain under those terms
    (attribution required). CC BY-NC data (Miller et al. 2020) are not bundled.
 
 Network use (AGPL-3.0 section 13)
    If you modify pyBasinSubs and let other people interact with it over a
-   network (for example by serving the Panel or Streamlit apps in
-   pybasinsubs/apps, pybasinsubs-ui or pybasinsubs-tracer to remote users), you
-   must offer those users the Corresponding Source of your modified version.
-   Running the apps locally for yourself creates no such obligation.
+   network (for example by serving the browser app in
+   pybasinsubs/webapp (pybasinsubs-app, pybasinsubs-ui or pybasinsubs-tracer) to
+   remote users), you must offer those users the Corresponding Source of your
+   modified version. Running the app locally for yourself creates no such obligation.

@@ -1,32 +1,26 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Copyright (C) 2026 Larry Syu-Heng Lai
-"""Interactive fault-surface editor (optional dependencies: panel + bokeh).
+"""Fault-surface editor logic (no GUI): the editable polylines, undo / redo, save / load and restoration.
 
-    pybasinsubs-tracer                               # browser app on the VG1 section (Panel)
+    pybasinsubs-tracer                               # the browser app (pybasinsubs-app) on the VG1 section
     from pybasinsubs.fault_tracer import FaultTracer, vg1_example
     sec, tops, base = vg1_example()
     tr = FaultTracer(sec, tops, base=base)           # loads the stored user faults if the file exists
-    tr.panel()                                       # in Jupyter: the editor inline
+    tr.store.add([(1e4, 2e3), (1.2e4, 5e3)])         # edit polylines (undo / redo, autosave)
     tr.faults(); tr.restore("cantilever")            # curved Faults from the polylines / a restoration
 
-Editing (Bokeh toolbar, right of the plot):
-* Draw (PolyDraw, pencil): click nodes of a new fault, double-click the last node to finish. Drag a whole fault to move it.
-* Edit nodes (PolyEdit): double-click a fault to show its nodes; drag a node; with a node selected, click empty
-  space to append a node after it; select a node and press Backspace to delete it.
-* Tap (pointer): click a fault to select it (also via the "fault" menu).
-Buttons: Insert node (midpoint after the selected node, or in the longest segment), Delete node, Delete fault,
-Rename, Tip horizon, Undo / Redo, Reset to (curved mid-ramp | curved footwall crest | straight | last saved | empty),
-Save / Load as JSON (default, pybasinsubs/example_data/faults/vg1_user_faults.json) or CSV (vg1_user_faults.csv);
-every edit is also autosaved to vg1_user_faults.autosave.json,
-vertical exaggeration, background auto faults, Run restoration (method / Te / H_d) with the restored oldest
-horizon and its flatness metric.
+The browser page (``pybasinsubs.webapp``, "Fault editor") drives :class:`FaultStore` / :class:`FaultTracer`:
+click to place nodes, Finish, select, drag or insert / delete nodes, delete / rename a fault, set its tip horizon,
+Undo / Redo, Reset to (curved mid-ramp | curved footwall crest | straight | last saved | empty), Save / Load as JSON
+(default, pybasinsubs/example_data/faults/vg1_user_faults.json) or CSV (vg1_user_faults.csv), and Run restoration
+(method / Te / H_d) with the restored oldest horizon and its flatness metric. Every edit is autosaved to
+vg1_user_faults.autosave.json.
 JSON: {version, section_id, units 'm', vertical_exaggeration, faults: [{id, name, tip_unit, method_origin,
 nodes: [[x, z], ...]}], metadata: {created, modified, pybasinsubs_version}}; CSV columns: fault_id, x, z, order,
 tip_unit (m, depth positive down).
 """
 from __future__ import annotations
 
-import io
 import tempfile
 from pathlib import Path
 
@@ -34,21 +28,11 @@ import numpy as np
 
 from . import flex2d, faults as F
 from ._paths import data_path
+from .material_colors import section_material_colors
 
 RESETS = {"curved mid-ramp (auto, default)": "curved_midramp", "curved footwall crest (auto)": "curved_crest",
           "straight (auto planar picks)": "straight", "last saved file": "saved", "empty": "empty"}
 PALETTE = ["#d62728", "#1f77b4", "#2ca02c", "#9467bd", "#ff7f0e", "#8c564b", "#e377c2", "#17becf", "#bcbd22", "#7f7f7f"]
-
-
-def _rgba_uint32(img):
-    img = np.asarray(img)
-    if img.dtype != np.uint8:
-        img = (np.clip(img, 0, 1) * 255).astype(np.uint8) if img.max() <= 1.0 else img.astype(np.uint8)
-    if img.ndim == 2:
-        img = np.stack([img] * 3, -1)
-    if img.shape[2] == 3:
-        img = np.concatenate([img, np.full(img.shape[:2] + (1,), 255, np.uint8)], 2)
-    return np.ascontiguousarray(img).view(np.uint32)[..., 0]
 
 
 class FaultStore:
@@ -217,14 +201,14 @@ class FaultTracer:
         else:
             self.store.reset(start)
         self.store._undo.clear(); self.store.autosave = True
-        self.result = None; self._app = None; self.src = None
+        self.result = None
 
     # ------------------------------------------------------------ data access
     def sticks(self):
         return {k: v.copy() for k, v in self.store.sticks.items()}
 
     def set_sticks(self, sticks: dict, tips=None):
-        self.store.edit(sticks, tips); self._push()
+        self.store.edit(sticks, tips)
 
     def faults(self, win=1500.0):
         return self.store.faults(win)
@@ -251,276 +235,30 @@ class FaultTracer:
         (self.to_json if fmt == "json" else self.to_csv)(pth)
         return Path(pth).read_bytes()
 
-    # ------------------------------------------------------------ bokeh sync
-    def _cds_data(self):
-        ks = list(self.store.sticks)
-        return dict(xs=[list(self.store.sticks[k][:, 0] / 1e3) for k in ks], ys=[list(self.store.sticks[k][:, 1]) for k in ks],
-                    fault_id=ks, color=[PALETTE[i % len(PALETTE)] for i in range(len(ks))])
 
-    def _push(self):
-        if self.src is None:
-            return
-        self._busy = True
-        try:
-            self.src.data = self._cds_data()
-            if hasattr(self, "_w_fault"):
-                ks = list(self.store.sticks); self._w_fault.options = ks
-                if self._w_fault.value not in ks:
-                    self._w_fault.value = ks[0] if ks else None
-                self._sync_widgets()
-        finally:
-            self._busy = False
-
-    def _pull(self, attr, old, new):
-        """CDS changed by a Bokeh tool (draw / drag / node edit) -> store (one undo step)."""
-        if getattr(self, "_busy", False):
-            return
-        d = self.src.data; sticks = {}; tips = {}; ids = list(d.get("fault_id", []))
-        ids += [""] * (len(d["xs"]) - len(ids))
-        for xs, ys, k in zip(d["xs"], d["ys"], ids):
-            if len(xs) < 2:
-                continue
-            k = str(k) if k not in ("", None) and str(k) not in sticks else None
-            if k is None:
-                k = "F1"; i = 1
-                while k in sticks or k in self.store.sticks and k not in ids:
-                    i += 1; k = f"F{i}"
-            sticks[k] = np.c_[np.asarray(xs, float) * 1e3, np.asarray(ys, float)]
-            tips[k] = self.store.tips.get(k)
-        changed = set(sticks) != set(self.store.sticks) or any(
-            sticks[k].shape != self.store.sticks[k].shape or not np.allclose(sticks[k], self.store.sticks[k]) for k in sticks)
-        if changed:
-            self.store.edit(sticks, tips)
-            if set(sticks) != set(ids) or len(ids) != len(sticks):
-                self._push()
-            elif hasattr(self, "_w_fault"):
-                self._busy = True; self._w_fault.options = list(sticks); self._busy = False
-            self._status(f"edited ({len(sticks)} faults, autosaved)")
-
-    def _status(self, s):
-        if hasattr(self, "_info"):
-            self._info.object = s
-
-    def _sync_widgets(self):
-        k = self._w_fault.value
-        if k is None:
-            return
-        self._w_name.value = k
-        t = self.store.tips.get(k)
-        self._w_tip.value = "default" if t is None else self.units[t]
-        ks = list(self.store.sticks)
-        if k in ks:
-            self.src.selected.indices = [ks.index(k)]
-
-    # ------------------------------------------------------------ UI
-    def panel(self):
-        import panel as pn
-        from bokeh.models import ColumnDataSource, PolyDrawTool, PolyEditTool, TapTool
-        from bokeh.plotting import figure
+    def run_restoration(self, method="cantilever", Te=1500.0, Hd=None):
+        """Restore with the current polylines and draw the restored oldest horizon. Returns (figure, metrics, message)."""
         import matplotlib; matplotlib.use("Agg")
         import matplotlib.pyplot as plt
-        pn.extension()
-        x = self.x / 1e3; zmax = float(np.nanmax(self.tops if self.base is None else self.base)) + 500
-        W = 1200
-        p = figure(width=W, height=420, title=self.title, x_axis_label="distance (km)", y_axis_label="depth (m)",
-                   y_range=(zmax, -200), x_range=(x[0], x[-1]), tools="pan,wheel_zoom,box_zoom,reset,save")
-        if self.image is not None:
-            x0, x1, zb, zt = self.extent
-            p.image_rgba(image=[_rgba_uint32(self.image)], x=x0 / 1e3, y=zt, dw=(x1 - x0) / 1e3, dh=zb - zt, global_alpha=0.75)
-        else:
-            lay = np.r_[self.tops, [self.base]] if self.base is not None else self.tops
-            for k in range(len(lay) - 1):
-                p.varea(x, lay[k], lay[k + 1], fill_color=f"C{k % 10}" if False else PALETTE[(k + 3) % 10], fill_alpha=0.35)
-        cols = self.colors or ["#333333"] * len(self.tops)
-        for k, t in enumerate(self.tops):
-            p.line(x, t, color=cols[k % len(cols)], line_width=1)
-        bg = ColumnDataSource(dict(xs=[], ys=[]))
-        p.multi_line("xs", "ys", source=bg, line_width=1.5, color="black", line_dash="dashed", alpha=0.6)
-        self.src = ColumnDataSource(self._cds_data())
-        r = p.multi_line("xs", "ys", source=self.src, line_width=3, color="color", selection_line_width=5,
-                         nonselection_line_alpha=0.6)
-        vsrc = ColumnDataSource(dict(x=[], y=[]))
-        vr = p.scatter("x", "y", source=vsrc, size=10, color="black")
-        draw = PolyDrawTool(renderers=[r], empty_value=""); edit = PolyEditTool(renderers=[r], vertex_renderer=vr)
-        tap = TapTool(renderers=[r])
-        p.add_tools(draw, edit, tap); p.toolbar.active_drag = draw
-        self.src.on_change("data", self._pull)
-        self._vsrc = vsrc
+        Hd = self.store.Hd if Hd is None else Hd
+        fs = self.faults(); r = self.restore(method, Te=float(Te), Hd=float(Hd))
+        nu = len(r["ages"]); i = nu - 1
+        fig, ax = plt.subplots(figsize=(15, 3.4))
+        cols = self.colors if self.colors is not None else section_material_colors(self.units)
+        for k in range(i, nu):
+            ax.fill_between(r["x"] / 1e3, r["top"][i][k], r["base"][i][k], color=cols[k % len(cols)], alpha=.8, lw=0,
+                            label=str(self.units[k]))
+        ax.plot(r["x"] / 1e3, r["top"][i][i], "k", lw=1)
+        for f in fs:
+            ax.axvline(f.x0 / 1e3, color="k", lw=.5, ls="--")
+        ax.set_ylim(max(np.nanmax(r["base"][i][i]), 1000) + 300, min(-1000., float(np.nanmin(r["top"][i][i])) - 1000.)); ax.set_xlabel("distance (km)")
+        ax.set_ylabel("depth (m)"); ax.set_title(f"{method}, Te {Te:g} m, H_d {Hd / 1e3:g} km: restored {r['ages'][i]:g} Ma")
+        ax.legend(loc="lower right", fontsize=8)
+        m = flex2d.restoration_metrics(r, i, self.x, fs)
+        msg = (f"{method} (Te {Te:g} m, H_d {Hd / 1e3:g} km), {len(fs)} faults - restored {r['ages'][i]:g} Ma top: "
+               f"std {m['std']:.0f} m, P95-P5 relief {m['relief_p95_p5']:.0f} m (flatter = better)")
+        return fig, m, msg
 
-        w = pn.widgets
-        ks = list(self.store.sticks)
-        self._w_fault = w.Select(name="fault", options=ks, value=ks[0] if ks else None, width=110)
-        self._w_name = w.TextInput(name="name", value=ks[0] if ks else "", width=110)
-        self._w_tip = w.Select(name="tip horizon (fault dies out at the top of)", options=["default"] + self.units,
-                               value="default", width=260)
-        b_ren = w.Button(name="Rename", width=80); b_del = w.Button(name="Delete fault", button_type="danger", width=110)
-        b_ins = w.Button(name="Insert node", width=100); b_dn = w.Button(name="Delete node", width=100)
-        b_undo = w.Button(name="↶ Undo", width=80); b_redo = w.Button(name="↷ Redo", width=80)
-        w_reset = w.Select(name="reset to", options=list(RESETS), width=240)
-        b_reset = w.Button(name="Reset", button_type="warning", width=80)
-        fmt = w.RadioButtonGroup(name="format", options=["JSON", "CSV"], value="JSON", width=110)
-        b_save = w.Button(name="💾 Save", button_type="primary", width=90)
-        b_load = w.Button(name="📂 Load", width=90)
-        dl = w.FileDownload(callback=lambda: io.BytesIO(self._file_bytes(fmt.value.lower())), filename="user_faults.json",
-                            label="Download", width=110)
-        fmt.param.watch(lambda e: setattr(dl, "filename", "user_faults." + e.new.lower()), "value")
-        up = w.FileInput(accept=".csv,.geojson,.json,.txt,.dat", width=220)
-        ve = w.FloatSlider(name="vertical exaggeration", start=1, end=10, step=0.5,
-                            value=float(self.store.vertical_exaggeration or 4), width=220)
-        w_bg = w.Select(name="background auto faults", options=["none", "curved_midramp", "curved_crest", "straight"],
-                        value="curved_midramp", width=180)
-        method = w.Select(name="method", options=["cantilever", "listric", "domino"], value="cantilever", width=120)
-        te = w.Select(name="Te (m)", options=[0, 500, 1000, 1500, 3000, 5000, 10000], value=1500, width=100)
-        hd = w.Select(name="H_d (km)", options=[6, 8, 10, 12, 15, 20], value=int(self.store.Hd / 1e3), width=100)
-        b_run = w.Button(name="▶ Run restoration", button_type="success", width=160)
-        self._info = pn.pane.Markdown(f"Loaded **{len(ks)}** faults "
-                                      f"({'user file ' + self.store.stored_path().name if self.store.stored_path() else 'auto curved mid-ramp'}).",
-                                      width=W)
-        out = pn.pane.Matplotlib(None, dpi=80, tight=True, width=W)
-
-        def set_ve(_=None):
-            self.store.vertical_exaggeration = float(ve.value)
-            rng_m = (x[-1] - x[0]) * 1e3; h = int(np.clip((W - 80) * (zmax + 200) / rng_m * ve.value + 80, 200, 1100))
-            p.height = h
-        set_ve()
-
-        def set_bg(_=None):
-            if w_bg.value == "none":
-                bg.data = dict(xs=[], ys=[]); return
-            fs = F.auto_faults(w_bg.value, self.x, self.tops, self.base, tip_unit=self.store.tip_unit, Hd=self.store.Hd)
-            s = F.fault_polylines(fs, zmax, n=30, x=self.x, ref_top=self.tops[-1])
-            bg.data = dict(xs=[list(v[:, 0] / 1e3) for v in s.values()], ys=[list(v[:, 1]) for v in s.values()])
-        set_bg()
-
-        def sel_from_plot(attr, old, new):
-            if getattr(self, "_busy", False) or not new:
-                return
-            ks = list(self.store.sticks)
-            if new[0] < len(ks):
-                self._w_fault.value = ks[new[0]]
-        self.src.selected.on_change("indices", sel_from_plot)
-
-        def cur():
-            k = self._w_fault.value
-            return k if k in self.store.sticks else None
-
-        def sel_node():
-            k = cur()
-            if k is None or not vsrc.selected.indices:
-                return None
-            xv = vsrc.data["x"]; yv = vsrc.data["y"]; j = vsrc.selected.indices[0]
-            st = self.store.sticks[k]
-            if j < len(xv) and len(xv) == len(st):
-                return j
-            d = np.hypot(st[:, 0] / 1e3 - xv[j], (st[:, 1] - yv[j]) / 1e3) if j < len(xv) else None
-            return None if d is None else int(np.argmin(d))
-
-        def on_fault(e):
-            if not getattr(self, "_busy", False):
-                self._busy = True; self._sync_widgets(); self._busy = False
-
-        def on_ren(_):
-            k = cur()
-            if k and self.store.rename(k, self._w_name.value):
-                self._push(); self._w_fault.value = self._w_name.value.strip(); self._status(f"renamed {k} → {self._w_fault.value}")
-            else:
-                self._status("rename: name empty or already used")
-
-        def on_tip(e):
-            k = cur()
-            if k is None or getattr(self, "_busy", False):
-                return
-            t = None if e.new == "default" else self.units.index(e.new)
-            self.store.set_tip(k, t); self._status(f"{k}: tip horizon = {e.new}")
-
-        def on_del(_):
-            k = cur()
-            if k:
-                self.store.delete(k); self._push(); self._status(f"deleted {k}")
-
-        def on_ins(_):
-            k = cur()
-            if k:
-                j = self.store.insert_node(k, sel_node()); self._push(); self._status(f"{k}: node inserted (#{j})")
-
-        def on_dn(_):
-            k = cur(); j = sel_node()
-            if k is None:
-                return
-            if j is None:
-                self._status("select a node first (Edit-nodes tool: double-click the fault, click a node)"); return
-            ok = self.store.delete_node(k, j); self._push()
-            self._status(f"{k}: node #{j} deleted" if ok else "a fault needs at least 2 nodes")
-
-        def on_undo(_):
-            self._status("undone" if self.store.undo() else "nothing to undo"); self._push()
-
-        def on_redo(_):
-            self._status("redone" if self.store.redo() else "nothing to redo"); self._push()
-
-        def on_reset(_):
-            self.store.reset(RESETS[w_reset.value]); self._push(); self._status(f"reset to {w_reset.value} ({len(self.store.sticks)} faults)")
-
-        def on_save(_):
-            pth = self.store.save(fmt=fmt.value.lower()); self._status(f"saved {len(self.store.sticks)} faults to `{pth}`")
-
-        def on_load(_):
-            try:
-                pth = self.store.load(fmt=fmt.value.lower())
-            except FileNotFoundError as ex:
-                self._status(f"no stored file `{ex}`"); return
-            self._push(); self._status(f"loaded {len(self.store.sticks)} faults from `{pth}`")
-
-        def on_up(_):
-            if up.value is None:
-                return
-            suf = Path(up.filename).suffix or ".csv"
-            with tempfile.NamedTemporaryFile(suffix=suf, delete=False) as fh:
-                fh.write(up.value); pth = fh.name
-            try:
-                s, t = F.read_user_faults(pth)
-            except Exception:
-                s, t = F.read_fault_sticks(pth), None
-            self.store.edit(s, t, {k: "imported" for k in s}); self._push(); self._status(f"imported {up.filename}")
-
-        def on_run(_):
-            self._status("running restoration ..."); kw = dict(Te=float(te.value), Hd=float(hd.value) * 1e3)
-            try:
-                fs = self.faults(); r = self.restore(method.value, **kw)
-            except Exception as ex:  # report in the app
-                self._status(f"restoration failed: {type(ex).__name__}: {ex}"); return
-            nu = len(r["ages"]); i = nu - 1
-            fig, ax = plt.subplots(figsize=(15, 3.4))
-            for k in range(i, nu):
-                ax.fill_between(r["x"] / 1e3, r["top"][i][k], r["base"][i][k], color=PALETTE[(k + 3) % 10], alpha=.8, lw=0)
-            ax.plot(r["x"] / 1e3, r["top"][i][i], "k", lw=1)
-            for f in fs:
-                ax.axvline(f.x0 / 1e3, color="k", lw=.5, ls="--")
-            ax.set_ylim(max(np.nanmax(r["base"][i][i]), 1000) + 300, -300); ax.set_xlabel("distance (km)")
-            ax.set_ylabel("depth (m)"); ax.set_title(f"{method.value}, Te {te.value} m, H_d {hd.value} km: restored {r['ages'][i]:g} Ma")
-            out.object = fig; plt.close(fig)
-            m = flex2d.restoration_metrics(r, i, self.x, fs)
-            self._status(f"**{method.value}** (Te {te.value} m, H_d {hd.value} km), {len(fs)} faults - restored {r['ages'][i]:g} Ma "
-                         f"top: **std {m['std']:.0f} m**, P95-P5 relief {m['relief_p95_p5']:.0f} m (flatter = better)")
-
-        self._w_fault.param.watch(on_fault, "value"); self._w_tip.param.watch(on_tip, "value")
-        for b, f in [(b_ren, on_ren), (b_del, on_del), (b_ins, on_ins), (b_dn, on_dn), (b_undo, on_undo), (b_redo, on_redo),
-                     (b_reset, on_reset), (b_save, on_save), (b_load, on_load), (b_run, on_run)]:
-            b.on_click(f)
-        up.param.watch(on_up, "value"); ve.param.watch(set_ve, "value"); w_bg.param.watch(set_bg, "value")
-        if ks:
-            self._busy = True; self._sync_widgets(); self._busy = False
-        help_ = pn.pane.Markdown(
-            "**Toolbar:** ✏️ *Draw* - click nodes, **double-click** to finish a new fault; drag a fault to move it. "
-            "*Edit nodes* - **double-click** a fault to show its nodes, **drag** a node, click a node then click empty space "
-            "to append, **Backspace** deletes the selected node. *Tap* - click a fault to select it. "
-            "Dashed black = auto faults (background). Every edit is autosaved; **Save** / **Load** the stored file as JSON or CSV.", width=W)
-        self._app = pn.Column(
-            help_, pn.Row(ve, w_bg), pn.pane.Bokeh(p),
-            pn.Row(self._w_fault, self._w_name, b_ren, self._w_tip, b_ins, b_dn, b_del),
-            pn.Row(b_undo, b_redo, w_reset, b_reset, fmt, b_save, b_load, dl, up),
-            pn.Row(method, te, hd, b_run), self._info, out)
-        return self._app
 
 
 def vg1_example():
@@ -541,6 +279,7 @@ def vg1_example():
 def vg1_editor(**kw):
     """The editor on VG1 with the coloured section image (as launched by ``pybasinsubs-tracer``)."""
     sec, tops, base = vg1_example()
-    img, ext = F.render_section_image(sec.x, tops, base, px=(1600, 500))
+    kw.setdefault("colors", section_material_colors(sec.units))
+    img, ext = F.render_section_image(sec.x, tops, base, colors=kw["colors"], px=(1600, 500))
     kw.setdefault("title", "VG1 (digitized Roberts et al. 1998 Fig. 4a) - fault-surface editor")
     return FaultTracer(sec, tops, image=img, extent=ext, base=base, **kw)

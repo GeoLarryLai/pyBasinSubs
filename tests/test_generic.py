@@ -248,15 +248,22 @@ def test_zero_growth_gives_zero_slip(method):
     assert np.allclose(r["top"][2][2], b["top"][2][2], atol=1e-6)
 
 
-def test_inclined_shear_planar_analytic_and_no_vertical_option():
+@pytest.mark.parametrize("dip", [50.0, 80.0])         # 80 deg is steeper than alpha = 65: the old fixed-point loops failed
+def test_inclined_shear_planar_analytic_and_no_vertical_option(dip):
     # planar fault (slope t): s = t e / (1 + t cot(alpha)), constant along the hangingwall
-    x = np.arange(41e3, 60e3, 100.0); t = np.tan(np.radians(50.0)); f = lambda xx: 1000.0 + (xx - 40e3) * t
+    x = np.arange(41e3, 60e3, 100.0); t = np.tan(np.radians(dip)); f = lambda xx: 1000.0 + (xx - 40e3) * t
     _, s = flex2d._shear_subsidence(x, np.full_like(x, 1500.0), f, 1000.0, 1, 65.0)
     assert np.allclose(s, t * 1000.0 / (1 + t / np.tan(np.radians(65.0))), rtol=1e-3)
     x2, sec = _wedge_section()
     f1 = flex2d.Fault(x0=40e3, dip=50.0, down=1, throw=np.zeros(3))
     with pytest.raises(ValueError):
         flex2d.restore_kinematic(sec, [f1], method="listric", alpha=90.0)
+
+
+def test_fit_listric_stick_ignores_detachment_end():
+    """A stick that ends at H_d must not push the near-surface dip to the 85 deg bound."""
+    xt, zt, d = flex2d.fit_listric_stick(np.array([[0.0, 1000.0], [10000.0, 8000.0]]), 1, 8e3)
+    assert (xt, zt) == (0.0, 1000.0) and 30.0 <= d < 80.0
 
 
 def test_kinematic_area_conservation():
@@ -383,13 +390,12 @@ def test_sealevel_offline_fixture(monkeypatch, tmp_path):
         sealevel.miller2020_path(download=False)
 
 
-def test_cli_entry_points(monkeypatch, capsys):
-    from pybasinsubs import cli
-    monkeypatch.setenv("PYBASINSUBS_DRY_RUN", "1")
-    cli.ui([]); cli.ui(["--streamlit"]); cli.tracer(["--streamlit"]); cli.tracer([])
-    out = capsys.readouterr().out.splitlines()
-    assert "panel serve" in out[0] and out[0].split()[4].endswith("panel_app.py")
-    assert "streamlit run" in out[1] and "streamlit_app.py" in out[1]
-    assert "tracer_streamlit.py" in out[2] and "tracer_panel.py" in out[3]
-    for line in out:
-        assert Path(line.split()[4 if "panel" in line.split()[2] else 4]).exists()
+def test_entry_points_point_at_webapp():
+    """Every console script in pyproject.toml resolves to a callable in pybasinsubs.webapp."""
+    import importlib
+    tomllib = pytest.importorskip("tomllib")  # Python 3.11+
+    scripts = tomllib.loads((Path(__file__).resolve().parents[1] / "pyproject.toml").read_text())["project"]["scripts"]
+    assert set(scripts) == {"pybasinsubs-app", "pybasinsubs-ui", "pybasinsubs-tracer"}
+    for target in scripts.values():
+        mod, func = target.split(":")
+        assert mod == "pybasinsubs.webapp" and callable(getattr(importlib.import_module(mod), func))

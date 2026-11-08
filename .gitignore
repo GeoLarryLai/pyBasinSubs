@@ -14,6 +14,6 @@ venv/
 *.part
 *.tar.gz
 *.tgz
-.streamlit/secrets.toml
+AI_EDITING_LOG.md
 # Miller et al. (2020) is CC BY-NC: never commit it
 SeaLevel_Miller2020.csv

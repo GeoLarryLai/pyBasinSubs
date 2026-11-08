@@ -1,4 +1,5 @@
-include README.md LICENSE NOTICE
+include README.md README-pypi.md LICENSE NOTICE CHANGELOG.md
+recursive-include pybasinsubs/webapp/static *
 recursive-include pybasinsubs/example_data *
 recursive-include tests *.py *.csv
 prune notebooks

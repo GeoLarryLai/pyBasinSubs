@@ -1,4 +1,3 @@
-# Written locally; not yet run (repository not pushed before 2026-10-31).
 name: CI
 on:
   push:

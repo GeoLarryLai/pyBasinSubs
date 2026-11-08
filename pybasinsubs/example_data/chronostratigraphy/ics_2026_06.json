@@ -1,0 +1,1239 @@
+{
+  "metadata": {
+    "chart_version": "2026/06",
+    "chart_year": 2026,
+    "source": "https://stratigraphy.org/chart",
+    "numeric_source": "https://stratigraphy.org/ICSchart/ChronostratChart2026-06.pdf",
+    "retrieved_date": "2026-11-07",
+    "coverage": "Phanerozoic periods, epochs/series and stages; informal placeholders marked. Precambrian not included.",
+    "citation": "Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. (2025). The ICS International Chronostratigraphic Chart this decade. Episodes 48(1): 105–115. https://doi.org/10.18814/epiiugs/2025/025001",
+    "notes": "Central numerical age brackets transcribed from the official static 2026/06 chart. Boundary uncertainty/approximation retained for stage rows; no uncertainty propagation is implied. Numeric ages do not define Phanerozoic units; GSSPs do. Explicit user/dataset ages always take precedence; never update VG1 numeric ages from this lookup.",
+    "numeric_source_sha256": "1909daecaf1fc15a8f9d432ea3af4f65f4dc9126a4a6a6b09a030aa71bb67ddc"
+  },
+  "units": [
+    {
+      "name": "Meghalayan",
+      "rank": "stage",
+      "age_top_Ma": 0,
+      "age_base_Ma": 0.0042,
+      "boundary_top_text": "0",
+      "boundary_base_text": "0.0042",
+      "informal": false
+    },
+    {
+      "name": "Northgrippian",
+      "rank": "stage",
+      "age_top_Ma": 0.0042,
+      "age_base_Ma": 0.0082,
+      "boundary_top_text": "0.0042",
+      "boundary_base_text": "0.0082",
+      "informal": false
+    },
+    {
+      "name": "Greenlandian",
+      "rank": "stage",
+      "age_top_Ma": 0.0082,
+      "age_base_Ma": 0.0117,
+      "boundary_top_text": "0.0082",
+      "boundary_base_text": "0.0117",
+      "informal": false
+    },
+    {
+      "name": "Holocene",
+      "rank": "epoch",
+      "age_top_Ma": 0,
+      "age_base_Ma": 0.0117
+    },
+    {
+      "name": "Upper Pleistocene",
+      "rank": "stage",
+      "age_top_Ma": 0.0117,
+      "age_base_Ma": 0.129,
+      "boundary_top_text": "0.0117",
+      "boundary_base_text": "0.129",
+      "informal": true
+    },
+    {
+      "name": "Chibanian",
+      "rank": "stage",
+      "age_top_Ma": 0.129,
+      "age_base_Ma": 0.774,
+      "boundary_top_text": "0.129",
+      "boundary_base_text": "0.774",
+      "informal": false
+    },
+    {
+      "name": "Calabrian",
+      "rank": "stage",
+      "age_top_Ma": 0.774,
+      "age_base_Ma": 1.8,
+      "boundary_top_text": "0.774",
+      "boundary_base_text": "1.80",
+      "informal": false
+    },
+    {
+      "name": "Gelasian",
+      "rank": "stage",
+      "age_top_Ma": 1.8,
+      "age_base_Ma": 2.58,
+      "boundary_top_text": "1.80",
+      "boundary_base_text": "2.58",
+      "informal": false
+    },
+    {
+      "name": "Pleistocene",
+      "rank": "epoch",
+      "age_top_Ma": 0.0117,
+      "age_base_Ma": 2.58
+    },
+    {
+      "name": "Piacenzian",
+      "rank": "stage",
+      "age_top_Ma": 2.58,
+      "age_base_Ma": 3.6,
+      "boundary_top_text": "2.58",
+      "boundary_base_text": "3.600",
+      "informal": false
+    },
+    {
+      "name": "Zanclean",
+      "rank": "stage",
+      "age_top_Ma": 3.6,
+      "age_base_Ma": 5.333,
+      "boundary_top_text": "3.600",
+      "boundary_base_text": "5.333",
+      "informal": false
+    },
+    {
+      "name": "Pliocene",
+      "rank": "epoch",
+      "age_top_Ma": 2.58,
+      "age_base_Ma": 5.333
+    },
+    {
+      "name": "Messinian",
+      "rank": "stage",
+      "age_top_Ma": 5.333,
+      "age_base_Ma": 7.246,
+      "boundary_top_text": "5.333",
+      "boundary_base_text": "7.246",
+      "informal": false
+    },
+    {
+      "name": "Tortonian",
+      "rank": "stage",
+      "age_top_Ma": 7.246,
+      "age_base_Ma": 11.63,
+      "boundary_top_text": "7.246",
+      "boundary_base_text": "11.63",
+      "informal": false
+    },
+    {
+      "name": "Serravallian",
+      "rank": "stage",
+      "age_top_Ma": 11.63,
+      "age_base_Ma": 13.82,
+      "boundary_top_text": "11.63",
+      "boundary_base_text": "13.82",
+      "informal": false
+    },
+    {
+      "name": "Langhian",
+      "rank": "stage",
+      "age_top_Ma": 13.82,
+      "age_base_Ma": 15.98,
+      "boundary_top_text": "13.82",
+      "boundary_base_text": "15.98",
+      "informal": false
+    },
+    {
+      "name": "Burdigalian",
+      "rank": "stage",
+      "age_top_Ma": 15.98,
+      "age_base_Ma": 20.45,
+      "boundary_top_text": "15.98",
+      "boundary_base_text": "20.45",
+      "informal": false
+    },
+    {
+      "name": "Aquitanian",
+      "rank": "stage",
+      "age_top_Ma": 20.45,
+      "age_base_Ma": 23.04,
+      "boundary_top_text": "20.45",
+      "boundary_base_text": "23.04",
+      "informal": false
+    },
+    {
+      "name": "Miocene",
+      "rank": "epoch",
+      "age_top_Ma": 5.333,
+      "age_base_Ma": 23.04
+    },
+    {
+      "name": "Chattian",
+      "rank": "stage",
+      "age_top_Ma": 23.04,
+      "age_base_Ma": 27.3,
+      "boundary_top_text": "23.04",
+      "boundary_base_text": "27.30",
+      "informal": false
+    },
+    {
+      "name": "Rupelian",
+      "rank": "stage",
+      "age_top_Ma": 27.3,
+      "age_base_Ma": 33.9,
+      "boundary_top_text": "27.30",
+      "boundary_base_text": "33.9",
+      "informal": false
+    },
+    {
+      "name": "Oligocene",
+      "rank": "epoch",
+      "age_top_Ma": 23.04,
+      "age_base_Ma": 33.9
+    },
+    {
+      "name": "Priabonian",
+      "rank": "stage",
+      "age_top_Ma": 33.9,
+      "age_base_Ma": 37.71,
+      "boundary_top_text": "33.9",
+      "boundary_base_text": "37.71",
+      "informal": false
+    },
+    {
+      "name": "Bartonian",
+      "rank": "stage",
+      "age_top_Ma": 37.71,
+      "age_base_Ma": 41.03,
+      "boundary_top_text": "37.71",
+      "boundary_base_text": "41.03",
+      "informal": false
+    },
+    {
+      "name": "Lutetian",
+      "rank": "stage",
+      "age_top_Ma": 41.03,
+      "age_base_Ma": 48.07,
+      "boundary_top_text": "41.03",
+      "boundary_base_text": "48.07",
+      "informal": false
+    },
+    {
+      "name": "Ypresian",
+      "rank": "stage",
+      "age_top_Ma": 48.07,
+      "age_base_Ma": 56.0,
+      "boundary_top_text": "48.07",
+      "boundary_base_text": "56.00",
+      "informal": false
+    },
+    {
+      "name": "Eocene",
+      "rank": "epoch",
+      "age_top_Ma": 33.9,
+      "age_base_Ma": 56.0
+    },
+    {
+      "name": "Thanetian",
+      "rank": "stage",
+      "age_top_Ma": 56.0,
+      "age_base_Ma": 59.24,
+      "boundary_top_text": "56.0",
+      "boundary_base_text": "59.24",
+      "informal": false
+    },
+    {
+      "name": "Selandian",
+      "rank": "stage",
+      "age_top_Ma": 59.24,
+      "age_base_Ma": 61.66,
+      "boundary_top_text": "59.24",
+      "boundary_base_text": "61.66",
+      "informal": false
+    },
+    {
+      "name": "Danian",
+      "rank": "stage",
+      "age_top_Ma": 61.66,
+      "age_base_Ma": 66.0,
+      "boundary_top_text": "61.66",
+      "boundary_base_text": "66.00",
+      "informal": false
+    },
+    {
+      "name": "Paleocene",
+      "rank": "epoch",
+      "age_top_Ma": 56.0,
+      "age_base_Ma": 66.0
+    },
+    {
+      "name": "Maastrichtian",
+      "rank": "stage",
+      "age_top_Ma": 66.0,
+      "age_base_Ma": 72.2,
+      "boundary_top_text": "66.0",
+      "boundary_base_text": "72.2 ±0.2",
+      "informal": false
+    },
+    {
+      "name": "Campanian",
+      "rank": "stage",
+      "age_top_Ma": 72.2,
+      "age_base_Ma": 83.6,
+      "boundary_top_text": "72.2 ±0.2",
+      "boundary_base_text": "83.6 ±0.2",
+      "informal": false
+    },
+    {
+      "name": "Santonian",
+      "rank": "stage",
+      "age_top_Ma": 83.6,
+      "age_base_Ma": 85.7,
+      "boundary_top_text": "83.6 ±0.2",
+      "boundary_base_text": "85.7 ±0.2",
+      "informal": false
+    },
+    {
+      "name": "Coniacian",
+      "rank": "stage",
+      "age_top_Ma": 85.7,
+      "age_base_Ma": 89.8,
+      "boundary_top_text": "85.7 ±0.2",
+      "boundary_base_text": "89.8 ±0.3",
+      "informal": false
+    },
+    {
+      "name": "Turonian",
+      "rank": "stage",
+      "age_top_Ma": 89.8,
+      "age_base_Ma": 93.9,
+      "boundary_top_text": "89.8 ±0.3",
+      "boundary_base_text": "93.9 ±0.2",
+      "informal": false
+    },
+    {
+      "name": "Cenomanian",
+      "rank": "stage",
+      "age_top_Ma": 93.9,
+      "age_base_Ma": 100.5,
+      "boundary_top_text": "93.9 ±0.2",
+      "boundary_base_text": "100.5 ±0.1",
+      "informal": false
+    },
+    {
+      "name": "Upper Cretaceous",
+      "rank": "epoch",
+      "age_top_Ma": 66.0,
+      "age_base_Ma": 100.5
+    },
+    {
+      "name": "Albian",
+      "rank": "stage",
+      "age_top_Ma": 100.5,
+      "age_base_Ma": 113.2,
+      "boundary_top_text": "100.5",
+      "boundary_base_text": "113.2 ±0.3",
+      "informal": false
+    },
+    {
+      "name": "Aptian",
+      "rank": "stage",
+      "age_top_Ma": 113.2,
+      "age_base_Ma": 121.4,
+      "boundary_top_text": "113.2 ±0.3",
+      "boundary_base_text": "121.4 ±0.6",
+      "informal": false
+    },
+    {
+      "name": "Barremian",
+      "rank": "stage",
+      "age_top_Ma": 121.4,
+      "age_base_Ma": 125.77,
+      "boundary_top_text": "121.4 ±0.6",
+      "boundary_base_text": "125.77",
+      "informal": false
+    },
+    {
+      "name": "Hauterivian",
+      "rank": "stage",
+      "age_top_Ma": 125.77,
+      "age_base_Ma": 132.6,
+      "boundary_top_text": "125.77",
+      "boundary_base_text": "132.6 ±0.6",
+      "informal": false
+    },
+    {
+      "name": "Valanginian",
+      "rank": "stage",
+      "age_top_Ma": 132.6,
+      "age_base_Ma": 137.05,
+      "boundary_top_text": "132.6 ±0.6",
+      "boundary_base_text": "137.05 ±0.2",
+      "informal": false
+    },
+    {
+      "name": "Berriasian",
+      "rank": "stage",
+      "age_top_Ma": 137.05,
+      "age_base_Ma": 143.1,
+      "boundary_top_text": "137.05 ±0.2",
+      "boundary_base_text": "143.1 ±0.6",
+      "informal": false
+    },
+    {
+      "name": "Lower Cretaceous",
+      "rank": "epoch",
+      "age_top_Ma": 100.5,
+      "age_base_Ma": 143.1
+    },
+    {
+      "name": "Tithonian",
+      "rank": "stage",
+      "age_top_Ma": 143.1,
+      "age_base_Ma": 149.2,
+      "boundary_top_text": "143.1",
+      "boundary_base_text": "149.2 ±0.7",
+      "informal": false
+    },
+    {
+      "name": "Kimmeridgian",
+      "rank": "stage",
+      "age_top_Ma": 149.2,
+      "age_base_Ma": 154.8,
+      "boundary_top_text": "149.2 ±0.7",
+      "boundary_base_text": "154.8 ±0.8",
+      "informal": false
+    },
+    {
+      "name": "Oxfordian",
+      "rank": "stage",
+      "age_top_Ma": 154.8,
+      "age_base_Ma": 161.5,
+      "boundary_top_text": "154.8 ±0.8",
+      "boundary_base_text": "161.5 ±1.0",
+      "informal": false
+    },
+    {
+      "name": "Upper Jurassic",
+      "rank": "epoch",
+      "age_top_Ma": 143.1,
+      "age_base_Ma": 161.5
+    },
+    {
+      "name": "Callovian",
+      "rank": "stage",
+      "age_top_Ma": 161.5,
+      "age_base_Ma": 165.3,
+      "boundary_top_text": "161.5",
+      "boundary_base_text": "165.3 ±1.1",
+      "informal": false
+    },
+    {
+      "name": "Bathonian",
+      "rank": "stage",
+      "age_top_Ma": 165.3,
+      "age_base_Ma": 168.2,
+      "boundary_top_text": "165.3 ±1.1",
+      "boundary_base_text": "168.2 ±1.2",
+      "informal": false
+    },
+    {
+      "name": "Bajocian",
+      "rank": "stage",
+      "age_top_Ma": 168.2,
+      "age_base_Ma": 170.9,
+      "boundary_top_text": "168.2 ±1.2",
+      "boundary_base_text": "170.9 ±0.8",
+      "informal": false
+    },
+    {
+      "name": "Aalenian",
+      "rank": "stage",
+      "age_top_Ma": 170.9,
+      "age_base_Ma": 174.7,
+      "boundary_top_text": "170.9 ±0.8",
+      "boundary_base_text": "174.7 ±0.8",
+      "informal": false
+    },
+    {
+      "name": "Middle Jurassic",
+      "rank": "epoch",
+      "age_top_Ma": 161.5,
+      "age_base_Ma": 174.7
+    },
+    {
+      "name": "Toarcian",
+      "rank": "stage",
+      "age_top_Ma": 174.7,
+      "age_base_Ma": 184.2,
+      "boundary_top_text": "174.7",
+      "boundary_base_text": "184.2 ±0.3",
+      "informal": false
+    },
+    {
+      "name": "Pliensbachian",
+      "rank": "stage",
+      "age_top_Ma": 184.2,
+      "age_base_Ma": 192.9,
+      "boundary_top_text": "184.2 ±0.3",
+      "boundary_base_text": "192.9 ±0.3",
+      "informal": false
+    },
+    {
+      "name": "Sinemurian",
+      "rank": "stage",
+      "age_top_Ma": 192.9,
+      "age_base_Ma": 199.5,
+      "boundary_top_text": "192.9 ±0.3",
+      "boundary_base_text": "199.5 ±0.3",
+      "informal": false
+    },
+    {
+      "name": "Hettangian",
+      "rank": "stage",
+      "age_top_Ma": 199.5,
+      "age_base_Ma": 201.4,
+      "boundary_top_text": "199.5 ±0.3",
+      "boundary_base_text": "201.4 ±0.2",
+      "informal": false
+    },
+    {
+      "name": "Lower Jurassic",
+      "rank": "epoch",
+      "age_top_Ma": 174.7,
+      "age_base_Ma": 201.4
+    },
+    {
+      "name": "Rhaetian",
+      "rank": "stage",
+      "age_top_Ma": 201.4,
+      "age_base_Ma": 205.7,
+      "boundary_top_text": "201.4",
+      "boundary_base_text": "~205.7",
+      "informal": false
+    },
+    {
+      "name": "Norian",
+      "rank": "stage",
+      "age_top_Ma": 205.7,
+      "age_base_Ma": 227.3,
+      "boundary_top_text": "~205.7",
+      "boundary_base_text": "~227.3",
+      "informal": false
+    },
+    {
+      "name": "Carnian",
+      "rank": "stage",
+      "age_top_Ma": 227.3,
+      "age_base_Ma": 237.0,
+      "boundary_top_text": "~227.3",
+      "boundary_base_text": "~237",
+      "informal": false
+    },
+    {
+      "name": "Upper Triassic",
+      "rank": "epoch",
+      "age_top_Ma": 201.4,
+      "age_base_Ma": 237.0
+    },
+    {
+      "name": "Ladinian",
+      "rank": "stage",
+      "age_top_Ma": 237.0,
+      "age_base_Ma": 241.464,
+      "boundary_top_text": "237.0",
+      "boundary_base_text": "241.464 ±0.28",
+      "informal": false
+    },
+    {
+      "name": "Anisian",
+      "rank": "stage",
+      "age_top_Ma": 241.464,
+      "age_base_Ma": 247.0,
+      "boundary_top_text": "241.464 ±0.28",
+      "boundary_base_text": "247.0",
+      "informal": false
+    },
+    {
+      "name": "Middle Triassic",
+      "rank": "epoch",
+      "age_top_Ma": 237.0,
+      "age_base_Ma": 247.0
+    },
+    {
+      "name": "Olenekian",
+      "rank": "stage",
+      "age_top_Ma": 247.0,
+      "age_base_Ma": 250.8,
+      "boundary_top_text": "247.0",
+      "boundary_base_text": "250.8",
+      "informal": false
+    },
+    {
+      "name": "Induan",
+      "rank": "stage",
+      "age_top_Ma": 250.8,
+      "age_base_Ma": 251.902,
+      "boundary_top_text": "250.8",
+      "boundary_base_text": "251.902 ±0.024",
+      "informal": false
+    },
+    {
+      "name": "Lower Triassic",
+      "rank": "epoch",
+      "age_top_Ma": 247.0,
+      "age_base_Ma": 251.902
+    },
+    {
+      "name": "Changhsingian",
+      "rank": "stage",
+      "age_top_Ma": 251.902,
+      "age_base_Ma": 254.14,
+      "boundary_top_text": "251.902",
+      "boundary_base_text": "254.14 ±0.07",
+      "informal": false
+    },
+    {
+      "name": "Wuchiapingian",
+      "rank": "stage",
+      "age_top_Ma": 254.14,
+      "age_base_Ma": 259.857,
+      "boundary_top_text": "254.14 ±0.07",
+      "boundary_base_text": "259.857 ±0.084",
+      "informal": false
+    },
+    {
+      "name": "Lopingian",
+      "rank": "epoch",
+      "age_top_Ma": 251.902,
+      "age_base_Ma": 259.857
+    },
+    {
+      "name": "Capitanian",
+      "rank": "stage",
+      "age_top_Ma": 259.857,
+      "age_base_Ma": 264.28,
+      "boundary_top_text": "259.857",
+      "boundary_base_text": "264.28 ±0.16",
+      "informal": false
+    },
+    {
+      "name": "Wordian",
+      "rank": "stage",
+      "age_top_Ma": 264.28,
+      "age_base_Ma": 266.9,
+      "boundary_top_text": "264.28 ±0.16",
+      "boundary_base_text": "266.9 ±0.4",
+      "informal": false
+    },
+    {
+      "name": "Roadian",
+      "rank": "stage",
+      "age_top_Ma": 266.9,
+      "age_base_Ma": 274.4,
+      "boundary_top_text": "266.9 ±0.4",
+      "boundary_base_text": "274.4 ±0.4",
+      "informal": false
+    },
+    {
+      "name": "Guadalupian",
+      "rank": "epoch",
+      "age_top_Ma": 259.857,
+      "age_base_Ma": 274.4
+    },
+    {
+      "name": "Kungurian",
+      "rank": "stage",
+      "age_top_Ma": 274.4,
+      "age_base_Ma": 283.3,
+      "boundary_top_text": "274.4",
+      "boundary_base_text": "283.3 ±0.4",
+      "informal": false
+    },
+    {
+      "name": "Artinskian",
+      "rank": "stage",
+      "age_top_Ma": 283.3,
+      "age_base_Ma": 290.1,
+      "boundary_top_text": "283.3 ±0.4",
+      "boundary_base_text": "290.1 ±0.26",
+      "informal": false
+    },
+    {
+      "name": "Sakmarian",
+      "rank": "stage",
+      "age_top_Ma": 290.1,
+      "age_base_Ma": 293.52,
+      "boundary_top_text": "290.1 ±0.26",
+      "boundary_base_text": "293.52 ±0.17",
+      "informal": false
+    },
+    {
+      "name": "Asselian",
+      "rank": "stage",
+      "age_top_Ma": 293.52,
+      "age_base_Ma": 298.9,
+      "boundary_top_text": "293.52 ±0.17",
+      "boundary_base_text": "298.9 ±0.15",
+      "informal": false
+    },
+    {
+      "name": "Cisuralian",
+      "rank": "epoch",
+      "age_top_Ma": 274.4,
+      "age_base_Ma": 298.9
+    },
+    {
+      "name": "Gzhelian",
+      "rank": "stage",
+      "age_top_Ma": 298.9,
+      "age_base_Ma": 303.7,
+      "boundary_top_text": "298.9",
+      "boundary_base_text": "303.7 ±0.1",
+      "informal": false
+    },
+    {
+      "name": "Kasimovian",
+      "rank": "stage",
+      "age_top_Ma": 303.7,
+      "age_base_Ma": 307.0,
+      "boundary_top_text": "303.7 ±0.1",
+      "boundary_base_text": "307.0 ±0.1",
+      "informal": false
+    },
+    {
+      "name": "Upper Pennsylvanian",
+      "rank": "epoch",
+      "age_top_Ma": 298.9,
+      "age_base_Ma": 307.0
+    },
+    {
+      "name": "Moscovian",
+      "rank": "stage",
+      "age_top_Ma": 307.0,
+      "age_base_Ma": 315.2,
+      "boundary_top_text": "307.0",
+      "boundary_base_text": "315.2 ±0.2",
+      "informal": false
+    },
+    {
+      "name": "Middle Pennsylvanian",
+      "rank": "epoch",
+      "age_top_Ma": 307.0,
+      "age_base_Ma": 315.2
+    },
+    {
+      "name": "Bashkirian",
+      "rank": "stage",
+      "age_top_Ma": 315.2,
+      "age_base_Ma": 323.4,
+      "boundary_top_text": "315.2",
+      "boundary_base_text": "323.4 ±0.4",
+      "informal": false
+    },
+    {
+      "name": "Lower Pennsylvanian",
+      "rank": "epoch",
+      "age_top_Ma": 315.2,
+      "age_base_Ma": 323.4
+    },
+    {
+      "name": "Serpukhovian",
+      "rank": "stage",
+      "age_top_Ma": 323.4,
+      "age_base_Ma": 330.3,
+      "boundary_top_text": "323.4",
+      "boundary_base_text": "330.3 ±0.4",
+      "informal": false
+    },
+    {
+      "name": "Upper Mississippian",
+      "rank": "epoch",
+      "age_top_Ma": 323.4,
+      "age_base_Ma": 330.3
+    },
+    {
+      "name": "Visean",
+      "rank": "stage",
+      "age_top_Ma": 330.3,
+      "age_base_Ma": 346.7,
+      "boundary_top_text": "330.3",
+      "boundary_base_text": "346.7 ±0.4",
+      "informal": false
+    },
+    {
+      "name": "Middle Mississippian",
+      "rank": "epoch",
+      "age_top_Ma": 330.3,
+      "age_base_Ma": 346.7
+    },
+    {
+      "name": "Tournaisian",
+      "rank": "stage",
+      "age_top_Ma": 346.7,
+      "age_base_Ma": 358.86,
+      "boundary_top_text": "346.7",
+      "boundary_base_text": "358.86 ±0.19",
+      "informal": false
+    },
+    {
+      "name": "Lower Mississippian",
+      "rank": "epoch",
+      "age_top_Ma": 346.7,
+      "age_base_Ma": 358.86
+    },
+    {
+      "name": "Famennian",
+      "rank": "stage",
+      "age_top_Ma": 358.86,
+      "age_base_Ma": 372.15,
+      "boundary_top_text": "358.86",
+      "boundary_base_text": "372.15 ±0.46",
+      "informal": false
+    },
+    {
+      "name": "Frasnian",
+      "rank": "stage",
+      "age_top_Ma": 372.15,
+      "age_base_Ma": 382.31,
+      "boundary_top_text": "372.15 ±0.46",
+      "boundary_base_text": "382.31 ±1.36",
+      "informal": false
+    },
+    {
+      "name": "Upper Devonian",
+      "rank": "epoch",
+      "age_top_Ma": 358.86,
+      "age_base_Ma": 382.31
+    },
+    {
+      "name": "Givetian",
+      "rank": "stage",
+      "age_top_Ma": 382.31,
+      "age_base_Ma": 387.95,
+      "boundary_top_text": "382.31",
+      "boundary_base_text": "387.95 ±1.04",
+      "informal": false
+    },
+    {
+      "name": "Eifelian",
+      "rank": "stage",
+      "age_top_Ma": 387.95,
+      "age_base_Ma": 393.47,
+      "boundary_top_text": "387.95 ±1.04",
+      "boundary_base_text": "393.47 ±0.99",
+      "informal": false
+    },
+    {
+      "name": "Middle Devonian",
+      "rank": "epoch",
+      "age_top_Ma": 382.31,
+      "age_base_Ma": 393.47
+    },
+    {
+      "name": "Emsian",
+      "rank": "stage",
+      "age_top_Ma": 393.47,
+      "age_base_Ma": 410.62,
+      "boundary_top_text": "393.47",
+      "boundary_base_text": "410.62 ±1.95",
+      "informal": false
+    },
+    {
+      "name": "Pragian",
+      "rank": "stage",
+      "age_top_Ma": 410.62,
+      "age_base_Ma": 413.02,
+      "boundary_top_text": "410.62 ±1.95",
+      "boundary_base_text": "413.02 ±1.91",
+      "informal": false
+    },
+    {
+      "name": "Lochkovian",
+      "rank": "stage",
+      "age_top_Ma": 413.02,
+      "age_base_Ma": 419.62,
+      "boundary_top_text": "413.02 ±1.91",
+      "boundary_base_text": "419.62 ±1.36",
+      "informal": false
+    },
+    {
+      "name": "Lower Devonian",
+      "rank": "epoch",
+      "age_top_Ma": 393.47,
+      "age_base_Ma": 419.62
+    },
+    {
+      "name": "Pridoli",
+      "rank": "epoch",
+      "age_top_Ma": 419.62,
+      "age_base_Ma": 422.7,
+      "boundary_top_text": "419.62",
+      "boundary_base_text": "422.7 ±1.6",
+      "informal": false
+    },
+    {
+      "name": "Ludfordian",
+      "rank": "stage",
+      "age_top_Ma": 422.7,
+      "age_base_Ma": 425.0,
+      "boundary_top_text": "422.7",
+      "boundary_base_text": "425.0 ±1.5",
+      "informal": false
+    },
+    {
+      "name": "Gorstian",
+      "rank": "stage",
+      "age_top_Ma": 425.0,
+      "age_base_Ma": 426.7,
+      "boundary_top_text": "425.0 ±1.5",
+      "boundary_base_text": "426.7 ±1.5",
+      "informal": false
+    },
+    {
+      "name": "Ludlow",
+      "rank": "epoch",
+      "age_top_Ma": 422.7,
+      "age_base_Ma": 426.7
+    },
+    {
+      "name": "Homerian",
+      "rank": "stage",
+      "age_top_Ma": 426.7,
+      "age_base_Ma": 430.6,
+      "boundary_top_text": "426.7",
+      "boundary_base_text": "430.6 ±1.3",
+      "informal": false
+    },
+    {
+      "name": "Sheinwoodian",
+      "rank": "stage",
+      "age_top_Ma": 430.6,
+      "age_base_Ma": 432.9,
+      "boundary_top_text": "430.6 ±1.3",
+      "boundary_base_text": "432.9 ±1.2",
+      "informal": false
+    },
+    {
+      "name": "Wenlock",
+      "rank": "epoch",
+      "age_top_Ma": 426.7,
+      "age_base_Ma": 432.9
+    },
+    {
+      "name": "Telychian",
+      "rank": "stage",
+      "age_top_Ma": 432.9,
+      "age_base_Ma": 438.6,
+      "boundary_top_text": "432.9",
+      "boundary_base_text": "438.6 ±1.0",
+      "informal": false
+    },
+    {
+      "name": "Aeronian",
+      "rank": "stage",
+      "age_top_Ma": 438.6,
+      "age_base_Ma": 440.5,
+      "boundary_top_text": "438.6 ±1.0",
+      "boundary_base_text": "440.5 ±1.0",
+      "informal": false
+    },
+    {
+      "name": "Rhuddanian",
+      "rank": "stage",
+      "age_top_Ma": 440.5,
+      "age_base_Ma": 443.1,
+      "boundary_top_text": "440.5 ±1.0",
+      "boundary_base_text": "443.1 ±0.9",
+      "informal": false
+    },
+    {
+      "name": "Llandovery",
+      "rank": "epoch",
+      "age_top_Ma": 432.9,
+      "age_base_Ma": 443.1
+    },
+    {
+      "name": "Hirnantian",
+      "rank": "stage",
+      "age_top_Ma": 443.1,
+      "age_base_Ma": 445.2,
+      "boundary_top_text": "443.1",
+      "boundary_base_text": "445.2 ±0.9",
+      "informal": false
+    },
+    {
+      "name": "Katian",
+      "rank": "stage",
+      "age_top_Ma": 445.2,
+      "age_base_Ma": 452.8,
+      "boundary_top_text": "445.2 ±0.9",
+      "boundary_base_text": "452.8 ±0.7",
+      "informal": false
+    },
+    {
+      "name": "Sandbian",
+      "rank": "stage",
+      "age_top_Ma": 452.8,
+      "age_base_Ma": 458.2,
+      "boundary_top_text": "452.8 ±0.7",
+      "boundary_base_text": "458.2 ±0.7",
+      "informal": false
+    },
+    {
+      "name": "Upper Ordovician",
+      "rank": "epoch",
+      "age_top_Ma": 443.1,
+      "age_base_Ma": 458.2
+    },
+    {
+      "name": "Darriwilian",
+      "rank": "stage",
+      "age_top_Ma": 458.2,
+      "age_base_Ma": 469.4,
+      "boundary_top_text": "458.2",
+      "boundary_base_text": "469.4 ±0.9",
+      "informal": false
+    },
+    {
+      "name": "Dapingian",
+      "rank": "stage",
+      "age_top_Ma": 469.4,
+      "age_base_Ma": 471.3,
+      "boundary_top_text": "469.4 ±0.9",
+      "boundary_base_text": "471.3 ±1.4",
+      "informal": false
+    },
+    {
+      "name": "Middle Ordovician",
+      "rank": "epoch",
+      "age_top_Ma": 458.2,
+      "age_base_Ma": 471.3
+    },
+    {
+      "name": "Floian",
+      "rank": "stage",
+      "age_top_Ma": 471.3,
+      "age_base_Ma": 477.1,
+      "boundary_top_text": "471.3",
+      "boundary_base_text": "477.1 ±1.2",
+      "informal": false
+    },
+    {
+      "name": "Tremadocian",
+      "rank": "stage",
+      "age_top_Ma": 477.1,
+      "age_base_Ma": 486.85,
+      "boundary_top_text": "477.1 ±1.2",
+      "boundary_base_text": "486.85 ±1.5",
+      "informal": false
+    },
+    {
+      "name": "Lower Ordovician",
+      "rank": "epoch",
+      "age_top_Ma": 471.3,
+      "age_base_Ma": 486.85
+    },
+    {
+      "name": "Stage 10",
+      "rank": "stage",
+      "age_top_Ma": 486.85,
+      "age_base_Ma": 491.0,
+      "boundary_top_text": "486.85",
+      "boundary_base_text": "~491.0",
+      "informal": true
+    },
+    {
+      "name": "Jiangshanian",
+      "rank": "stage",
+      "age_top_Ma": 491.0,
+      "age_base_Ma": 494.2,
+      "boundary_top_text": "~491.0",
+      "boundary_base_text": "~494.2",
+      "informal": false
+    },
+    {
+      "name": "Paibian",
+      "rank": "stage",
+      "age_top_Ma": 494.2,
+      "age_base_Ma": 497.0,
+      "boundary_top_text": "~494.2",
+      "boundary_base_text": "~497.0",
+      "informal": false
+    },
+    {
+      "name": "Furongian",
+      "rank": "epoch",
+      "age_top_Ma": 486.85,
+      "age_base_Ma": 497.0
+    },
+    {
+      "name": "Guzhangian",
+      "rank": "stage",
+      "age_top_Ma": 497.0,
+      "age_base_Ma": 500.5,
+      "boundary_top_text": "497.0",
+      "boundary_base_text": "~500.5",
+      "informal": false
+    },
+    {
+      "name": "Drumian",
+      "rank": "stage",
+      "age_top_Ma": 500.5,
+      "age_base_Ma": 504.5,
+      "boundary_top_text": "~500.5",
+      "boundary_base_text": "~504.5",
+      "informal": false
+    },
+    {
+      "name": "Wuliuan",
+      "rank": "stage",
+      "age_top_Ma": 504.5,
+      "age_base_Ma": 506.5,
+      "boundary_top_text": "~504.5",
+      "boundary_base_text": "~506.5",
+      "informal": false
+    },
+    {
+      "name": "Miaolingian",
+      "rank": "epoch",
+      "age_top_Ma": 497.0,
+      "age_base_Ma": 506.5
+    },
+    {
+      "name": "Stage 4",
+      "rank": "stage",
+      "age_top_Ma": 506.5,
+      "age_base_Ma": 514.5,
+      "boundary_top_text": "506.5",
+      "boundary_base_text": "~514.5",
+      "informal": true
+    },
+    {
+      "name": "Stage 3",
+      "rank": "stage",
+      "age_top_Ma": 514.5,
+      "age_base_Ma": 521.0,
+      "boundary_top_text": "~514.5",
+      "boundary_base_text": "~521.0",
+      "informal": true
+    },
+    {
+      "name": "Series 2",
+      "rank": "epoch",
+      "age_top_Ma": 506.5,
+      "age_base_Ma": 521.0
+    },
+    {
+      "name": "Stage 2",
+      "rank": "stage",
+      "age_top_Ma": 521.0,
+      "age_base_Ma": 529.0,
+      "boundary_top_text": "521.0",
+      "boundary_base_text": "~529.0",
+      "informal": true
+    },
+    {
+      "name": "Fortunian",
+      "rank": "stage",
+      "age_top_Ma": 529.0,
+      "age_base_Ma": 538.8,
+      "boundary_top_text": "~529.0",
+      "boundary_base_text": "538.8 ±0.6",
+      "informal": false
+    },
+    {
+      "name": "Terreneuvian",
+      "rank": "epoch",
+      "age_top_Ma": 521.0,
+      "age_base_Ma": 538.8
+    },
+    {
+      "name": "Quaternary",
+      "rank": "period",
+      "age_top_Ma": 0,
+      "age_base_Ma": 2.58
+    },
+    {
+      "name": "Neogene",
+      "rank": "period",
+      "age_top_Ma": 2.58,
+      "age_base_Ma": 23.04
+    },
+    {
+      "name": "Paleogene",
+      "rank": "period",
+      "age_top_Ma": 23.04,
+      "age_base_Ma": 66.0
+    },
+    {
+      "name": "Cretaceous",
+      "rank": "period",
+      "age_top_Ma": 66.0,
+      "age_base_Ma": 143.1
+    },
+    {
+      "name": "Jurassic",
+      "rank": "period",
+      "age_top_Ma": 143.1,
+      "age_base_Ma": 201.4
+    },
+    {
+      "name": "Triassic",
+      "rank": "period",
+      "age_top_Ma": 201.4,
+      "age_base_Ma": 251.902
+    },
+    {
+      "name": "Permian",
+      "rank": "period",
+      "age_top_Ma": 251.902,
+      "age_base_Ma": 298.9
+    },
+    {
+      "name": "Carboniferous",
+      "rank": "period",
+      "age_top_Ma": 298.9,
+      "age_base_Ma": 358.86
+    },
+    {
+      "name": "Devonian",
+      "rank": "period",
+      "age_top_Ma": 358.86,
+      "age_base_Ma": 419.62
+    },
+    {
+      "name": "Silurian",
+      "rank": "period",
+      "age_top_Ma": 419.62,
+      "age_base_Ma": 443.1
+    },
+    {
+      "name": "Ordovician",
+      "rank": "period",
+      "age_top_Ma": 443.1,
+      "age_base_Ma": 486.85
+    },
+    {
+      "name": "Cambrian",
+      "rank": "period",
+      "age_top_Ma": 486.85,
+      "age_base_Ma": 538.8
+    },
+    {
+      "name": "Pennsylvanian",
+      "rank": "subperiod",
+      "age_top_Ma": 298.9,
+      "age_base_Ma": 323.4
+    },
+    {
+      "name": "Mississippian",
+      "rank": "subperiod",
+      "age_top_Ma": 323.4,
+      "age_base_Ma": 358.86
+    }
+  ]
+}

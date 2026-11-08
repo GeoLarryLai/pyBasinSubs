@@ -51,26 +51,47 @@ def fit_listric(x, ztop, x0, down=1, Hd=10e3, win=1500.0, dips=np.arange(30.0, 7
     return x0 - down * win, z0, float(best[1])
 
 
-def fit_listric_stick(stick, down=1, Hd=10e3, dips=np.arange(30.0, 85.1, 0.5)):
+def fit_listric_stick(stick, down=1, Hd=10e3, dips=np.arange(30.0, 85.1, 0.5), max_depth_frac=0.9):
     """Fit the near-surface dip of a listric fault (fixed detachment Hd) to fault-plane points (x, z).
-    The origin is the shallowest point. Returns (x_top, z_top, dip0)."""
+    The origin is the shallowest point. Returns (x_top, z_top, dip0).
+
+    Only the part of the stick shallower than ``max_depth_frac * Hd`` is fitted (the stick is first sampled at 40
+    depths along its segments). A listric curve only approaches Hd, so a stick that reaches Hd (or ends there, as
+    the template sticks do) would otherwise push the dip to its upper bound. Falls back to the whole stick if
+    fewer than two sample points are shallower than the limit."""
     st = np.asarray(stick, float); st = st[np.argsort(st[:, 1])]
     xt, zt = st[0]
-    best = min(dips, key=lambda d: np.sum((listric_depth(st[:, 0], xt, zt, d, Hd, down) - st[:, 1]) ** 2))
+    if len(st) >= 2 and np.ptp(st[:, 1]) > 0:
+        zz = np.linspace(st[0, 1], st[-1, 1], 40); xx = np.interp(zz, st[:, 1], st[:, 0])
+        m = zz < max_depth_frac * Hd
+        pts = np.c_[xx[m], zz[m]] if m.sum() >= 2 else st
+    else:
+        pts = st
+    best = min(dips, key=lambda d: np.sum((listric_depth(pts[:, 0], xt, zt, d, Hd, down) - pts[:, 1]) ** 2))
     return float(xt), float(zt), float(best)
+
+
+def _bisect(fun, lo, hi, n=40):
+    """Root of an increasing function on [lo, hi] (arrays), by bisection (always converges)."""
+    for _ in range(n):
+        mid = 0.5 * (lo + hi); up = fun(mid) > 0
+        hi = np.where(up, mid, hi); lo = np.where(up, lo, mid)
+    return 0.5 * (lo + hi)
 
 
 def _shear_subsidence(xc, zc, f_of_x, e, down, alpha):
     """Restoration of points (xc, zc) in the hangingwall for heave e: returns (x_orig, s) where s is the
     vertical displacement accrued (subsidence) and x_orig the pre-slip position. Inclined shear lines dip
-    towards the fault at alpha from horizontal (alpha=90: vertical shear)."""
+    towards the fault at alpha from horizontal (alpha=90: vertical shear).
+    Both unknowns (shear-line base xb on the fault, subsidence s) are roots of increasing functions and are
+    found by bisection; the former fixed-point loops did not converge when the fault is steeper than alpha."""
+    xc = np.asarray(xc, float)
     ca = 0.0 if abs(alpha - 90.0) < 1e-9 else 1.0 / np.tan(np.radians(alpha))
-    xb = xc.copy()
-    for _ in range(30):                                   # shear-line base on the fault
-        xb = xc - down * (f_of_x(xb) - zc) * ca
-    s = np.zeros_like(xc)
-    for _ in range(40):
-        s = f_of_x(xb) - f_of_x(xb - down * (e - s * ca))
+    t = _bisect(lambda t: t + ca * (f_of_x(xc + down * t) - zc),            # xb = xc + down t
+                -ca * np.maximum(f_of_x(xc) - zc, 0.0), np.zeros_like(xc))
+    xb = xc + down * t
+    s = _bisect(lambda s: s - f_of_x(xb) + f_of_x(xb - down * (e - s * ca)),
+                np.zeros_like(xc), np.maximum(f_of_x(xb) - f_of_x(xb - down * e), 0.0))
     return xc - down * (e - s * ca), s
 
 
