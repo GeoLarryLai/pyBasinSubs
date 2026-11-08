@@ -1,10 +1,8 @@
 <p align="center"><img src="image/logo.png" alt="pyBasinSubs" width="200"></p>
 <p align="center">
-<a href="https://doi.org/10.5281/zenodo.23832018"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23832018-blue" alt="Software DOI"></a>
-<a href="https://doi.org/10.1038/s43247-022-00429-2"><img src="https://img.shields.io/badge/method-Lai%20et%20al.%202022-blue" alt="Method paper"></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-lightgrey" alt="License"></a>
-<a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/badge/python-3.10%2B-lightgrey" alt="Python 3.10 or newer"></a>
-<a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/pypi/v/pybasinsubs?color=orange" alt="Published PyPI version"></a>
+<a href="https://doi.org/10.5281/zenodo.23832018"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23832018-blue" alt="DOI"></a> <a href="https://doi.org/10.1038/s43247-022-00429-2"><img src="https://img.shields.io/badge/paper-10.1038%2Fs43247--022--00429--2-blue" alt="paper DOI"></a> <a href="https://github.com/GeoLarryLai/pyBasinSubs/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-lightgrey" alt="License"></a>
+<br>
+<a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/badge/python-3.10%2B-lightgrey" alt="Python versions"></a> <a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/pypi/v/pybasinsubs?color=orange" alt="PyPI version"></a> <a href="https://pepy.tech/projects/pybasinsubs"><img src="https://img.shields.io/pepy/dt/pybasinsubs?label=pypi%20downloads&color=orange" alt="PyPI downloads"></a> <a href="https://anaconda.org/conda-forge/pybasinsubs"><img src="https://img.shields.io/conda/vn/conda-forge/pybasinsubs?label=conda-forge&color=green" alt="conda-forge version"></a> <a href="https://anaconda.org/conda-forge/pybasinsubs"><img src="https://img.shields.io/conda/dn/conda-forge/pybasinsubs?label=conda%20downloads&color=green" alt="conda downloads"></a>
 </p>
 
 # pyBasinSubs
@@ -13,8 +11,6 @@
 > Under active development. Many functions, especially fault restoration, are experimental and not fully validated. Use geological constraints; a restored section is not a unique solution.
 
 **pyBasinSubs** is a tool for **1-D and 2-D backstripping and decompaction basin analysis**, with a user-friendly, semi-automated workflow. Start with a well, stratigraphic column or interpreted section; explore subsidence, burial, thermal history and structural restoration in the local browser app or Python notebooks.
-
-**This README describes 0.2.0 (unreleased). The published PyPI package is still 0.1.2.**
 
 ## Citation
 
@@ -26,17 +22,17 @@ Code: **AGPL-3.0-or-later**. Data and method credits are in [NOTICE](NOTICE), in
 
 ## Install and run
 
-Requires Python 3.10 or newer. For the published package:
+Requires Python 3.10 or newer.
 
 ```bash
 pip install pybasinsubs
+pybasinsubs-app
 ```
 
-For the **0.2.0 source checkout**, run these from the project folder:
+From source, run this from the project folder:
 
 ```bash
 pip install -e .
-pybasinsubs-app
 ```
 
 `python -m pybasinsubs.webapp` also starts the app. It runs locally; your input files stay on your computer. `pybasinsubs-ui` is an alias, and `pybasinsubs-tracer` opens the fault editor directly.
@@ -45,20 +41,20 @@ pybasinsubs-app
 
 Backstrip sediment loads with **Airy isostasy and decompaction**, including erosion, over-compaction and Monte Carlo uncertainty. Use a bundled well or your own column CSV. Optional thermal tools cover geotherms, McKenzie stretching-factor fits, burial temperature and Easy%Ro maturity.
 
-![North Sea well 30/4-1: animated geohistory and stratigraphic column](image/hero_geohistory_north_sea_30-4-1.gif)
+[![North Sea well 30/4-1: animated geohistory and stratigraphic column](image/hero_geohistory_north_sea_30-4-1.webp)](image/videos/hero_geohistory_north_sea_30-4-1.mp4)
 *North Sea well 30/4-1 — **1-D Airy backstripping + decompaction**, oldest → youngest, with a time-evolving thin stratigraphic column.*
 
-![North Sea well 30/4-1: thermal column and geotherm animation](image/thermal_history_north_sea_30-4-1.gif)
+[![North Sea well 30/4-1: thermal column and geotherm animation](image/thermal_history_north_sea_30-4-1.webp)](image/videos/thermal_history_north_sea_30-4-1.mp4)
 *North Sea well 30/4-1 — **thermal column + geotherm**, with kinetic Easy%Ro oil, wet-gas and dry-gas windows.*
 
 ## 2-D: strip layers, restore and inspect rates
 
 Use correlated horizons, unit properties and interpreted fault sticks for **flexural backstripping and decompaction**. Explore cantilever, listric and domino restoration options, or the fixed-trace growth-history prototype below.
 
-![VG1 fixed-shape reconstruction and aligned rates through time](image/vg1_growth_restoration.gif)
+[![VG1 fixed-shape reconstruction and aligned rates through time](image/vg1_growth_restoration.webp)](image/videos/vg1_growth_restoration.mp4)
 *Viking Graben VG1 — **fixed-trace vertical-shear reconstruction**: one stripped unit per timestep, remaining slipped/top-clipped traces, and aligned apparent-throw and decompacted sedimentation rates. Frame shape and axes stay fixed; numeric VG1 ages are retained.*
 
-![VG1 whole-section thermal history through time](image/vg1_section_thermal_history.gif)
+[![VG1 whole-section thermal history through time](image/vg1_section_thermal_history.webp)](image/videos/vg1_section_thermal_history.mp4)
 *Viking Graben VG1 — **whole-section thermal history** at 59 mW/m², oldest → modern: red isotherms and translucent kinetic Easy%Ro oil, wet-gas and dry-gas windows over the restored section, with three 0–100% strips showing one line per remaining unit in its unit color, lightly shaded underneath. Independent steady columns, not 2-D heat conduction.*
 
 The growth prototype infers **nonnegative, distributed apparent throw** after stripping, decompaction and flexural unloading, regularized along approximately 1-km knots within fixed hanging-wall partitions. It is **not resolved down-dip slip, geological heave or curved-fault balancing**. Zero is an assumed datum. The footwall of the westernmost fault (#1) is flattened separately toward the datum and is not counted as throw. Traces remain user-controlled inputs; default VG1 traces were not replaced, and the optional tip-extension assist was not applied. The oldest interval retains the last constrained 170.3-Ma geometry, not an inferred 252-Ma section.
