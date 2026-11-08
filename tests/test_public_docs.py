@@ -41,8 +41,8 @@ def test_notebook_app_screenshot_links_exist():
 def test_readme_no_retired_fault_rate_feature():
     text = (ROOT / "README.md").read_text()
     assert "vg1_fault_throw_rates" not in text and "companion export" not in text
-    media = ["hero_geohistory_north_sea_30-4-1.gif", "thermal_history_north_sea_30-4-1.gif",
-             "vg1_growth_restoration.gif", "vg1_section_thermal_history.gif",
+    media = ["hero_geohistory_north_sea_30-4-1.webp", "thermal_history_north_sea_30-4-1.webp",
+             "vg1_growth_restoration.webp", "vg1_section_thermal_history.webp",
              "pyBasinSubs_column_demo.webp", "pyBasinSubs_section_demo.webp", "app_fault_editor.png"]
     assert [text.index(name) for name in media] == sorted(text.index(name) for name in media)
 

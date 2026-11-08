@@ -46,20 +46,20 @@ pip install -e .
 
 Backstrip sediment loads with **Airy isostasy and decompaction**, including erosion, over-compaction and Monte Carlo uncertainty. Use a bundled well or your own column CSV. Optional thermal tools cover geotherms, McKenzie stretching-factor fits, burial temperature and Easy%Ro maturity.
 
-![North Sea well 30/4-1: animated geohistory and stratigraphic column](image/hero_geohistory_north_sea_30-4-1.gif)
+[![North Sea well 30/4-1: animated geohistory and stratigraphic column](image/hero_geohistory_north_sea_30-4-1.webp)](image/videos/hero_geohistory_north_sea_30-4-1.mp4)
 *North Sea well 30/4-1 — **1-D Airy backstripping + decompaction**, oldest → youngest, with a time-evolving thin stratigraphic column.*
 
-![North Sea well 30/4-1: thermal column and geotherm animation](image/thermal_history_north_sea_30-4-1.gif)
+[![North Sea well 30/4-1: thermal column and geotherm animation](image/thermal_history_north_sea_30-4-1.webp)](image/videos/thermal_history_north_sea_30-4-1.mp4)
 *North Sea well 30/4-1 — **thermal column + geotherm**, with kinetic Easy%Ro oil, wet-gas and dry-gas windows.*
 
 ## 2-D: strip layers, restore and inspect rates
 
 Use correlated horizons, unit properties and interpreted fault sticks for **flexural backstripping and decompaction**. Explore cantilever, listric and domino restoration options, or the fixed-trace growth-history prototype below.
 
-![VG1 fixed-shape reconstruction and aligned rates through time](image/vg1_growth_restoration.gif)
+[![VG1 fixed-shape reconstruction and aligned rates through time](image/vg1_growth_restoration.webp)](image/videos/vg1_growth_restoration.mp4)
 *Viking Graben VG1 — **fixed-trace vertical-shear reconstruction**: one stripped unit per timestep, remaining slipped/top-clipped traces, and aligned apparent-throw and decompacted sedimentation rates. Frame shape and axes stay fixed; numeric VG1 ages are retained.*
 
-![VG1 whole-section thermal history through time](image/vg1_section_thermal_history.gif)
+[![VG1 whole-section thermal history through time](image/vg1_section_thermal_history.webp)](image/videos/vg1_section_thermal_history.mp4)
 *Viking Graben VG1 — **whole-section thermal history** at 59 mW/m², oldest → modern: red isotherms and translucent kinetic Easy%Ro oil, wet-gas and dry-gas windows over the restored section, with three 0–100% strips showing one line per remaining unit in its unit color, lightly shaded underneath. Independent steady columns, not 2-D heat conduction.*
 
 The growth prototype infers **nonnegative, distributed apparent throw** after stripping, decompaction and flexural unloading, regularized along approximately 1-km knots within fixed hanging-wall partitions. It is **not resolved down-dip slip, geological heave or curved-fault balancing**. Zero is an assumed datum. The footwall of the westernmost fault (#1) is flattened separately toward the datum and is not counted as throw. Traces remain user-controlled inputs; default VG1 traces were not replaced, and the optional tip-extension assist was not applied. The oldest interval retains the last constrained 170.3-Ma geometry, not an inferred 252-Ma section.
