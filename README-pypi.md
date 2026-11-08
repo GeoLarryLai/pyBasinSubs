@@ -17,7 +17,7 @@ Bundled examples cover Taiwan's Coastal Range, North Sea and Barents Sea wells, 
 
 Under active development; many methods, especially fault restoration, are experimental and not fully validated. The growth prototype uses regularized vertical-shear apparent-throw fields within fixed hanging-wall partitions after decompaction and flexural unloading. It does not resolve down-dip slip, geological heave or curved-fault balancing; zero is an assumed datum, and interpreted traces remain user-controlled. Restored geometry is not a unique geological solution.
 
-Requires Python 3.10 or newer. Code license: **AGPL-3.0-or-later**. Third-party data retain their own terms; the Miller et al. (2020) sea-level curve is downloaded on first use, not bundled, and has non-commercial restrictions. Data and method credits are in NOTICE.
+Requires Python 3.12 or newer. Code license: **AGPL-3.0-or-later**. Third-party data retain their own terms; the Miller et al. (2020) sea-level curve is downloaded on first use, not bundled, and has non-commercial restrictions. Data and method credits are in NOTICE.
 
 Illustrated documentation, notebooks, installation guidance and release history: [GitHub](https://github.com/GeoLarryLai/pyBasinSubs).
 
