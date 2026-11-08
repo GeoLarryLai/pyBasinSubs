@@ -42,14 +42,15 @@ def test_readme_no_retired_fault_rate_feature():
     text = (ROOT / "README.md").read_text()
     assert "vg1_fault_throw_rates" not in text and "companion export" not in text
     media = ["hero_geohistory_north_sea_30-4-1.gif", "thermal_history_north_sea_30-4-1.gif",
-             "vg1_growth_restoration.gif", "vg1_section_thermal_history.gif", "app_start.png",
+             "vg1_growth_restoration.gif", "vg1_section_thermal_history.gif",
              "pyBasinSubs_column_demo.webp", "pyBasinSubs_section_demo.webp", "app_fault_editor.png"]
     assert [text.index(name) for name in media] == sorted(text.index(name) for name in media)
 
 
 def test_readme_unreleased_and_animated_1d_figures():
     text = (ROOT / "README.md").read_text()
-    assert "This README describes 0.2.0 (unreleased). The published PyPI package is still 0.1.2." in text
+    assert "This README describes 0.2.0 (unreleased). The published PyPI package is still 0.1.2." not in text
+    assert "image/app_start.png" not in text
     assert "hero_geohistory_north_sea_30-4-1.png" not in text
     assert "maturity_history_30-4-1.gif" not in text
     assert "kinetic Easy%Ro" in text

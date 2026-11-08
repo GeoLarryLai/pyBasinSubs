@@ -1,8 +1,8 @@
 <p align="center"><img src="image/logo.png" alt="pyBasinSubs" width="200"></p>
 <p align="center">
-<a href="https://doi.org/10.5281/zenodo.23832018"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23832018-blue" alt="DOI"></a> <a href="https://doi.org/10.1038/s43247-022-00429-2"><img src="https://img.shields.io/badge/paper-10.1038%2Fs43247--022--00429--2-blue" alt="paper DOI"></a> <a href="https://github.com/GeoLarryLai/pyBasinSubs/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-lightgrey" alt="License"></a>
+<a href="https://doi.org/10.5281/zenodo.23832018"><img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23832018-blue" alt="Software DOI"></a> <a href="https://doi.org/10.1038/s43247-022-00429-2"><img src="https://img.shields.io/badge/Paper-10.1038%2Fs43247--022--00429--2-blue" alt="Paper DOI"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-lightgrey" alt="License"></a>
 <br>
-<a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/badge/python-3.10%2B-lightgrey" alt="Python versions"></a> <a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/pypi/v/pybasinsubs?color=orange" alt="PyPI version"></a> <a href="https://pepy.tech/projects/pybasinsubs"><img src="https://img.shields.io/pepy/dt/pybasinsubs?label=pypi%20downloads&color=orange" alt="PyPI downloads"></a> <a href="https://anaconda.org/conda-forge/pybasinsubs"><img src="https://img.shields.io/conda/vn/conda-forge/pybasinsubs?label=conda-forge&color=green" alt="conda-forge version"></a> <a href="https://anaconda.org/conda-forge/pybasinsubs"><img src="https://img.shields.io/conda/dn/conda-forge/pybasinsubs?label=conda%20downloads&color=green" alt="conda downloads"></a>
+<a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/badge/python-3.10%2B-lightgrey" alt="Python 3.10 or newer"></a> <a href="https://pypi.org/project/pybasinsubs/"><img src="https://img.shields.io/pypi/v/pybasinsubs?color=orange" alt="Published PyPI version"></a> <a href="https://pepy.tech/projects/pybasinsubs"><img src="https://img.shields.io/pepy/dt/pybasinsubs?label=pypi%20downloads&color=orange" alt="PyPI downloads"></a> <a href="https://anaconda.org/conda-forge/pybasinsubs"><img src="https://img.shields.io/conda/vn/conda-forge/pybasinsubs?label=conda-forge&color=green" alt="conda-forge version"></a> <a href="https://anaconda.org/conda-forge/pybasinsubs"><img src="https://img.shields.io/conda/dn/conda-forge/pybasinsubs?label=conda%20downloads&color=green" alt="conda downloads"></a>
 </p>
 
 # pyBasinSubs
@@ -22,14 +22,19 @@ Code: **AGPL-3.0-or-later**. Data and method credits are in [NOTICE](NOTICE), in
 
 ## Install and run
 
-Requires Python 3.10 or newer.
+Requires Python 3.10 or newer. Install the published package:
 
 ```bash
 pip install pybasinsubs
+```
+
+Start the local browser app:
+
+```bash
 pybasinsubs-app
 ```
 
-From source, run this from the project folder:
+For an optional editable install from source, run this from the project folder:
 
 ```bash
 pip install -e .
@@ -41,20 +46,20 @@ pip install -e .
 
 Backstrip sediment loads with **Airy isostasy and decompaction**, including erosion, over-compaction and Monte Carlo uncertainty. Use a bundled well or your own column CSV. Optional thermal tools cover geotherms, McKenzie stretching-factor fits, burial temperature and Easy%Ro maturity.
 
-[![North Sea well 30/4-1: animated geohistory and stratigraphic column](image/hero_geohistory_north_sea_30-4-1.webp)](image/videos/hero_geohistory_north_sea_30-4-1.mp4)
+![North Sea well 30/4-1: animated geohistory and stratigraphic column](image/hero_geohistory_north_sea_30-4-1.gif)
 *North Sea well 30/4-1 — **1-D Airy backstripping + decompaction**, oldest → youngest, with a time-evolving thin stratigraphic column.*
 
-[![North Sea well 30/4-1: thermal column and geotherm animation](image/thermal_history_north_sea_30-4-1.webp)](image/videos/thermal_history_north_sea_30-4-1.mp4)
+![North Sea well 30/4-1: thermal column and geotherm animation](image/thermal_history_north_sea_30-4-1.gif)
 *North Sea well 30/4-1 — **thermal column + geotherm**, with kinetic Easy%Ro oil, wet-gas and dry-gas windows.*
 
 ## 2-D: strip layers, restore and inspect rates
 
 Use correlated horizons, unit properties and interpreted fault sticks for **flexural backstripping and decompaction**. Explore cantilever, listric and domino restoration options, or the fixed-trace growth-history prototype below.
 
-[![VG1 fixed-shape reconstruction and aligned rates through time](image/vg1_growth_restoration.webp)](image/videos/vg1_growth_restoration.mp4)
+![VG1 fixed-shape reconstruction and aligned rates through time](image/vg1_growth_restoration.gif)
 *Viking Graben VG1 — **fixed-trace vertical-shear reconstruction**: one stripped unit per timestep, remaining slipped/top-clipped traces, and aligned apparent-throw and decompacted sedimentation rates. Frame shape and axes stay fixed; numeric VG1 ages are retained.*
 
-[![VG1 whole-section thermal history through time](image/vg1_section_thermal_history.webp)](image/videos/vg1_section_thermal_history.mp4)
+![VG1 whole-section thermal history through time](image/vg1_section_thermal_history.gif)
 *Viking Graben VG1 — **whole-section thermal history** at 59 mW/m², oldest → modern: red isotherms and translucent kinetic Easy%Ro oil, wet-gas and dry-gas windows over the restored section, with three 0–100% strips showing one line per remaining unit in its unit color, lightly shaded underneath. Independent steady columns, not 2-D heat conduction.*
 
 The growth prototype infers **nonnegative, distributed apparent throw** after stripping, decompaction and flexural unloading, regularized along approximately 1-km knots within fixed hanging-wall partitions. It is **not resolved down-dip slip, geological heave or curved-fault balancing**. Zero is an assumed datum. The footwall of the westernmost fault (#1) is flattened separately toward the datum and is not counted as throw. Traces remain user-controlled inputs; default VG1 traces were not replaced, and the optional tip-extension assist was not applied. The oldest interval retains the last constrained 170.3-Ma geometry, not an inferred 252-Ma section.
@@ -62,9 +67,6 @@ The growth prototype infers **nonnegative, distributed apparent throw** after st
 ## The local browser app
 
 The start page has the package logo and **two symbolic function buttons**. **Fault editor** is available from Start and the 2-D workflow, not inside the 1-D wizard or as a third landing card. A small footer stays outside the workspace: “Project by Larry Syu-Heng Lai, PhD.” at the left and “AGPL-3.0 or later license” at the right.
-
-![pyBasinSubs start page with two analysis workflows](image/app_start.png)
-*Local browser app — **choose a workflow**: 1-D Airy backstripping or 2-D flexural restoration, with local-file privacy and project/license credits.*
 
 The app uses isolated numbered left-step wizards: open/edit inputs, choose or fit compaction curves, compute, then export. Return to Start to choose a different analysis. Earlier edits invalidate downstream results. Real-point fits and geothermal imports are explicit. Choose one dataset; porosity-curve checkboxes control the plot, not which unit lithologies are decompacted.
 
