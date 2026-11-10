@@ -7,6 +7,7 @@
 - **Columns and well tops:** decompaction and 1-D Airy backstripping, erosion and over-compaction, with Monte Carlo uncertainty.
 - **Compaction data and microfossils:** porosity–depth fitting and paleo-water-depth estimation.
 - **Thermal history:** geotherms, McKenzie stretching-factor fits, burial temperature, Easy%Ro maturity and oil/gas windows.
+- **Property evolution (optional overlay):** porosity, permeability and stress from published compaction and cementation relations; existing backstrip results are unchanged unless these functions are called.
 - **Well transects:** thin-plate flexural profiles through well-based columns and effective elastic thickness fitting, distinct from fault-resolved restoration.
 - **Correlated sections and interpreted faults:** 2-D flexural backstripping and decompaction, cantilever/listric/domino restoration options, and a fixed-trace growth-history prototype with spatially variable nonnegative apparent throw and sedimentation rates.
 - **Local browser app:** two main analysis workflows, with fault-stick editing available in the navigation; the app and notebooks share calculation engines. The legacy module preserves the original R-workflow results.

@@ -50,6 +50,7 @@ def test_readme_no_retired_fault_rate_feature():
 def test_readme_unreleased_and_animated_1d_figures():
     text = (ROOT / "README.md").read_text()
     assert "This README describes 0.2.0 (unreleased). The published PyPI package is still 0.1.2." not in text
+    assert "This README describes 0.3.0 (release draft, unpublished). The published PyPI package is 0.2.0." not in text
     assert "image/app_start.png" not in text
     assert "hero_geohistory_north_sea_30-4-1.png" not in text
     assert "maturity_history_30-4-1.gif" not in text

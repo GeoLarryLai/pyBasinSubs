@@ -232,3 +232,27 @@ def test_column_timesteps_current_snapshot_and_optional_exports(client, monkeypa
     with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
         assert 'geohistory_history.gif' in archive.namelist()
         assert 'thermal_history.gif' not in archive.namelist()
+
+
+def test_wizard_progress_unknown_job(client):
+    rec = client.get('/api/wizard/progress/missing-job').json()
+    assert rec['status'] == 'unknown'
+    assert rec['percent'] == 0
+
+
+def test_column_properties_progress_job(client):
+    opened = post(client, 'column/input', dict(source='North Viking Graben well (Sodir)', well='30/4-1'))
+    model = post(client, 'column/compaction', dict(input_id=opened['input_id']))
+    run = post(client, 'column/run', dict(model_id=model['model_id'], n=0))
+    job_id = 'test-column-prop'
+    result = post(client, 'column/properties', dict(
+        result_id=run['result_id'], heat_flow_mW_m2=59, surface_temperature_C=4,
+        n_mc=2, dt_Myr=5.0, max_frames=2, job_id=job_id,
+    ))
+    assert 'Property logs ready' in result['status']
+    assert len(result['frames']) == 2
+    rec = client.get('/api/wizard/progress/' + job_id).json()
+    assert rec['status'] == 'done'
+    assert rec['percent'] == 100
+    assert rec['message'] == 'Computing properties… 100%'
+

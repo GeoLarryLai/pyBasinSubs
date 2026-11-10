@@ -17,7 +17,7 @@ from ._paths import data_path
 from .column import Column, read_column, from_basinsubs, from_sodir
 from .backstrip import backstrip, BackstripResult
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 __all__ = ["data_path", "Column", "read_column", "from_basinsubs", "from_sodir", "backstrip", "BackstripResult"]
 
 from .timestep import (
@@ -35,3 +35,26 @@ __all__ += ["timestep_steps", "timestep_column", "timestep_thermal_fields", "tim
 from .section_thermal import section_thermal_data, plot_section_thermal_timestep, save_section_thermal_animation
 
 __all__ += ["section_thermal_data", "plot_section_thermal_timestep", "save_section_thermal_animation"]
+
+from .diagenesis import evolve_properties, evolve_section_properties, PropertyResult, SectionPropertyResult, default_priors, mechanical_porosity
+from . import petrophysics, stress
+from .property_plots import (
+    plot_geohistory_porosity, plot_porosity_depth_paths,
+    plot_property_timeseries, plot_porosity_partition, plot_calibration_layout,
+    plot_property_logs, plot_property_logs_snapshots, plot_section_properties,
+    property_log_limits, property_log_frame_ages, plot_property_logs_view,
+    save_property_logs_animation, plot_section_property, section_property_limits,
+    save_section_property_animation, PROPERTY_CMAPS, cmap_for,
+)
+
+__all__ += [
+    "evolve_properties", "evolve_section_properties",
+    "PropertyResult", "SectionPropertyResult", "default_priors", "mechanical_porosity",
+    "petrophysics", "stress", "PROPERTY_CMAPS", "cmap_for",
+    "plot_geohistory_porosity", "plot_porosity_depth_paths",
+    "plot_property_timeseries", "plot_porosity_partition", "plot_calibration_layout",
+    "plot_property_logs", "plot_property_logs_snapshots", "plot_section_properties",
+    "property_log_limits", "property_log_frame_ages", "plot_property_logs_view",
+    "save_property_logs_animation", "plot_section_property", "section_property_limits",
+    "save_section_property_animation",
+]

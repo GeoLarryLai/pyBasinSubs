@@ -68,6 +68,10 @@ button.on, #tabs button.on { background:#e8f0ff; border-color:var(--acc); }
 }
 #f_wrap { background:#fff; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
 #f_cv { display:block; width:100%; cursor:crosshair; outline:none; }
+#job_progress { position:fixed; right:16px; bottom:16px; z-index:40; width:min(280px, calc(100vw - 32px)); padding:10px 12px; background:var(--card); border:1px solid var(--line); border-radius:10px; box-shadow:0 8px 24px rgba(31,41,51,.16); }
+.job-progress-label { font-size:12.5px; color:var(--ink); margin:0 0 6px; white-space:nowrap; }
+.job-progress-track { height:8px; background:#e8edf3; border-radius:999px; overflow:hidden; }
+.job-progress-fill { height:100%; width:0; background:var(--acc); border-radius:inherit; transition:width .2s ease; }
 #toast { position:fixed; bottom:14px; left:50%; transform:translateX(-50%); background:#1f2933; color:#fff; padding:6px 14px; border-radius:6px; opacity:0; transition:opacity .2s; pointer-events:none; }
 #toast.show { opacity:.95; }
 @media (max-width: 800px) { .page:not(#page-home) { grid-template-columns:1fr; } }
@@ -77,7 +81,7 @@ button.on, #tabs button.on { background:#e8f0ff; border-color:var(--acc); }
 .growth-frame { display:grid; grid-template-columns:58px minmax(0,1fr); align-items:center; gap:2px; }
 .growth-frame .fig { width:100%; }
 .growth-time { display:flex; flex-direction:column; align-items:center; gap:3px; text-align:center; font-size:11px; color:var(--mut); }
-#s_growth_time, #s_thermal_time { writing-mode:vertical-lr; direction:ltr; width:24px; height:clamp(100px,22vw,280px); cursor:pointer; }
+#s_growth_time, #s_thermal_time, #s_prop_time { writing-mode:vertical-lr; direction:ltr; width:24px; height:clamp(100px,22vw,280px); cursor:pointer; }
 @media (max-width:800px) { .growth-frame { grid-template-columns:42px minmax(0,1fr); } .growth-time { font-size:10px; } }
 
 /* Analysis order: inputs, compaction, history, then diagnostics/thermal. */

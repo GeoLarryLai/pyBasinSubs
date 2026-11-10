@@ -202,7 +202,7 @@ def test_chrome_styles_keep_credits_in_normal_flow_and_home_responsive(client):
     assert '.home-logo {' in css and '.brand img {' in css
     assert '.card-symbol { display:block; align-self:center; color:#205f70;' in css
     assert '.cards { grid-template-columns:minmax(0,1fr)' in css
-    assert '#s_growth_time, #s_thermal_time { writing-mode:vertical-lr' in css
+    assert '#s_growth_time, #s_thermal_time, #s_prop_time { writing-mode:vertical-lr' in css
 
 
 def test_wizard_step_markup_and_no_featured_fault_rate_plot(client):
@@ -234,3 +234,33 @@ def test_flat_single_dataset_options_and_curve_catalog(client):
     assert 'id="c_src"' not in page and 'id="c_well"' not in page
     for m in ("c", "s"):
         assert f'id="{m}_curve_picker"' in page and f'id="{m}_curve_options"' in page
+
+
+
+def test_property_evolution_wizard_markup(client):
+    page = client.get("/").text
+    assert 'id="c_step6"' in page and "5 · Property evolution" in page
+    assert 'id="s_step7"' in page and "6 · Property evolution" in page
+    assert 'id="c_prop"' in page and 'id="s_prop"' in page
+    assert "Schneider et al. (1996)" in page and "Walderhaug (1996)" in page
+    assert 'id="s_prop_var"' in page and 'id="c_prop_time"' in page
+    assert 'id="c_prop_note"' not in page and 'id="s_prop_note"' not in page
+    assert 'id="c_prop_layers"' not in page and 'id="c_prop_tab"' in page
+    assert page.count("Selected timestep layers / depths") == 2
+    assert 'id="job_progress"' in page and 'id="job_progress_fill"' in page
+    assert "Computing properties…" in page
+    js = client.get("/static/app.js").text
+    assert "Property evolution" in js
+    assert "/api/wizard/column/properties" in js
+    assert "/api/wizard/section/properties" in js
+    assert "c_prop_tab" in js and "Mechanical porosity" in js and "Pore pressure (MPa)" in js
+    assert 'if(r.table)$("c_prop_tab")' not in js
+    assert "c_prop_note" not in js and "s_prop_note" not in js
+    assert "watchJobProgress" in js and "/api/wizard/progress/" in js
+    assert "showJobProgress" in js and "hideJobProgress" in js
+    from pathlib import Path
+    src = (Path(__file__).resolve().parents[1] / "pybasinsubs/webapp/wizard.py").read_text()
+    assert "phi_mechanical" in src and "pore_pressure_mpa" in src
+    assert "Property logs ready" in src and "Section properties ready" in src
+    assert '@app.get("/api/wizard/progress/{job_id}")' in src
+    assert "return guard(wizard_progress)" not in src

@@ -10,7 +10,7 @@
 > [!WARNING]
 > Under active development. Many functions, especially fault restoration, are experimental and not fully validated. Use geological constraints; a restored section is not a unique solution.
 
-**pyBasinSubs** is a tool for **1-D and 2-D backstripping and decompaction basin analysis**, with a user-friendly, semi-automated workflow. Start with a well, stratigraphic column or interpreted section; explore subsidence, burial, thermal history and structural restoration in the local browser app or Python notebooks.
+**pyBasinSubs** is a tool for **1-D and 2-D backstripping and decompaction basin analysis**, with a user-friendly, semi-automated workflow. Start with a well, stratigraphic column or interpreted section; explore subsidence, burial, thermal history, structural restoration and optional overlay property evolution in the local browser app or Python notebooks.
 
 ## Citation
 
@@ -70,17 +70,17 @@ The start page has the package logo and **two symbolic function buttons**. **Fau
 
 The app uses isolated numbered left-step wizards: open/edit inputs, choose or fit compaction curves, compute, then export. Return to Start to choose a different analysis. Earlier edits invalidate downstream results. Real-point fits and geothermal imports are explicit. Choose one dataset; porosity-curve checkboxes control the plot, not which unit lithologies are decompacted.
 
-The 1-D steps are **stratigraphy + aligned paleo-water inputs → compaction relations → geohistory + table → geothermal conditions + thermal plots/tables → export**. The 2-D steps are **interpreted section → compaction relations → ordinary flexural backstripping/decompaction → explicit growth reconstruction + rates → thermal history (isotherms, Easy%Ro window overlays and percent-in-window lines) → export**. Real porosity points are shown and used for supported fits when supplied; sparse or unsuitable data retain the chosen curves. Bundled VG1/well-top examples provide model curves, not measured porosity logs.
+The 1-D steps are **stratigraphy + aligned paleo-water inputs → compaction relations → geohistory + table → geothermal conditions + thermal plots/tables → property evolution (optional overlay) → export**. The 2-D steps are **interpreted section → compaction relations → ordinary flexural backstripping/decompaction → explicit growth reconstruction + rates → thermal history (isotherms, Easy%Ro window overlays and percent-in-window lines) → property evolution (one property per view) → export**. Real porosity points are shown and used for supported fits when supplied; sparse or unsuitable data retain the chosen curves. Bundled VG1/well-top examples provide model curves, not measured porosity logs.
 
 ### 1-D column demo
 
-[![Demo: North Sea well 30/4-1 geohistory and thermal maturity](image/videos/pyBasinSubs_column_demo.webp)](image/videos/pyBasinSubs_column_demo.mp4)
-*North Sea well 30/4-1 — **step-by-step Airy backstripping + thermal history**: dataset and porosity choices → geohistory (500 Monte Carlo draws) → thermal history at 59 mW/m². Age sliders drive the thin stratigraphic column and the paired geotherm / burial-temperature / Easy%Ro views. Sped-up demo. Click it to [watch the 1080p video](image/videos/pyBasinSubs_column_demo.mp4) (about 38 seconds).*
+[![Demo: North Sea well 30/4-1 geohistory, thermal maturity and property evolution](image/videos/pyBasinSubs_column_demo.webp)](image/videos/pyBasinSubs_column_demo.mp4)
+*North Sea well 30/4-1 — **step-by-step Airy backstripping, thermal history and property evolution**: dataset and porosity choices → geohistory (500 Monte Carlo draws) → thermal history at 59 mW/m² → optional property-log overlay (porosity dragged through every time step, then the present-day permeability, stress and temperature tracks). Age sliders drive the thin stratigraphic column, the paired geotherm / burial-temperature / Easy%Ro views, and the fixed-layout property logs. Sped-up demo. Click it to [watch the 1080p video](image/videos/pyBasinSubs_column_demo.mp4) (about 40 seconds).*
 
 ### 2-D section demo
 
-[![Demo: VG1 section restoration and spatial rates](image/videos/pyBasinSubs_section_demo.webp)](image/videos/pyBasinSubs_section_demo.mp4)
-*Viking Graben VG1 — **step-by-step flexural backstripping, growth reconstruction + thermal history**: dataset and porosity menus → Run section → explicit Reconstruct growth / Show rates, every geological timestep down and back with aligned apparent-throw and sedimentation rates → Compute thermal history at 59 mW/m², with isotherms, Easy%Ro windows and percent-in-window lines through the same timesteps. Sped-up demo. Click it to [watch the 1080p video](image/videos/pyBasinSubs_section_demo.mp4) (about 50 seconds).*
+[![Demo: VG1 section restoration, thermal history and property evolution](image/videos/pyBasinSubs_section_demo.webp)](image/videos/pyBasinSubs_section_demo.mp4)
+*Viking Graben VG1 — **step-by-step flexural backstripping, growth reconstruction, thermal history and property evolution**: dataset and porosity menus → Run section → explicit Reconstruct growth / Show rates, every geological timestep down and back with aligned apparent-throw and sedimentation rates → Compute thermal history at 59 mW/m², with isotherms, Easy%Ro windows and percent-in-window lines through the same timesteps → Compute section properties, dragging porosity from present day to the oldest restoration age and back, then present-day permeability and effective stress. Sped-up demo. Click it to [watch the 1080p video](image/videos/pyBasinSubs_section_demo.mp4) (about 58 seconds).*
 
 Growth reconstruction does **not** run on page load or ordinary **Run section**. Blank section uploads use the bundled VG1 template; supply both horizons and units CSVs for your own section, plus optional fault sticks.
 
@@ -111,8 +111,58 @@ The executed [notebooks](notebooks/) explain data preparation, assumptions and v
 | [1 · Porosity](notebooks/pyBasinSubs_1_porosity_fit.ipynb) / [2 · Paleo-water depth](notebooks/pyBasinSubs_2_paleowater_depth.ipynb) | Compaction fits and water-depth estimates from microfossils. |
 | [3 · Coastal Range](notebooks/pyBasinSubs_3_coastal_range_backstrip.ipynb) / [4 · R parity](notebooks/pyBasinSubs_4_R_parity.ipynb) | Taiwan subsidence examples and checks against the original workflow. |
 | [5 · Your data and the app](notebooks/pyBasinSubs_5_own_data_and_UI.ipynb) | Column/section CSV templates and browser workflows. |
-| [6 · Thermal history](notebooks/pyBasinSubs_6_north_sea_thermal.ipynb) | North Sea and Barents Sea temperature and maturity. |
+| [6 · Thermal history](notebooks/pyBasinSubs_6_north_sea_thermal.ipynb) | North Sea and Barents Sea temperature and maturity, plus optional 1-D property evolution. |
 | [7 · Well-transect flexure](notebooks/pyBasinSubs_7_2D_flexure.ipynb) | Well-based loads, flexural profiles and elastic-thickness sensitivity; not fault-resolved restoration. |
-| [8 · 2-D backstripping](notebooks/pyBasinSubs_8_2d_flexural_backstripping.ipynb) / [9 · Fault interpretation](notebooks/pyBasinSubs_9_fault_interpretation.ipynb) | Correlated sections, interpreted faults, restoration comparisons and the growth prototype. |
+| [8 · 2-D backstripping](notebooks/pyBasinSubs_8_2d_flexural_backstripping.ipynb) / [9 · Fault interpretation](notebooks/pyBasinSubs_9_fault_interpretation.ipynb) | Correlated sections, interpreted faults, restoration comparisons, the growth prototype and optional section property views. |
+
+
+## Property evolution (optional overlay)
+
+An opt-in overlay walks the existing 1-D geohistory or 2-D restoration through time and records porosity, quartz cement, permeability and stress. New porosities do **not** feed back into decompaction, isostasy or conductivity: calling `backstrip` or running the earlier wizard steps still produces the 0.2.0 results.
+
+Mechanical compaction follows the exponential effective-stress law used as the plastic part of Schneider et al. (1996), written with a residual intergranular volume as in Lander & Walderhaug (1999). Quartz cement uses Walderhaug (1996) and is applied only to the sandstone end-member. Sand permeability is Kozeny–Carman; mudstone permeability is Yang & Aplin (2010); chalk uses the Mortensen / Fabricius Kozeny form. Pore pressure is hydrostatic (Terzaghi effective stress).
+
+The 1-D display is a fixed well-log frame: an ICS-coloured stratigraphic column plus porosity, permeability, stress and temperature + Easy%Ro tracks. Depth and value ranges are measured once across every time step, then held constant so animation frames do not jump.
+
+![North Sea well 30/4-1: present-day property logs](image/property_logs_north_sea_30-4-1.png)
+*North Sea well 30/4-1 — **present-day property logs**: stratigraphic column with porosity, permeability, hydrostatic stress and temperature + Easy%Ro tracks. P10–P90 bands from the overlay Monte Carlo. The same layout is used at every time step.*
+
+[![North Sea well 30/4-1: property-log animation](image/property_logs_north_sea_30-4-1.webp)](image/videos/property_logs_north_sea_30-4-1.mp4)
+*North Sea well 30/4-1 — **property-log animation**, one frame per stratigraphic time step, oldest → youngest, with fixed axes.*
+
+On a restored section the same 1-D model is applied independently at each $x$. Each figure shows one property (porosity, permeability or effective stress) at one restoration age, with colour limits shared across ages.
+
+![VG1 section coloured by overlay porosity](image/vg1_section_porosity_0Ma.png)
+*Viking Graben VG1 — **present-day overlay porosity** on the restored section (copper). Adjacent columns are filled as a continuous mesh.*
+
+Package entry points include `evolve_properties`, `evolve_section_properties`, `plot_property_logs`, `save_property_logs_animation`, `plot_section_property` and `save_section_property_animation`. Notebooks 6 and 8 document the equations, citations and limitations; the local browser app adds a Property evolution step after thermal history in both wizards.
+
+
+## References
+
+**Mechanical compaction and quartz cement**
+- Schneider, F., Potdevin, J. L., Wolf, S. & Faille, I. (1996). Mechanical and chemical compaction model for sedimentary basin simulators. *Tectonophysics* 263, 307–317.
+- Lander, R. H. & Walderhaug, O. (1999). Predicting porosity through simulating sandstone compaction and quartz cementation. *AAPG Bulletin* 83, 433–449.
+- Walderhaug, O. (1996). Kinetic modeling of quartz cementation and porosity loss in deeply buried sandstone reservoirs. *AAPG Bulletin* 80, 731–745.
+- Bowers, G. L. (1995). Pore pressure estimation from velocity data: accounting for overpressure mechanisms besides undercompaction. *SPE Drilling & Completion* 10, 89–95.
+- Bjørlykke, K. & Jahren, J. (2012). Open or closed geochemical systems during diagenesis in sedimentary basins: constraints on mass transfer during diagenesis and the prediction of porosity in sandstone and carbonate reservoirs. *AAPG Bulletin* 96, 2193–2214.
+- Athy, L. F. (1930). Density, porosity, and compaction of sedimentary rocks. *AAPG Bulletin* 14, 1–24.
+
+**Permeability**
+- Kozeny, J. (1927). Über kapillare Leitung des Wassers im Boden. *Sitzungsberichte der Akademie der Wissenschaften in Wien* 136, 271–306.
+- Carman, P. C. (1937). Fluid flow through granular beds. *Transactions of the Institution of Chemical Engineers* 15, 150–166.
+- Yang, Y. & Aplin, A. C. (2010). A permeability–porosity relationship for mudstones. *Marine and Petroleum Geology* 27, 1692–1697.
+- Mortensen, J., Engstrøm, F. & Lind, I. (1998). The relation among porosity, permeability, and specific surface of chalk from the Gorm field, Danish North Sea. *SPE Reservoir Evaluation & Engineering* 1, 245–251 (SPE-31062-PA).
+- Fabricius, I. L. (2007). Chalk: composition, diagenesis and physical properties. *Bulletin of the Geological Society of Denmark* 55, 97–128.
+- Mallon, A. J., Swarbrick, R. E. & Katsube, T. J. (2005). Permeability of fine-grained rocks: new evidence from chalks. *Geology* 33, 21–24.
+
+**Stress, temperature and maturity**
+- Terzaghi, K. (1925). *Erdbaumechanik auf bodenphysikalischer Grundlage*. Deuticke.
+- Jáky, J. (1944). The coefficient of earth pressure at rest. *Journal of the Society of Hungarian Architects and Engineers* 78, 355–358.
+- Sweeney, J. J. & Burnham, A. K. (1990). Evaluation of a simple model of vitrinite reflectance based on chemical kinetics. *AAPG Bulletin* 74, 1559–1570.
+
+**Basin analysis (existing pyBasinSubs methods)**
+- Lai, L. S.-H., Lin, A. T.-S. & Lallemand, S. (2022). Extremely rapid up-and-down motions of island arc crust during arc-continent collision. *Communications Earth & Environment* 3, 100.
+- Sclater, J. G. & Christie, P. A. F. (1980). Continental stretching: an explanation of the post-mid-Cretaceous subsidence of the central North Sea Basin. *Journal of Geophysical Research* 85, 3711–3739.
 
 Release history and migration notes: [CHANGELOG.md](CHANGELOG.md).

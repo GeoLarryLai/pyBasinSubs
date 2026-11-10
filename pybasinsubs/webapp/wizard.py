@@ -13,6 +13,7 @@ import json
 import tempfile
 from pathlib import Path
 from uuid import uuid4
+import threading
 import zipfile
 
 import numpy as np
@@ -151,6 +152,39 @@ def mount_wizard(app, guard, fig_b64, table_json):
     from fastapi import Body, HTTPException
     from fastapi.responses import Response
     cache = {}
+    jobs = {}
+    jobs_lock = threading.Lock()
+    JOB_LIMIT = 32
+
+    def update_job(job_id, *, percent=None, done=None, total=None, message=None,
+                   status="running", error=None):
+        if not job_id:
+            return
+        with jobs_lock:
+            rec = jobs.get(job_id) or {
+                "percent": 0, "done": 0, "total": 0,
+                "message": "Computing properties…", "status": "running",
+            }
+            if done is not None:
+                rec["done"] = int(done)
+            if total is not None:
+                rec["total"] = int(total)
+            if percent is not None:
+                rec["percent"] = int(max(0, min(100, round(percent))))
+            elif rec.get("total"):
+                rec["percent"] = int(max(0, min(100, round(100 * rec["done"] / rec["total"]))))
+            if message is not None:
+                rec["message"] = message
+            rec["status"] = status
+            if error is not None:
+                rec["error"] = str(error)
+            jobs[job_id] = rec
+            while len(jobs) > JOB_LIMIT:
+                jobs.pop(next(iter(jobs)))
+
+    def job_label(percent, detail=""):
+        pct = int(max(0, min(100, round(percent))))
+        return f"Computing properties… {pct}%"
 
     def put(kind, **values):
         key = uuid4().hex
@@ -164,6 +198,14 @@ def mount_wizard(app, guard, fig_b64, table_json):
         if value is None or value["kind"] != kind:
             raise ValueError("This step needs a current earlier snapshot. Reopen/recompute the earlier step.")
         return value
+
+    @app.get("/api/wizard/progress/{job_id}")
+    def wizard_progress(job_id: str):
+        with jobs_lock:
+            rec = jobs.get(job_id)
+        if rec is None:
+            return dict(percent=0, done=0, total=0, message="", status="unknown")
+        return dict(rec)
 
     def column_frames(result, fields=None, maturity_data=None):
         frames = []
@@ -372,14 +414,170 @@ def mount_wizard(app, guard, fig_b64, table_json):
                              "Oldest repeated geometry has no supported thermal reconstruction.")
         return guard(run)
 
+    @app.post("/api/wizard/column/properties")
+    def compute_column_properties(body: dict = Body(...)):
+        def run():
+            from .. import petrophysics as petra
+            from ..diagenesis import evolve_properties
+            from ..property_plots import (
+                plot_property_logs, property_log_limits, property_log_frame_ages,
+                _rows_at_time,
+            )
+            if body.get("thermal_id"):
+                data = get(body.get("thermal_id"), "column:thermal")
+            else:
+                data = get(body.get("result_id"), "column:run")
+            result = data["result"]
+            ts = float(body.get("surface_temperature_C", 4.))
+            q = float(body.get("heat_flow_mW_m2", body.get("heat_flow_mW", 59.))) / 1000
+            n_mc = int(body.get("n_mc", 40))
+            dt = float(body.get("dt_Myr", 1.0))
+            if not 0 <= n_mc <= 400:
+                raise ValueError("Property Monte Carlo draws must be between 0 and 400")
+            if not np.isfinite(ts) or not -30 <= ts <= 60 or not np.isfinite(q) or not 0 < q <= .3:
+                raise ValueError("Use finite surface temperature −30…60 °C and heat flow >0…300 mW/m²")
+            job_id = body.get("job_id")
+            update_job(job_id, percent=0, message=job_label(0), status="running")
+
+            def on_compute(done, total, message=""):
+                pct = 80 * (0 if total <= 0 else done / total)
+                update_job(job_id, percent=pct, done=done, total=total,
+                           message=job_label(pct, message or "Computing properties"))
+
+            try:
+                prop = evolve_properties(result, heat_flow=q, T_s=ts, n_mc=n_mc, dt_Myr=dt,
+                                        seed=0, progress=on_compute)
+            except Exception as exc:
+                update_job(job_id, status="error", message="Computing properties failed", error=exc)
+                raise
+            limits = property_log_limits(prop)
+            cap = body.get("max_frames")
+            ages = property_log_frame_ages(prop, max_frames=None if cap is None else int(cap))
+            frames, figures = [], dict(data["figures"])
+            nF = max(len(ages), 1)
+            for i, age in enumerate(ages):
+                image = fig_b64(plot_property_logs(prop, age=float(age), limits=limits))
+                it = int(np.argmin(np.abs(np.asarray(prop.ages, float) - float(age))))
+                layers = []
+                for rec in _rows_at_time(prop, it):
+                    layers.append(dict(
+                        unit_index=rec["j"], unit=rec["name"], top_m=rec["top"],
+                        base_m=rec["base"], thickness_m=rec["th"],
+                        temperature_C=rec["temperature_C"],
+                        porosity=rec["porosity"],
+                        phi_mechanical=rec["phi_mechanical"],
+                        quartz_cement=rec["quartz_cement"],
+                        permeability_mD=float(petra.m2_to_md(rec["permeability_m2"])),
+                        effective_stress_mpa=rec["effective_stress_mpa"],
+                        pore_pressure_mpa=rec["pore_pressure_mpa"],
+                    ))
+                frames.append(dict(age_Ma=float(age), label=f"{float(age):g} Ma",
+                                   figure=image, layers=layers))
+                figures[f"property_logs_{i:02d}.png"] = image
+                pct = 80 + 19 * (i + 1) / nF
+                update_job(job_id, percent=pct, message=job_label(pct))
+            files = dict(data["files"], **{
+                "property_present.csv": prop.present.to_csv(index=False),
+                "property_table.csv": prop.table.to_csv(index=False),
+                "property_conditions.json": json.dumps(dict(
+                    heat_flow_mW_m2=q * 1000, surface_temperature_C=ts,
+                    n_mc=n_mc, dt_Myr=dt,
+                    note=("Schneider et al. (1996) mechanical compaction; "
+                          "Walderhaug (1996) quartz cement; "
+                          "Kozeny–Carman / Yang & Aplin (2010) permeability; "
+                          "Mortensen et al. (1998) / Fabricius (2007) chalk relation. "
+                          "Hydrostatic Terzaghi stress. Overlay only."),
+                ), indent=2),
+            })
+            ident = put("column:properties", result=result, prop=prop, files=files,
+                        figures=figures, frames=frames,
+                        fields=data.get("fields"), maturity_data=data.get("maturity_data"))
+            update_job(job_id, percent=100, message=job_label(100), status="done")
+            return dict(
+                properties_id=ident, frames=frames, table=table_json(prop.present),
+                status="Property logs ready. Axis ranges fit every time step.",
+            )
+        return guard(run)
+
+    @app.post("/api/wizard/section/properties")
+    def compute_section_properties(body: dict = Body(...)):
+        def run():
+            from ..diagenesis import evolve_section_properties
+            from ..property_plots import plot_section_property, section_property_limits
+            data = get(body.get("growth_id"), "section:growth")
+            thermal_data = None
+            if body.get("thermal_id"):
+                thermal_data = get(body.get("thermal_id"), "section:thermal").get("thermal_fields")
+            q = float(body.get("heat_flow_mW", 59.)) / 1000
+            ts = float(body.get("T_s", 4.))
+            if not 0 < q <= .3 or not -20 <= ts <= 60:
+                raise ValueError("Heat flow must be 0–300 mW/m²; surface temperature -20–60°C")
+            job_id = body.get("job_id")
+            update_job(job_id, percent=0, message=job_label(0), status="running")
+
+            def on_compute(done, total, message=""):
+                pct = 70 * (0 if total <= 0 else done / total)
+                update_job(job_id, percent=pct, done=done, total=total,
+                           message=job_label(pct, message or "Computing properties"))
+
+            try:
+                secprop = evolve_section_properties(
+                    data["result"], data["model"], heat_flow=q, T_s=ts,
+                    thermal_data=thermal_data, progress=on_compute,
+                )
+            except Exception as exc:
+                update_job(job_id, status="error", message="Computing properties failed", error=exc)
+                raise
+            ages = np.asarray(data["result"].restoration.ages, float)
+            variables = ["porosity", "permeability_m2", "effective_stress_mpa"]
+            frames_by_variable = {}
+            figures = dict(data.get("figures", {}))
+            n_plots = max(len(variables) * max(len(ages), 1), 1)
+            drawn = 0
+            for var in variables:
+                limits = section_property_limits(data["result"], secprop, var)
+                frames = []
+                for i, age in enumerate(ages):
+                    image = fig_b64(plot_section_property(
+                        data["result"], secprop, age=float(age), variable=var,
+                        limits=limits,
+                    ), tight=False)
+                    frames.append(dict(age_Ma=float(age), label=f"{float(age):g} Ma", figure=image))
+                    figures[f"section_{var}_{i:02d}.png"] = image
+                    drawn += 1
+                    pct = 70 + 29 * drawn / n_plots
+                    update_job(job_id, percent=pct, message=job_label(pct))
+                frames_by_variable[var] = frames
+            files = dict(data["files"], **{
+                "section_property_conditions.json": json.dumps(dict(
+                    heat_flow_mW=q * 1000, T_s=ts,
+                    temperature_source=secprop.temperature_source,
+                    note="Same 1-D overlay as the column step, applied independently at each x.",
+                ), indent=2),
+            })
+            ident = put("section:properties", result=data["result"], model=data["model"],
+                        secprop=secprop, bins=data.get("bins"), files=files,
+                        figures=figures, frames=data.get("frames"),
+                        property_frames=frames_by_variable)
+            update_job(job_id, percent=100, message=job_label(100), status="done")
+            return dict(
+                properties_id=ident, frames_by_variable=frames_by_variable,
+                variables=variables,
+                status="Section properties ready. Colour limits are shared across restoration ages.",
+            )
+        return guard(run)
+
     @app.get("/api/wizard/export/{ident}")
-    def export(ident: str, animation: bool = False, fault_numbers: bool = True, section_thermal: bool = False):
+    def export(ident: str, animation: bool = False, fault_numbers: bool = True, section_thermal: bool = False, section_properties: bool = False):
         def run():
             import base64
             item = cache.get(ident)
-            if item is None or item["kind"] not in {"column:run", "column:thermal", "section:run", "section:growth", "section:thermal"}:
+            allowed = {"column:run", "column:thermal", "column:properties",
+                       "section:run", "section:growth", "section:thermal", "section:properties"}
+            if item is None or item["kind"] not in allowed:
                 raise HTTPException(400, "Compute a current result before export")
-            if animation and item["kind"] not in {"section:growth", "section:thermal", "column:run", "column:thermal"}:
+            if animation and item["kind"] not in {"section:growth", "section:thermal", "section:properties",
+                                                   "column:run", "column:thermal", "column:properties"}:
                 raise ValueError("Compute growth before exporting an animation")
             buf = io.BytesIO()
             with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as archive:
@@ -389,6 +587,13 @@ def mount_wizard(app, guard, fig_b64, table_json):
                     if not fault_numbers and name.startswith("timestep_"):
                         image = item["frames"][int(name.split("_")[1].split(".")[0])]["figure_without_numbers"]
                     archive.writestr(name, base64.b64decode(image))
+                if section_properties and item.get("secprop") is not None:
+                    from ..property_plots import save_section_property_animation
+                    with tempfile.TemporaryDirectory() as folder:
+                        path = save_section_property_animation(
+                            item["result"], item["secprop"], Path(folder)/"section_porosity.gif",
+                            variable="porosity", show_fault_numbers=fault_numbers)
+                        archive.writestr(path.name, path.read_bytes())
                 if section_thermal and item["kind"] == "section:thermal":
                     from ..section_thermal import save_section_thermal_animation, plot_section_thermal_timestep
                     for i, frame in enumerate(item["thermal_frames"]):
@@ -405,15 +610,25 @@ def mount_wizard(app, guard, fig_b64, table_json):
                         if item["kind"].startswith("column:"):
                             path = save_geohistory_animation(item["result"], folder/"geohistory_history.gif")
                             archive.writestr(path.name, path.read_bytes())
-                            if item["kind"] == "column:thermal":
+                            if item.get("fields") is not None:
                                 path = save_thermal_animation(item["result"], folder/"thermal_history.gif", fields=item["fields"])
                                 archive.writestr(path.name, path.read_bytes())
                                 path = save_maturity_animation(item["result"], folder/"maturity_history.gif", data=item["maturity_data"])
+                                archive.writestr(path.name, path.read_bytes())
+                            if item.get("prop") is not None:
+                                from ..property_plots import save_property_logs_animation
+                                path = save_property_logs_animation(item["prop"], folder/"property_logs.gif")
                                 archive.writestr(path.name, path.read_bytes())
                         else:
                             from ..growth_display import save_growth_animation
                             path = save_growth_animation(item["result"], folder/"restoration.gif", bins=item["bins"], fps=1, show_fault_numbers=fault_numbers)
                             archive.writestr("restoration.gif", path.read_bytes())
+                            if item.get("secprop") is not None and not section_properties:
+                                from ..property_plots import save_section_property_animation
+                                path = save_section_property_animation(
+                                    item["result"], item["secprop"], folder/"section_porosity.gif",
+                                    variable="porosity", show_fault_numbers=fault_numbers)
+                                archive.writestr(path.name, path.read_bytes())
                 archive.writestr("export.json", json.dumps(dict(analysis=item["kind"], computed_from="opened inputs and applied compaction model", figures=list(item["figures"])), indent=2))
             return Response(buf.getvalue(), media_type="application/zip", headers={"Content-Disposition": 'attachment; filename="pybasinsubs_results.zip"'})
         return guard(run)

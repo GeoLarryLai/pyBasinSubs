@@ -13,6 +13,7 @@ Shipped inside the package; locate files with `pybasinsubs.data_path("north_sea"
 | `north_sea/sodir_*_wells.csv`, `sodir_*_group_tops.csv` | well headers (location, KB, water depth, TD, BHT) and lithostratigraphic group tops, North Viking Graben (8 wells) and Hammerfest Basin (6 wells) | Norwegian Offshore Directorate (Sodir) FactPages, downloaded 2026-10 | Norwegian Licence for Open Government Data (NLOD 2.0) |
 | `north_sea/group_lookup.csv` | group ages, paleo-water depth, lithology fractions and the reconstructed eroded Cenozoic overburden | **compiled for this package** from the ICS 2023 time scale and standard North Sea / Barents lithostratigraphy (Gradstein et al. 2010; Halland et al. 2014 CO₂ atlas; Henriksen et al. 2011). Values are approximate, for demonstration | AGPL-3.0-or-later (this package) |
 | `heatflow/ihfc2024_northsea_barents.csv` | 326 heat-flow sites 55–75° N, 0–35° E | IHFC Global Heat Flow Database, 2024 release (GFZ Data Services, https://doi.org/10.5880/fidgeo.2024.014) | CC BY 4.0 |
+| `north_sea/lithology_priors.csv` | property-evolution priors (grain size, quartz and clay fractions, grain coatings, Schneider β, Kozeny–Carman factor). Every value has an error and a source column. Chalk permeability uses the Mortensen / Fabricius Kozeny form rather than grain size | **literature or assumed priors compiled for this package**; not measured at the bundled wells. Citations are in the file | AGPL-3.0-or-later (this package) |
 | `template/my_column_template.csv` | example input column (well 30/4-1) | derived from the Sodir data above | NLOD 2.0 / AGPL-3.0-or-later |
 
 ## Assumptions in the North Sea / Barents demo data
@@ -22,6 +23,7 @@ Shipped inside the package; locate files with `pybasinsubs.data_path("north_sea"
 - Eroded Cenozoic in the Barents wells: 1100 ± 400 m removed at 2.7 Ma (within published 1–1.5 km estimates for the Hammerfest Basin).
 - Sea level before 66.6 Ma: 0 ± 100 m (Miller 2020 does not extend further).
 - No IHFC site falls inside the transect windows; nearest sites are ~150–200 km away.
+- Diagenesis priors in `lithology_priors.csv` are literature values or assumed typical numbers, not grain-size, mineralogy, porosity, permeability or cement measurements from these wells.
 
 ## Not included / fetch notes
 - The GFZ heat-flow portal timed out; the IHFC 2024 release was taken from its backup xlsx mirror and subset.

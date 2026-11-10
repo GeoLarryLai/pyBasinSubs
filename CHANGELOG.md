@@ -1,5 +1,41 @@
 # Changelog
 
+## [0.3.0] - 2026-11-10
+
+- Opt-in property evolution modules (`diagenesis`, `petrophysics`, `stress`,
+  `property_plots`): Schneider / Lander–Walderhaug effective-stress compaction,
+  Walderhaug (1996) quartz cement on the sandstone end-member, Kozeny–Carman
+  sand permeability, Yang & Aplin (2010) mudstone permeability, Mortensen /
+  Fabricius chalk permeability (`k = c φ³ / S²`, `c = 0.25`, literature-prior
+  `S_BET = 2.0 m²/g`), and hydrostatic Terzaghi / Jáky stress. Existing 0.2.0
+  backstrip, thermal and app results are unchanged unless the new functions
+  are called.
+- Fixed-layout 1-D property-log frame (stratigraphic column plus porosity,
+  permeability, stress and temperature + Easy%Ro tracks). Axis ranges are
+  measured once across all time steps (`property_log_limits`) and reused by
+  `plot_property_logs` and `save_property_logs_animation` (one frame per
+  backstrip / stratigraphic time step; GIF via Pillow; MP4 when ffmpeg is present).
+- Single-property 2-D section views (`plot_section_property`,
+  `section_property_limits`, `save_section_property_animation`) with a
+  continuous polygon fill (no white vertical stripes between columns).
+- Colormaps: copper (porosity), cividis (permeability), viridis (effective
+  and vertical stress), inferno (temperature), Blues (pore pressure),
+  YlOrBr (quartz cement).
+- Literature/assumed lithology priors in
+  `example_data/north_sea/lithology_priors.csv` (not well measurements).
+- Notebook 6 and notebook 8 each have a documented section (equations,
+  citations, assumptions) that calls the package functions. The 1-D and 2-D
+  browser wizards gain a Property evolution step after thermal history.
+- Wizard property steps: a single status line (no repeated method blurb); the
+  1-D table follows the time-step slider (units present at that age, with
+  depth, temperature, porosities, quartz cement, permeability, effective
+  stress and pore pressure) instead of the present-day prior summary.
+- Wizard demo recordings now include the property-evolution step (1-D step 5, 2-D step 6).
+- Wizard property computation (1-D step 5, 2-D step 6) shows a lower-right percent-complete progress bar (`Computing properties… N%`) driven by a lock-free `/api/wizard/progress/{job_id}` poll of actual Monte Carlo draws (1-D) or time-integration steps (2-D, every column advances together) plus figure generation. `evolve_properties` and `evolve_section_properties` accept an optional `progress(done, total, message)` callback.
+- The minimum Python version is now 3.12 (classifiers list 3.12 and 3.13 only).
+
+
+
 ## 0.2.0 (2026-11-08)
 
 - Add explicit cached whole-section thermal timesteps (independent steady columns + kinetic Easy%Ro), translucent sediment-only window overlays and unit contacts, three 0–100% line strips (oil, wet gas, dry gas) with one opaque line per supported remaining unit in its original unit color, transparent shade fills (about alpha 0.3) under each window curve and a y-axis padded slightly past 0 and 100, wizard step 5, notebook slider and optional GIF export.
