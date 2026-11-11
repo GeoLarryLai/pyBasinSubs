@@ -10,7 +10,7 @@
 > [!WARNING]
 > Under active development. Many functions, especially fault restoration, are experimental and not fully validated. Use geological constraints; a restored section is not a unique solution.
 
-**pyBasinSubs** is a tool for **1-D and 2-D backstripping and decompaction basin analysis**, with a user-friendly, semi-automated workflow. Start with a well, stratigraphic column or interpreted section; explore subsidence, burial, thermal history, structural restoration and optional overlay property evolution in the local browser app or Python notebooks.
+**pyBasinSubs** is a tool for **1-D and 2-D backstripping and decompaction basin analysis**, with a user-friendly, semi-automated workflow. Start with a well, stratigraphic column or interpreted section; explore subsidence, burial, thermal history, structural restoration and property modeling in the local browser app or Python notebooks.
 
 ## Citation
 
@@ -47,22 +47,43 @@ pip install -e .
 Backstrip sediment loads with **Airy isostasy and decompaction**, including erosion, over-compaction and Monte Carlo uncertainty. Use a bundled well or your own column CSV. Optional thermal tools cover geotherms, McKenzie stretching-factor fits, burial temperature and Easy%Ro maturity.
 
 [![North Sea well 30/4-1: animated geohistory and stratigraphic column](image/hero_geohistory_north_sea_30-4-1.webp)](image/videos/hero_geohistory_north_sea_30-4-1.mp4)
-*North Sea well 30/4-1 — **1-D Airy backstripping + decompaction**, oldest → youngest, with a time-evolving thin stratigraphic column.*
+*North Sea well 30/4-1 — **1-D Airy backstripping + decompaction**.*
 
 [![North Sea well 30/4-1: thermal column and geotherm animation](image/thermal_history_north_sea_30-4-1.webp)](image/videos/thermal_history_north_sea_30-4-1.mp4)
-*North Sea well 30/4-1 — **thermal column + geotherm**, with kinetic Easy%Ro oil, wet-gas and dry-gas windows.*
+*North Sea well 30/4-1 — **thermal column + geotherm**.*
 
 ## 2-D: strip layers, restore and inspect rates
 
 Use correlated horizons, unit properties and interpreted fault sticks for **flexural backstripping and decompaction**. Explore cantilever, listric and domino restoration options, or the fixed-trace growth-history prototype below.
 
 [![VG1 fixed-shape reconstruction and aligned rates through time](image/vg1_growth_restoration.webp)](image/videos/vg1_growth_restoration.mp4)
-*Viking Graben VG1 — **fixed-trace vertical-shear reconstruction**: one stripped unit per timestep, remaining slipped/top-clipped traces, and aligned apparent-throw and decompacted sedimentation rates. Frame shape and axes stay fixed; numeric VG1 ages are retained.*
+*Viking Graben VG1 — **fixed-trace vertical-shear reconstruction**.*
 
 [![VG1 whole-section thermal history through time](image/vg1_section_thermal_history.webp)](image/videos/vg1_section_thermal_history.mp4)
-*Viking Graben VG1 — **whole-section thermal history** at 59 mW/m², oldest → modern: red isotherms and translucent kinetic Easy%Ro oil, wet-gas and dry-gas windows over the restored section, with three 0–100% strips showing one line per remaining unit in its unit color, lightly shaded underneath. Independent steady columns, not 2-D heat conduction.*
+*Viking Graben VG1 — **whole-section thermal history**.*
 
-The growth prototype infers **nonnegative, distributed apparent throw** after stripping, decompaction and flexural unloading, regularized along approximately 1-km knots within fixed hanging-wall partitions. It is **not resolved down-dip slip, geological heave or curved-fault balancing**. Zero is an assumed datum. The footwall of the westernmost fault (#1) is flattened separately toward the datum and is not counted as throw. Traces remain user-controlled inputs; default VG1 traces were not replaced, and the optional tip-extension assist was not applied. The oldest interval retains the last constrained 170.3-Ma geometry, not an inferred 252-Ma section.
+The growth prototype infers **nonnegative, distributed apparent throw** after stripping, decompaction and flexural unloading. It is **not resolved down-dip slip, geological heave or curved-fault balancing**. Zero is an assumed datum. The footwall of the westernmost fault is flattened separately toward the datum and is not counted as throw. Traces remain user-controlled inputs.
+
+## Property modeling
+
+This step walks the existing 1-D geohistory or 2-D restoration through time and records porosity, quartz cement, permeability and stress. New porosities do **not** feed back into decompaction, isostasy or conductivity: calling `backstrip` or running the earlier wizard steps still produces the 0.2.0 results.
+
+Mechanical compaction follows the exponential effective-stress law used as the plastic part of Schneider et al. (1996), written with a residual intergranular volume as in Lander & Walderhaug (1999). Quartz cement uses Walderhaug (1996) and is applied only to the sandstone end-member. Sand permeability is Kozeny–Carman; mudstone permeability is Yang & Aplin (2010); chalk uses the Mortensen / Fabricius Kozeny form. Pore pressure is hydrostatic (Terzaghi effective stress).
+
+The 1-D display is a fixed well-log frame: an ICS-coloured stratigraphic column plus porosity, permeability, stress and temperature + Easy%Ro tracks. Depth and value ranges are measured once across every time step, then held constant so animation frames do not jump.
+
+![North Sea well 30/4-1: present-day property logs](image/property_logs_north_sea_30-4-1.png)
+*North Sea well 30/4-1 — **present-day property logs**.*
+
+[![North Sea well 30/4-1: property-log animation](image/property_logs_north_sea_30-4-1.webp)](image/videos/property_logs_north_sea_30-4-1.mp4)
+*North Sea well 30/4-1 — **property-log animation**.*
+
+On a restored section the same 1-D model is applied independently at each $x$. Each figure shows one property (porosity, permeability or effective stress) at one restoration age, with colour limits shared across ages.
+
+![VG1 section coloured by porosity](image/vg1_section_porosity_0Ma.png)
+*Viking Graben VG1 — **present-day porosity**.*
+
+Package entry points include `evolve_properties`, `evolve_section_properties`, `plot_property_logs`, `save_property_logs_animation`, `plot_section_property` and `save_section_property_animation`. Notebooks 6 and 8 document the equations, citations and limitations; the local browser app adds a Property modeling step after thermal history in both wizards.
 
 ## The local browser app
 
@@ -70,24 +91,24 @@ The start page has the package logo and **two symbolic function buttons**. **Fau
 
 The app uses isolated numbered left-step wizards: open/edit inputs, choose or fit compaction curves, compute, then export. Return to Start to choose a different analysis. Earlier edits invalidate downstream results. Real-point fits and geothermal imports are explicit. Choose one dataset; porosity-curve checkboxes control the plot, not which unit lithologies are decompacted.
 
-The 1-D steps are **stratigraphy + aligned paleo-water inputs → compaction relations → geohistory + table → geothermal conditions + thermal plots/tables → property evolution (optional overlay) → export**. The 2-D steps are **interpreted section → compaction relations → ordinary flexural backstripping/decompaction → explicit growth reconstruction + rates → thermal history (isotherms, Easy%Ro window overlays and percent-in-window lines) → property evolution (one property per view) → export**. Real porosity points are shown and used for supported fits when supplied; sparse or unsuitable data retain the chosen curves. Bundled VG1/well-top examples provide model curves, not measured porosity logs.
+The 1-D steps are **stratigraphy + aligned paleo-water inputs → compaction relations → geohistory + table → geothermal conditions + thermal plots/tables → property modeling → export**. The 2-D steps are **interpreted section → compaction relations → ordinary flexural backstripping/decompaction → explicit growth reconstruction + rates → thermal history (isotherms, Easy%Ro window overlays and percent-in-window lines) → property modeling → export**. Real porosity points are shown and used for supported fits when supplied; sparse or unsuitable data retain the chosen curves. Bundled VG1/well-top examples provide model curves, not measured porosity logs.
 
 ### 1-D column demo
 
-[![Demo: North Sea well 30/4-1 geohistory, thermal maturity and property evolution](image/videos/pyBasinSubs_column_demo.webp)](image/videos/pyBasinSubs_column_demo.mp4)
-*North Sea well 30/4-1 — **step-by-step Airy backstripping, thermal history and property evolution**: dataset and porosity choices → geohistory (500 Monte Carlo draws) → thermal history at 59 mW/m² → optional property-log overlay (porosity dragged through every time step, then the present-day permeability, stress and temperature tracks). Age sliders drive the thin stratigraphic column, the paired geotherm / burial-temperature / Easy%Ro views, and the fixed-layout property logs. Sped-up demo. Click it to [watch the 1080p video](image/videos/pyBasinSubs_column_demo.mp4) (about 40 seconds).*
+[![1-D column demo: North Sea well 30/4-1](image/videos/pyBasinSubs_column_demo.webp)](image/videos/pyBasinSubs_column_demo.mp4)
+*North Sea well 30/4-1 — **step-by-step Airy backstripping, thermal history and property modeling**. Click it to [watch the video](image/videos/pyBasinSubs_column_demo.mp4).*
 
 ### 2-D section demo
 
-[![Demo: VG1 section restoration, thermal history and property evolution](image/videos/pyBasinSubs_section_demo.webp)](image/videos/pyBasinSubs_section_demo.mp4)
-*Viking Graben VG1 — **step-by-step flexural backstripping, growth reconstruction, thermal history and property evolution**: dataset and porosity menus → Run section → explicit Reconstruct growth / Show rates, every geological timestep down and back with aligned apparent-throw and sedimentation rates → Compute thermal history at 59 mW/m², with isotherms, Easy%Ro windows and percent-in-window lines through the same timesteps → Compute section properties, dragging porosity from present day to the oldest restoration age and back, then present-day permeability and effective stress. Sped-up demo. Click it to [watch the 1080p video](image/videos/pyBasinSubs_section_demo.mp4) (about 58 seconds).*
+[![2-D section demo: Viking Graben VG1](image/videos/pyBasinSubs_section_demo.webp)](image/videos/pyBasinSubs_section_demo.mp4)
+*Viking Graben VG1 — **step-by-step flexural backstripping, growth reconstruction, thermal history and property modeling**. Click it to [watch the video](image/videos/pyBasinSubs_section_demo.mp4).*
 
 Growth reconstruction does **not** run on page load or ordinary **Run section**. Blank section uploads use the bundled VG1 template; supply both horizons and units CSVs for your own section, plus optional fault sticks.
 
 ### Interpret your own fault traces
 
 ![Local fault-stick editor on the Viking Graben section](image/app_fault_editor.png)
-*Viking Graben — **fault-stick digitizing**: edit interpreted x–depth traces, undo changes and save JSON or CSV, with a restoration preview. The geometry is an interpretation, not a balanced solution.*
+*Viking Graben — **fault-stick digitizing**.*
 
 ## Quick start in Python
 
@@ -111,31 +132,9 @@ The executed [notebooks](notebooks/) explain data preparation, assumptions and v
 | [1 · Porosity](notebooks/pyBasinSubs_1_porosity_fit.ipynb) / [2 · Paleo-water depth](notebooks/pyBasinSubs_2_paleowater_depth.ipynb) | Compaction fits and water-depth estimates from microfossils. |
 | [3 · Coastal Range](notebooks/pyBasinSubs_3_coastal_range_backstrip.ipynb) / [4 · R parity](notebooks/pyBasinSubs_4_R_parity.ipynb) | Taiwan subsidence examples and checks against the original workflow. |
 | [5 · Your data and the app](notebooks/pyBasinSubs_5_own_data_and_UI.ipynb) | Column/section CSV templates and browser workflows. |
-| [6 · Thermal history](notebooks/pyBasinSubs_6_north_sea_thermal.ipynb) | North Sea and Barents Sea temperature and maturity, plus optional 1-D property evolution. |
+| [6 · Thermal history](notebooks/pyBasinSubs_6_north_sea_thermal.ipynb) | North Sea and Barents Sea temperature and maturity, plus 1-D property modeling. |
 | [7 · Well-transect flexure](notebooks/pyBasinSubs_7_2D_flexure.ipynb) | Well-based loads, flexural profiles and elastic-thickness sensitivity; not fault-resolved restoration. |
-| [8 · 2-D backstripping](notebooks/pyBasinSubs_8_2d_flexural_backstripping.ipynb) / [9 · Fault interpretation](notebooks/pyBasinSubs_9_fault_interpretation.ipynb) | Correlated sections, interpreted faults, restoration comparisons, the growth prototype and optional section property views. |
-
-
-## Property evolution (optional overlay)
-
-An opt-in overlay walks the existing 1-D geohistory or 2-D restoration through time and records porosity, quartz cement, permeability and stress. New porosities do **not** feed back into decompaction, isostasy or conductivity: calling `backstrip` or running the earlier wizard steps still produces the 0.2.0 results.
-
-Mechanical compaction follows the exponential effective-stress law used as the plastic part of Schneider et al. (1996), written with a residual intergranular volume as in Lander & Walderhaug (1999). Quartz cement uses Walderhaug (1996) and is applied only to the sandstone end-member. Sand permeability is Kozeny–Carman; mudstone permeability is Yang & Aplin (2010); chalk uses the Mortensen / Fabricius Kozeny form. Pore pressure is hydrostatic (Terzaghi effective stress).
-
-The 1-D display is a fixed well-log frame: an ICS-coloured stratigraphic column plus porosity, permeability, stress and temperature + Easy%Ro tracks. Depth and value ranges are measured once across every time step, then held constant so animation frames do not jump.
-
-![North Sea well 30/4-1: present-day property logs](image/property_logs_north_sea_30-4-1.png)
-*North Sea well 30/4-1 — **present-day property logs**: stratigraphic column with porosity, permeability, hydrostatic stress and temperature + Easy%Ro tracks. P10–P90 bands from the overlay Monte Carlo. The same layout is used at every time step.*
-
-[![North Sea well 30/4-1: property-log animation](image/property_logs_north_sea_30-4-1.webp)](image/videos/property_logs_north_sea_30-4-1.mp4)
-*North Sea well 30/4-1 — **property-log animation**, one frame per stratigraphic time step, oldest → youngest, with fixed axes.*
-
-On a restored section the same 1-D model is applied independently at each $x$. Each figure shows one property (porosity, permeability or effective stress) at one restoration age, with colour limits shared across ages.
-
-![VG1 section coloured by overlay porosity](image/vg1_section_porosity_0Ma.png)
-*Viking Graben VG1 — **present-day overlay porosity** on the restored section (copper). Adjacent columns are filled as a continuous mesh.*
-
-Package entry points include `evolve_properties`, `evolve_section_properties`, `plot_property_logs`, `save_property_logs_animation`, `plot_section_property` and `save_section_property_animation`. Notebooks 6 and 8 document the equations, citations and limitations; the local browser app adds a Property evolution step after thermal history in both wizards.
+| [8 · 2-D backstripping](notebooks/pyBasinSubs_8_2d_flexural_backstripping.ipynb) / [9 · Fault interpretation](notebooks/pyBasinSubs_9_fault_interpretation.ipynb) | Correlated sections, interpreted faults, restoration comparisons, the growth prototype and section property views. |
 
 
 ## References
