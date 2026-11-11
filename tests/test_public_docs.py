@@ -24,6 +24,7 @@ def test_pypi_description_is_overview_only():
     assert "https://doi.org/10.5281/zenodo.23832018" in text
     assert 'readme = "README-pypi.md"' in (ROOT / "pyproject.toml").read_text()
     assert "README-pypi.md" in (ROOT / "MANIFEST.in").read_text()
+    assert "conda install" not in text
 
 
 @pytest.mark.skipif(not (ROOT / "notebooks").is_dir(), reason="notebooks are source-checkout only")
@@ -56,6 +57,10 @@ def test_readme_unreleased_and_animated_1d_figures():
     assert "maturity_history_30-4-1.gif" not in text
     assert "1-D Airy backstripping + decompaction" in text
     assert "thermal column + geotherm" in text
+    assert "property_logs_north_sea_30-4-1.png" not in text
+    assert "vg1_section_porosity_0Ma.png" not in text
+    assert "vg1_present_properties.webp" in text
+    assert "conda install -c conda-forge pybasinsubs" in text
 
 
 def test_readme_2d_thermal_and_footwall_wording():

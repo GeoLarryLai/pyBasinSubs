@@ -28,6 +28,12 @@ Requires Python 3.12 or newer. Install the published package:
 pip install pybasinsubs
 ```
 
+or from `conda-forge` repository with `conda`:
+
+```bash
+conda install -c conda-forge pybasinsubs
+```
+
 Start the local browser app:
 
 ```bash
@@ -72,18 +78,13 @@ Mechanical compaction follows the exponential effective-stress law used as the p
 
 The 1-D display is a fixed well-log frame: an ICS-coloured stratigraphic column plus porosity, permeability, stress and temperature + Easy%Ro tracks. Depth and value ranges are measured once across every time step, then held constant so animation frames do not jump.
 
-![North Sea well 30/4-1: present-day property logs](image/property_logs_north_sea_30-4-1.png)
-*North Sea well 30/4-1 — **present-day property logs**.*
-
 [![North Sea well 30/4-1: property-log animation](image/property_logs_north_sea_30-4-1.webp)](image/videos/property_logs_north_sea_30-4-1.mp4)
 *North Sea well 30/4-1 — **property-log animation**.*
 
-On a restored section the same 1-D model is applied independently at each $x$. Each figure shows one property (porosity, permeability or effective stress) at one restoration age, with colour limits shared across ages.
+On a restored section the same 1-D model is applied independently at each $x$, with colour limits shared across restoration ages.
 
-![VG1 section coloured by porosity](image/vg1_section_porosity_0Ma.png)
-*Viking Graben VG1 — **present-day porosity**.*
-
-Package entry points include `evolve_properties`, `evolve_section_properties`, `plot_property_logs`, `save_property_logs_animation`, `plot_section_property` and `save_section_property_animation`. Notebooks 6 and 8 document the equations, citations and limitations; the local browser app adds a Property modeling step after thermal history in both wizards.
+[![Viking Graben VG1: present-day porosity, permeability and effective stress](image/vg1_present_properties.webp)](image/videos/vg1_present_properties.mp4)
+*Viking Graben VG1 — **present-day porosity, permeability and effective stress**.*
 
 ## The local browser app
 

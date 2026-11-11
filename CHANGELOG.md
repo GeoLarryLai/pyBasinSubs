@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.2] - 2026-11-10
+
+- README: drop the static present-day property-log figure (the animation remains) and replace the static VG1 present-day porosity figure with an animation cycling present-day porosity, permeability and effective stress.
+- README: remove the redundant package-entry-point / notebook / Property modeling step listing.
+- README: add `conda install -c conda-forge pybasinsubs` below the pip install line.
+
 ## [0.3.1] - 2026-11-10
 
 - Remove unused import flagged by lint; update docs tests for shortened README captions.
