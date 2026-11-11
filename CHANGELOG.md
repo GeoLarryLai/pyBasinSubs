@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3.1] - 2026-11-10
+
+- Remove unused import flagged by lint; update docs tests for shortened README captions.
+
 ## [0.3.0] - 2026-11-10
 
 - Opt-in property evolution modules (`diagenesis`, `petrophysics`, `stress`,

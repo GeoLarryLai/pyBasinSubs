@@ -1141,8 +1141,6 @@ def plot_property_logs_view(prop, *, limits=None, ages=None, max_frames=None,
 
 def _write_animation(frames_rgb, path, fps):
     """Write RGB PIL frames as GIF (Pillow) or MP4 (ffmpeg if present)."""
-    from PIL import Image
-
     path = Path(path)
     suffix = path.suffix.lower()
     if not np.isfinite(fps) or fps <= 0:

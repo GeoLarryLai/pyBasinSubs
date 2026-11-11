@@ -17,7 +17,7 @@ from ._paths import data_path
 from .column import Column, read_column, from_basinsubs, from_sodir
 from .backstrip import backstrip, BackstripResult
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 __all__ = ["data_path", "Column", "read_column", "from_basinsubs", "from_sodir", "backstrip", "BackstripResult"]
 
 from .timestep import (

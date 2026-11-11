@@ -54,8 +54,8 @@ def test_readme_unreleased_and_animated_1d_figures():
     assert "image/app_start.png" not in text
     assert "hero_geohistory_north_sea_30-4-1.png" not in text
     assert "maturity_history_30-4-1.gif" not in text
-    assert "kinetic Easy%Ro" in text
-    assert "time-evolving thin stratigraphic column" in text
+    assert "1-D Airy backstripping + decompaction" in text
+    assert "thermal column + geotherm" in text
 
 
 def test_readme_2d_thermal_and_footwall_wording():
