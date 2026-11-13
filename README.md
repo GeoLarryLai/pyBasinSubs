@@ -14,7 +14,7 @@
 
 ## Citation
 
-Lai, L.S.-H. (2026) pyBasinSubs. *Zenodo*, [doi:10.5281/zenodo.23832018](https://doi.org/10.5281/zenodo.23832018) (concept DOI).
+Lai, L.S.-H. (2026) pyBasinSubs. *Zenodo*, [doi:10.5281/zenodo.23832018](https://doi.org/10.5281/zenodo.23832018).
 
 Please also cite the method paper: Lai et al. (2022), *Extremely rapid up-and-down motions of island arc crust during arc-continent collision*, [Communications Earth & Environment 3, 100](https://doi.org/10.1038/s43247-022-00429-2).
 
