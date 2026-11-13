@@ -10,7 +10,7 @@
 > [!WARNING]
 > Under active development. Many functions, especially fault restoration, are experimental and not fully validated. Use geological constraints; a restored section is not a unique solution.
 
-**pyBasinSubs** is a tool for **1-D and 2-D backstripping and decompaction basin analysis**, with a user-friendly, semi-automated workflow. Start with a well, stratigraphic column or interpreted section; explore subsidence, burial, thermal history, structural restoration and property modeling in the local browser app or Python notebooks.
+**pyBasinSubs** is a tool for **1D and 2D backstripping and decompaction basin analysis**, with a user-friendly, semi-automated workflow. Start with a well, stratigraphic column or interpreted section; explore subsidence, burial, thermal history, structural restoration and property modeling in the local browser app or Python notebooks.
 
 ## Citation
 
@@ -18,7 +18,9 @@ Lai, L.S.-H. (2026) pyBasinSubs. *Zenodo*, [doi:10.5281/zenodo.23832018](https:/
 
 Please also cite the method paper: Lai et al. (2022), *Extremely rapid up-and-down motions of island arc crust during arc-continent collision*, [Communications Earth & Environment 3, 100](https://doi.org/10.1038/s43247-022-00429-2).
 
-Code: **AGPL-3.0-or-later**. Data and method credits are in [NOTICE](NOTICE), including Sodir, Roberts et al. (1998), Miller et al. (2020) and IHFC (2024). The Miller sea-level curve is downloaded on first use, not bundled; its non-commercial terms still apply.
+Code: **AGPL-3.0-or-later**. You are free to use, modify, and share it; anyone distributing modified code or running a modified version as a network service must share its source under the same license.
+
+Data and method credits are in [NOTICE](NOTICE), including Sodir, Roberts et al. (1998), Miller et al. (2020) and IHFC (2024). The Miller sea-level curve is downloaded on first use, not bundled; its non-commercial terms still apply.
 
 ## Install and run
 
@@ -48,17 +50,17 @@ pip install -e .
 
 `python -m pybasinsubs.webapp` also starts the app. It runs locally; your input files stay on your computer. `pybasinsubs-ui` is an alias, and `pybasinsubs-tracer` opens the fault editor directly.
 
-## 1-D: from a well to basin history
+## 1D: from a well to basin history
 
 Backstrip sediment loads with **Airy isostasy and decompaction**, including erosion, over-compaction and Monte Carlo uncertainty. Use a bundled well or your own column CSV. Optional thermal tools cover geotherms, McKenzie stretching-factor fits, burial temperature and Easy%Ro maturity.
 
 [![North Sea well 30/4-1: animated geohistory and stratigraphic column](image/hero_geohistory_north_sea_30-4-1.webp)](image/videos/hero_geohistory_north_sea_30-4-1.mp4)
-*North Sea well 30/4-1 — **1-D Airy backstripping + decompaction**.*
+*North Sea well 30/4-1 — **1D Airy backstripping + decompaction**.*
 
 [![North Sea well 30/4-1: thermal column and geotherm animation](image/thermal_history_north_sea_30-4-1.webp)](image/videos/thermal_history_north_sea_30-4-1.mp4)
 *North Sea well 30/4-1 — **thermal column + geotherm**.*
 
-## 2-D: strip layers, restore and inspect rates
+## 2D: strip layers, restore and inspect rates
 
 Use correlated horizons, unit properties and interpreted fault sticks for **flexural backstripping and decompaction**. Explore cantilever, listric and domino restoration options, or the fixed-trace growth-history prototype below.
 
@@ -72,36 +74,36 @@ The growth prototype infers **nonnegative, distributed apparent throw** after st
 
 ## Property modeling
 
-This step walks the existing 1-D geohistory or 2-D restoration through time and records porosity, quartz cement, permeability and stress. New porosities do **not** feed back into decompaction, isostasy or conductivity: calling `backstrip` or running the earlier wizard steps still produces the 0.2.0 results.
+This step walks the existing 1D geohistory or 2D restoration through time and records porosity, quartz cement, permeability and stress. New porosities do **not** feed back into decompaction, isostasy or conductivity: calling `backstrip` or running the earlier wizard steps still produces the 0.2.0 results.
 
 Mechanical compaction follows the exponential effective-stress law used as the plastic part of Schneider et al. (1996), written with a residual intergranular volume as in Lander & Walderhaug (1999). Quartz cement uses Walderhaug (1996) and is applied only to the sandstone end-member. Sand permeability is Kozeny–Carman; mudstone permeability is Yang & Aplin (2010); chalk uses the Mortensen / Fabricius Kozeny form. Pore pressure is hydrostatic (Terzaghi effective stress).
 
-The 1-D display is a fixed well-log frame: an ICS-coloured stratigraphic column plus porosity, permeability, stress and temperature + Easy%Ro tracks. Depth and value ranges are measured once across every time step, then held constant so animation frames do not jump.
+The 1D display is a fixed well-log frame: an ICS-coloured stratigraphic column plus porosity, permeability, stress and temperature + Easy%Ro tracks. Depth and value ranges are measured once across every time step, then held constant so animation frames do not jump.
 
 [![North Sea well 30/4-1: property-log animation](image/property_logs_north_sea_30-4-1.webp)](image/videos/property_logs_north_sea_30-4-1.mp4)
 *North Sea well 30/4-1 — **property-log animation**.*
 
-On a restored section the same 1-D model is applied independently at each $x$, with colour limits shared across restoration ages.
+On a restored section the same 1D model is applied independently at each $x$, with colour limits shared across restoration ages.
 
 [![Viking Graben VG1: present-day porosity, permeability and effective stress](image/vg1_present_properties.webp)](image/videos/vg1_present_properties.mp4)
 *Viking Graben VG1 — **present-day porosity, permeability and effective stress**.*
 
 ## The local browser app
 
-The start page has the package logo and **two symbolic function buttons**. **Fault editor** is available from Start and the 2-D workflow, not inside the 1-D wizard or as a third landing card. A small footer stays outside the workspace: “Project by Larry Syu-Heng Lai, PhD.” at the left and “AGPL-3.0 or later license” at the right.
+The start page has the package logo and **two symbolic function buttons**. **Fault editor** is available from Start and the 2D workflow, not inside the 1D wizard or as a third landing card. A small footer stays outside the workspace: “Project by Larry Syu-Heng Lai, PhD.” at the left and “AGPL-3.0 or later license” at the right.
 
 The app uses isolated numbered left-step wizards: open/edit inputs, choose or fit compaction curves, compute, then export. Return to Start to choose a different analysis. Earlier edits invalidate downstream results. Real-point fits and geothermal imports are explicit. Choose one dataset; porosity-curve checkboxes control the plot, not which unit lithologies are decompacted.
 
-The 1-D steps are **stratigraphy + aligned paleo-water inputs → compaction relations → geohistory + table → geothermal conditions + thermal plots/tables → property modeling → export**. The 2-D steps are **interpreted section → compaction relations → ordinary flexural backstripping/decompaction → explicit growth reconstruction + rates → thermal history (isotherms, Easy%Ro window overlays and percent-in-window lines) → property modeling → export**. Real porosity points are shown and used for supported fits when supplied; sparse or unsuitable data retain the chosen curves. Bundled VG1/well-top examples provide model curves, not measured porosity logs.
+The 1D steps are **stratigraphy + aligned paleo-water inputs → compaction relations → geohistory + table → geothermal conditions + thermal plots/tables → property modeling → export**. The 2D steps are **interpreted section → compaction relations → ordinary flexural backstripping/decompaction → explicit growth reconstruction + rates → thermal history (isotherms, Easy%Ro window overlays and percent-in-window lines) → property modeling → export**. Real porosity points are shown and used for supported fits when supplied; sparse or unsuitable data retain the chosen curves. Bundled VG1/well-top examples provide model curves, not measured porosity logs.
 
-### 1-D column demo
+### 1D column demo
 
-[![1-D column demo: North Sea well 30/4-1](image/videos/pyBasinSubs_column_demo.webp)](image/videos/pyBasinSubs_column_demo.mp4)
+[![1D column demo: North Sea well 30/4-1](image/videos/pyBasinSubs_column_demo.webp)](image/videos/pyBasinSubs_column_demo.mp4)
 *North Sea well 30/4-1 — **step-by-step Airy backstripping, thermal history and property modeling**. Click it to [watch the video](image/videos/pyBasinSubs_column_demo.mp4).*
 
-### 2-D section demo
+### 2D section demo
 
-[![2-D section demo: Viking Graben VG1](image/videos/pyBasinSubs_section_demo.webp)](image/videos/pyBasinSubs_section_demo.mp4)
+[![2D section demo: Viking Graben VG1](image/videos/pyBasinSubs_section_demo.webp)](image/videos/pyBasinSubs_section_demo.mp4)
 *Viking Graben VG1 — **step-by-step flexural backstripping, growth reconstruction, thermal history and property modeling**. Click it to [watch the video](image/videos/pyBasinSubs_section_demo.mp4).*
 
 Growth reconstruction does **not** run on page load or ordinary **Run section**. Blank section uploads use the bundled VG1 template; supply both horizons and units CSVs for your own section, plus optional fault sticks.
@@ -133,9 +135,9 @@ The executed [notebooks](notebooks/) explain data preparation, assumptions and v
 | [1 · Porosity](notebooks/pyBasinSubs_1_porosity_fit.ipynb) / [2 · Paleo-water depth](notebooks/pyBasinSubs_2_paleowater_depth.ipynb) | Compaction fits and water-depth estimates from microfossils. |
 | [3 · Coastal Range](notebooks/pyBasinSubs_3_coastal_range_backstrip.ipynb) / [4 · R parity](notebooks/pyBasinSubs_4_R_parity.ipynb) | Taiwan subsidence examples and checks against the original workflow. |
 | [5 · Your data and the app](notebooks/pyBasinSubs_5_own_data_and_UI.ipynb) | Column/section CSV templates and browser workflows. |
-| [6 · Thermal history](notebooks/pyBasinSubs_6_north_sea_thermal.ipynb) | North Sea and Barents Sea temperature and maturity, plus 1-D property modeling. |
+| [6 · Thermal history](notebooks/pyBasinSubs_6_north_sea_thermal.ipynb) | North Sea and Barents Sea temperature and maturity, plus 1D property modeling. |
 | [7 · Well-transect flexure](notebooks/pyBasinSubs_7_2D_flexure.ipynb) | Well-based loads, flexural profiles and elastic-thickness sensitivity; not fault-resolved restoration. |
-| [8 · 2-D backstripping](notebooks/pyBasinSubs_8_2d_flexural_backstripping.ipynb) / [9 · Fault interpretation](notebooks/pyBasinSubs_9_fault_interpretation.ipynb) | Correlated sections, interpreted faults, restoration comparisons, the growth prototype and section property views. |
+| [8 · 2D backstripping](notebooks/pyBasinSubs_8_2d_flexural_backstripping.ipynb) / [9 · Fault interpretation](notebooks/pyBasinSubs_9_fault_interpretation.ipynb) | Correlated sections, interpreted faults, restoration comparisons, the growth prototype and section property views. |
 
 
 ## References
